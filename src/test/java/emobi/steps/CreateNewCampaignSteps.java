@@ -24,8 +24,7 @@ public class CreateNewCampaignSteps {
     private RestHeaders restHeaders = new RestHeaders();
     private CampaignConfig campaignConfig = new CampaignConfig();
     private ObjectMapper objectMapper = new ObjectMapper();
-    private ArrayList arrayList = new ArrayList();
-    private ArrayList arrayList1 = new ArrayList();
+    private ArrayList arrayList;
 
     private CreateCampaignEntity createNewCampaignEntity = new CreateCampaignEntity();
     private CampaignTrafficSourceParam campaignTrafficSourceParam = new CampaignTrafficSourceParam();
@@ -58,10 +57,10 @@ public class CreateNewCampaignSteps {
         createAffiliatesPartnerEntity.setDescription("Thuan test create new affiliates parter");
         createAffiliatesPartnerEntity.setCreatedBy(63);
         createAffiliatesPartnerEntity.setUpdatedBy(63);
-        createAffiliatesPartnerEntity.setParams(arrayList);
+        createAffiliatesPartnerEntity.setParams(arrayList =  new ArrayList());
         createAffiliatesPartnerEntity.setPixelUrl(restRequest.newHashSet("http://api.airpush.com/track/?guid=%click_id%"));
         createAffiliatesPartnerEntity.setCountries(restRequest.newHashSet("se"));
-        createAffiliatesPartnerEntity.setCountryPayout(arrayList);
+        createAffiliatesPartnerEntity.setCountryPayout(arrayList = new ArrayList());
         affiliatesPartnerCountryPayout.setPayoutAmount(10);
         affiliatesPartnerCountryPayout.setIsoCountryCode("se");
         affiliatesPartnerCountryPayout.setPayoutCurrency("usd");
@@ -99,7 +98,7 @@ public class CreateNewCampaignSteps {
         campaignConfig.setFirePostbackOnSale(true);
         campaignConfig.set5MinutesPostbackCancel(true);
         restRequest.writeValueAsString(createNewCampaignEntity);
-        createNewCampaignEntity.setTsp(arrayList1);
+        createNewCampaignEntity.setTsp(arrayList = new ArrayList());
         campaignTrafficSourceParam.setName("Test Lps AT ContentdownloadBlack");
         campaignTrafficSourceParam.setLandingId(651);
         campaignTrafficSourceParam.setStatus(Status.ACTIVE);
@@ -113,7 +112,7 @@ public class CreateNewCampaignSteps {
         campaignTrafficSourceParam.setPixelRatio(100);
         campaignTrafficSourceParam.setFromMinute(0);
         campaignTrafficSourceParam.setToMinute(1440);
-        arrayList1.add(campaignTrafficSourceParam);
+        arrayList.add(campaignTrafficSourceParam);
 
         objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         restRequest.setBody(new RestBody(objectMapper.writeValueAsString(createNewCampaignEntity)));

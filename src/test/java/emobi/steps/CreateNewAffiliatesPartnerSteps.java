@@ -24,7 +24,7 @@ public class CreateNewAffiliatesPartnerSteps {
     private RestHeaders restHeaders = new RestHeaders();
     private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
     private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
-    private ArrayList arrayList = new ArrayList();
+    private ArrayList arrayList;
 
     String getGetRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
@@ -50,7 +50,7 @@ public class CreateNewAffiliatesPartnerSteps {
         createAffiliatesPartnerEntity.setCountries(restRequest.newHashSet("se"));
         //Set<String> set = Stream.of("ca").collect(Collectors.toCollection(HashSet::new));
         //createAffiliatesPartnerEntity.setCountries(set);
-        createAffiliatesPartnerEntity.setCountryPayout(arrayList);
+        createAffiliatesPartnerEntity.setCountryPayout(arrayList = new ArrayList());
         affiliatesPartnerCountryPayout.setPayoutAmount(10);
         affiliatesPartnerCountryPayout.setIsoCountryCode("se");
         affiliatesPartnerCountryPayout.setPayoutCurrency("usd");

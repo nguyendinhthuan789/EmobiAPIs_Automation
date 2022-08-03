@@ -8,7 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AffiliatesPartnerCountryPayout {
-
     @JsonProperty("payout_amount")
     private int payoutAmount;
 

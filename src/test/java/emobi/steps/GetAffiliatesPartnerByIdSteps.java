@@ -23,7 +23,7 @@ public class GetAffiliatesPartnerByIdSteps {
     private RestResponse restResponse;
     private RestParams restParams;
     private RestHeaders restHeaders = new RestHeaders();
-    private ArrayList arrayList = new ArrayList();
+    private ArrayList arrayList;
 
     private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
     private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
@@ -55,7 +55,7 @@ public class GetAffiliatesPartnerByIdSteps {
         createAffiliatesPartnerEntity.setParams(arrayList);
         createAffiliatesPartnerEntity.setPixelUrl(restRequest.newHashSet("http://api.airpush.com/track/?guid=%click_id%"));
         createAffiliatesPartnerEntity.setCountries(restRequest.newHashSet("se"));
-        createAffiliatesPartnerEntity.setCountryPayout(arrayList);
+        createAffiliatesPartnerEntity.setCountryPayout(arrayList = new ArrayList());
         affiliatesPartnerCountryPayout.setPayoutAmount(10);
         affiliatesPartnerCountryPayout.setIsoCountryCode("se");
         affiliatesPartnerCountryPayout.setPayoutCurrency("usd");
