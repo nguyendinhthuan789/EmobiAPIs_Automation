@@ -49,8 +49,29 @@ public class RestResponse {
         return response.getBody();
     }
 
-    public static JsonPath rawToJson(Response response) {
+    public ResponseBody printPeek(){
+        return getBody().peek();
+    }
+
+    public ResponseBody printPrettyPeek(){
+        return getBody().prettyPeek();
+    }
+
+    public String printPrettyPrint(){
+        System.out.println("==================== "+"Start Response body"+" ========================");
+        String res=getBody().prettyPrint();
+        System.out.println("==================== "+"End Response body"+" ========================");
+        return res;
+    }
+
+    public static JsonPath getJsonPath(Response response) {
         JsonPath js = new JsonPath(response.body().asString());
         return js;
+    }
+
+    public static String getJsonPathHasKey(Response response, String key) {
+        String complete = response.asString();
+        JsonPath js = new JsonPath(complete);
+        return js.get(key).toString();
     }
 }

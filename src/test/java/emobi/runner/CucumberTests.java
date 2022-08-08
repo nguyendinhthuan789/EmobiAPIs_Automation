@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/java/emobi/features"},
         plugin = {"pretty", "html:target/report/cucumber.html"},
-        tags = "@Login or @CreateAffiliatePartner or @CreateNewCampaign or @GetAffiliatesPartnerById",
+        tags = "Mobwizard_C2s",
+        //tags = "@Login or @CreateAffiliatePartner or @CreateNewCampaign or @GetAffiliatesPartnerById or @UpdateAffiliatePartner",
         glue = {"emobi.steps"},
         monochrome = true
 )

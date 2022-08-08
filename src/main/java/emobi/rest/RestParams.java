@@ -19,23 +19,30 @@ public class RestParams {
 
     /**
      * Add new param
-     * @param key key
+     *
+     * @param key   key
      * @param value value
      */
     public void addParam(String key, Object value) {
         this.params.put(key, value);
     }
 
-    public void remove(String key){
+    public Map<String, Object> formParam(String key, Object value) {
+        params.put(key, value);
+        return this.params;
+    }
+
+    public void remove(String key) {
         this.params.remove(key);
     }
 
-    public void removeAll(){
+    public void removeAll() {
         this.params.clear();
     }
 
     /**
      * Get map
+     *
      * @return
      */
     public Map<String, Object> getParams() {

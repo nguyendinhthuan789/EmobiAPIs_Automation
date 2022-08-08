@@ -30,6 +30,7 @@ public class RestRequest {
     private static final Logger requestLog = LoggerFactory.getLogger(RestRequest.class);
     private String url;
     private String path;
+    private String camp;
     private RestMethod method;
     private RestHeaders header;
     private RestBody body;
@@ -68,6 +69,22 @@ public class RestRequest {
     public RestRequest(String url, String path, RestMethod method, int connectionTimeout) {
         this.url = url;
         this.path = path;
+        this.method = method;
+        init(connectionTimeout);
+    }
+
+    /**
+     * Init request with url, path, method and timeout
+     *
+     * @param url               String
+     * @param path              String
+     * @param camp              String
+     * @param method            RestMethod
+     */
+    public RestRequest(String url, String path, String camp, RestMethod method) {
+        this.url = url;
+        this.path = path;
+        this.camp = camp;
         this.method = method;
         init(connectionTimeout);
     }
@@ -168,7 +185,6 @@ public class RestRequest {
         String b = this.body.print();
         requestSpecBuilder.setBody(b).setContentType(ContentType.JSON);
         curlConverter.setBodyCurl(this.body);
-        requestLog.info("Request :"+body);
     }
 
     /**
@@ -192,7 +208,6 @@ public class RestRequest {
         } else {
             requestSpecBuilder.addQueryParams(this.params.getParams());
         }
-
         curlConverter.setParams(params);
     }
 

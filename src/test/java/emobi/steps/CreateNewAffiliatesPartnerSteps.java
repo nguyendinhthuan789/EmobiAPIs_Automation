@@ -19,19 +19,24 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CreateNewAffiliatesPartnerSteps {
-    private RestRequest restRequest;
-    private RestResponse restResponse;
-    private RestHeaders restHeaders = new RestHeaders();
-    private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
-    private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
-    private ArrayList arrayList;
-
     String getGetRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Cost = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Callback_payout = Convert.convertIntToString(Randoms.generateRandomInt());
     String getServiceName = Randoms.randomStringInList(ServiceNames.ALL_SERVICE_NAME);
     List<String> stringListCA = Stream.of(getGetRand_Default_pub_id, getRand_Default_pub_id, "se", getServiceName, "psms_click2sms", getRand_Cost, "se", getServiceName, "tele2", getRand_Callback_payout).collect(Collectors.toList());
+    private RestRequest restRequest;
+    private RestResponse restResponse;
+    private RestHeaders restHeaders;
+    private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity;
+    private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout;
+    private ArrayList arrayList;
+
+    public CreateNewAffiliatesPartnerSteps() {
+        restHeaders = new RestHeaders();
+        createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
+        affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
+    }
 
     @Given("User create new affiliates partner for country SE with valid")
     public void user_create_new_affiliates_partner_for_country_se_with_valid() {
@@ -58,6 +63,7 @@ public class CreateNewAffiliatesPartnerSteps {
         createAffiliatesPartnerEntity.setConfig(String.format("{\"default_pub_id\":\"" + "%d" + "\",\"default_sub_id\":\"" + "%d" + "\",\"cost\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}},\"callback_payout\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}}}", Integer.parseInt(stringListCA.get(0)), Integer.parseInt(stringListCA.get(1)), stringListCA.get(2), stringListCA.get(3), stringListCA.get(4), Integer.parseInt(stringListCA.get(5)), stringListCA.get(6), stringListCA.get(7), stringListCA.get(8), Integer.parseInt(stringListCA.get(9))));
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(createAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
+        restResponse.printPrettyPrint();
     }
 
     @Then("Response status code create new affiliates partner for country SE valid equals {int}")
@@ -67,6 +73,6 @@ public class CreateNewAffiliatesPartnerSteps {
 
     @Then("Response body create new affiliates for country SE valid has param Id is not null")
     public void response_body_create_new_affiliates_for_country_se_valid_has_param_id_is_not_null() {
-        Assert.assertNotNull(restResponse.rawToJson(restResponse.extract()).getString("id"));
+        Assert.assertNotNull(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
     }
 }

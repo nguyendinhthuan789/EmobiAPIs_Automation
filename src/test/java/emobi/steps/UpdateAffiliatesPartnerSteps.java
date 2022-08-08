@@ -22,6 +22,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class UpdateAffiliatesPartnerSteps {
+    String getGetRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
+    String getRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
+    String getRand_Cost = Convert.convertIntToString(Randoms.generateRandomInt());
+    String getRand_Callback_payout = Convert.convertIntToString(Randoms.generateRandomInt());
+    String getServiceName = Randoms.randomStringInList(ServiceNames.ALL_SERVICE_NAME);
+    List<String> stringListCA = Stream.of(getGetRand_Default_pub_id, getRand_Default_pub_id, "se", getServiceName, "psms_click2sms", getRand_Cost, "se", getServiceName, "tele2", getRand_Callback_payout).collect(Collectors.toList());
     private RestRequest restRequest;
     private RestResponse restResponse;
     private RestHeaders restHeaders = new RestHeaders();
@@ -30,15 +36,9 @@ public class UpdateAffiliatesPartnerSteps {
     private UpdateAffiliatesPartnerEntity updateAffiliatesPartnerEntity = new UpdateAffiliatesPartnerEntity();
     private UpdateAffiliatesPartnerCountryPayout updateAffiliatesPartnerCountryPayout = new UpdateAffiliatesPartnerCountryPayout();
     private ArrayList arrayList;
-
-    String getGetRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
-    String getRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
-    String getRand_Cost = Convert.convertIntToString(Randoms.generateRandomInt());
-    String getRand_Callback_payout = Convert.convertIntToString(Randoms.generateRandomInt());
-    String getServiceName = Randoms.randomStringInList(ServiceNames.ALL_SERVICE_NAME);
-    List<String> stringListCA = Stream.of(getGetRand_Default_pub_id, getRand_Default_pub_id, "se", getServiceName, "psms_click2sms", getRand_Cost, "se", getServiceName, "tele2", getRand_Callback_payout).collect(Collectors.toList());
-
     private State state;
+    private String name = "Thuan update name affiliates SE";
+
     public UpdateAffiliatesPartnerSteps(State state) {
         this.state = state;
     }
@@ -58,7 +58,7 @@ public class UpdateAffiliatesPartnerSteps {
         createAffiliatesPartnerEntity.setParams(arrayList = new ArrayList());
         createAffiliatesPartnerEntity.setPixelUrl(restRequest.newHashSet("http://api.airpush.com/track/?guid=%click_id%"));
         createAffiliatesPartnerEntity.setCountries(restRequest.newHashSet("se"));
-        createAffiliatesPartnerEntity.setCountryPayout(arrayList=new ArrayList());
+        createAffiliatesPartnerEntity.setCountryPayout(arrayList = new ArrayList());
         affiliatesPartnerCountryPayout.setPayoutAmount(10);
         affiliatesPartnerCountryPayout.setIsoCountryCode("se");
         affiliatesPartnerCountryPayout.setPayoutCurrency("usd");
@@ -66,10 +66,10 @@ public class UpdateAffiliatesPartnerSteps {
         createAffiliatesPartnerEntity.setConfig(String.format("{\"default_pub_id\":\"" + "%d" + "\",\"default_sub_id\":\"" + "%d" + "\",\"cost\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}},\"callback_payout\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}}}", Integer.parseInt(stringListCA.get(0)), Integer.parseInt(stringListCA.get(1)), stringListCA.get(2), stringListCA.get(3), stringListCA.get(4), Integer.parseInt(stringListCA.get(5)), stringListCA.get(6), stringListCA.get(7), stringListCA.get(8), Integer.parseInt(stringListCA.get(9))));
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(createAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
-        state.setId(restResponse.rawToJson(restResponse.extract()).getString("id"));
+        restResponse.printPrettyPrint();
+        state.setId(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
     }
 
-    private String name ="Thuan update name affiliates SE";
     @When("User update name affiliates partner for country SE with valid")
     public void user_update_name_affiliates_partner_for_country_se_with_valid() {
         restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_AFFILIATES_PARTNER, RestMethod.PUT);
@@ -94,7 +94,8 @@ public class UpdateAffiliatesPartnerSteps {
         updateAffiliatesPartnerEntity.setConfig(String.format("{\"default_pub_id\":\"" + "%d" + "\",\"default_sub_id\":\"" + "%d" + "\",\"cost\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}},\"callback_payout\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}}}", Integer.parseInt(stringListCA.get(0)), Integer.parseInt(stringListCA.get(1)), stringListCA.get(2), stringListCA.get(3), stringListCA.get(4), Integer.parseInt(stringListCA.get(5)), stringListCA.get(6), stringListCA.get(7), stringListCA.get(8), Integer.parseInt(stringListCA.get(9))));
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(updateAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
-        state.setValue(restResponse.rawToJson(restResponse.extract()).getString("name"));
+        restResponse.printPrettyPrint();
+        state.setValue(RestResponse.getJsonPath(restResponse.extract()).getString("name"));
     }
 
     @When("User update payout amount affiliates partner for country SE with valid")
@@ -121,7 +122,8 @@ public class UpdateAffiliatesPartnerSteps {
         updateAffiliatesPartnerEntity.setConfig(String.format("{\"default_pub_id\":\"" + "%d" + "\",\"default_sub_id\":\"" + "%d" + "\",\"cost\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}},\"callback_payout\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}}}", Integer.parseInt(stringListCA.get(0)), Integer.parseInt(stringListCA.get(1)), stringListCA.get(2), stringListCA.get(3), stringListCA.get(4), Integer.parseInt(stringListCA.get(5)), stringListCA.get(6), stringListCA.get(7), stringListCA.get(8), Integer.parseInt(stringListCA.get(9))));
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(updateAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
-        updateAffiliatesPartnerCountryPayout.setPayoutAmount((float) restResponse.rawToJson(restResponse.extract()).getList("country_payout.payout_amount").get(0));
+        restResponse.printPrettyPrint();
+        updateAffiliatesPartnerCountryPayout.setPayoutAmount((float) RestResponse.getJsonPath(restResponse.extract()).getList("country_payout.payout_amount").get(0));
     }
 
     @Then("Response status code update affiliates for country SE valid equals {int}")
@@ -131,7 +133,7 @@ public class UpdateAffiliatesPartnerSteps {
 
     @Then("Response body with id of country SE")
     public void response_body_with_id_of_country_se() {
-        Assert.assertEquals(state.getId(),restResponse.rawToJson(restResponse.extract()).getString("id"));
+        Assert.assertEquals(state.getId(), RestResponse.getJsonPath(restResponse.extract()).getString("id"));
     }
 
     @Then("Response body update name successful for country SE")
@@ -141,6 +143,6 @@ public class UpdateAffiliatesPartnerSteps {
 
     @Then("Response body update payout amount successful for country SE")
     public void response_body_update_payout_amount_successful_for_country_se() {
-        Assert.assertEquals(updateAffiliatesPartnerCountryPayout.getPayoutAmount(), 20,0.0);
+        Assert.assertEquals(updateAffiliatesPartnerCountryPayout.getPayoutAmount(), 20, 0.0);
     }
 }

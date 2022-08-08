@@ -19,25 +19,26 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GetAffiliatesPartnerByIdSteps {
-    private RestRequest restRequest;
-    private RestResponse restResponse;
-    private RestParams restParams;
-    private RestHeaders restHeaders = new RestHeaders();
-    private ArrayList arrayList;
-
-    private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
-    private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
-
     String getGetRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Cost = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Callback_payout = Convert.convertIntToString(Randoms.generateRandomInt());
     String getServiceName = Randoms.randomStringInList(ServiceNames.ALL_SERVICE_NAME);
     List<String> stringListCA = Stream.of(getGetRand_Default_pub_id, getRand_Default_pub_id, "se", getServiceName, "psms_click2sms", getRand_Cost, "se", getServiceName, "tele2", getRand_Callback_payout).collect(Collectors.toList());
-
+    private RestRequest restRequest;
+    private RestResponse restResponse;
+    private RestParams restParams;
+    private RestHeaders restHeaders;
+    private ArrayList arrayList;
+    private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity;
+    private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout;
     private State state;
+
     public GetAffiliatesPartnerByIdSteps(State state) {
         this.state = state;
+        restHeaders = new RestHeaders();
+        createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
+        affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
     }
 
     @Given("User create new affiliates partner after that get affiliates by id with valid credential")
@@ -52,7 +53,7 @@ public class GetAffiliatesPartnerByIdSteps {
         createAffiliatesPartnerEntity.setDescription("Thuan test create new affiliates parter");
         createAffiliatesPartnerEntity.setCreatedBy(63);
         createAffiliatesPartnerEntity.setUpdatedBy(63);
-        createAffiliatesPartnerEntity.setParams(arrayList);
+        createAffiliatesPartnerEntity.setParams(arrayList = new ArrayList());
         createAffiliatesPartnerEntity.setPixelUrl(restRequest.newHashSet("http://api.airpush.com/track/?guid=%click_id%"));
         createAffiliatesPartnerEntity.setCountries(restRequest.newHashSet("se"));
         createAffiliatesPartnerEntity.setCountryPayout(arrayList = new ArrayList());
@@ -63,15 +64,17 @@ public class GetAffiliatesPartnerByIdSteps {
         createAffiliatesPartnerEntity.setConfig(String.format("{\"default_pub_id\":\"" + "%d" + "\",\"default_sub_id\":\"" + "%d" + "\",\"cost\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}},\"callback_payout\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}}}", Integer.parseInt(stringListCA.get(0)), Integer.parseInt(stringListCA.get(1)), stringListCA.get(2), stringListCA.get(3), stringListCA.get(4), Integer.parseInt(stringListCA.get(5)), stringListCA.get(6), stringListCA.get(7), stringListCA.get(8), Integer.parseInt(stringListCA.get(9))));
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(createAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
-        state.setId(restResponse.rawToJson(restResponse.extract()).getString("id"));
+        restResponse.printPrettyPrint();
+        state.setId(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
     }
 
     @Given("Get affiliates partner by id with id valid credential")
     public void get_affiliates_partner_by_id_with_id_valid_credential() {
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_AFFILIATES_PARTNER +"/" + state.getId(), RestMethod.GET);
+        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_AFFILIATES_PARTNER + "/" + state.getId(), RestMethod.GET);
         restHeaders.add(restHeaders.defalutHeaders());
         restRequest.setHeader(restHeaders);
         restResponse = restRequest.sendWithLog();
+        restResponse.printPrettyPrint();
     }
 
     @Then("Response status code get affiliates partner by id valid is equals {int}")

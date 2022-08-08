@@ -19,29 +19,33 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CreateNewCampaignSteps {
-    private RestRequest restRequest;
-    private RestResponse restResponse;
-    private RestHeaders restHeaders = new RestHeaders();
-    private CampaignConfig campaignConfig = new CampaignConfig();
-    private ObjectMapper objectMapper = new ObjectMapper();
-    private ArrayList arrayList;
-
-    private CreateCampaignEntity createNewCampaignEntity = new CreateCampaignEntity();
-    private CampaignTrafficSourceParam campaignTrafficSourceParam = new CampaignTrafficSourceParam();
-
-    private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
-    private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
-
     String getGetRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Default_pub_id = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Cost = Convert.convertIntToString(Randoms.generateRandomInt());
     String getRand_Callback_payout = Convert.convertIntToString(Randoms.generateRandomInt());
     String getServiceName = Randoms.randomStringInList(ServiceNames.ALL_SERVICE_NAME);
     List<String> stringListCA = Stream.of(getGetRand_Default_pub_id, getRand_Default_pub_id, "se", getServiceName, "psms_click2sms", getRand_Cost, "se", getServiceName, "tele2", getRand_Callback_payout).collect(Collectors.toList());
-
+    private RestRequest restRequest;
+    private RestResponse restResponse;
+    private RestHeaders restHeaders;
+    private CampaignConfig campaignConfig;
+    private ObjectMapper objectMapper;
+    private ArrayList arrayList;
+    private CreateCampaignEntity createNewCampaignEntity;
+    private CampaignTrafficSourceParam campaignTrafficSourceParam;
+    private CreateAffiliatesPartnerEntity createAffiliatesPartnerEntity;
+    private AffiliatesPartnerCountryPayout affiliatesPartnerCountryPayout;
     private State state;
+
     public CreateNewCampaignSteps(State state) {
         this.state = state;
+        restHeaders = new RestHeaders();
+        campaignConfig = new CampaignConfig();
+        objectMapper = new ObjectMapper();
+        affiliatesPartnerCountryPayout = new AffiliatesPartnerCountryPayout();
+        createAffiliatesPartnerEntity = new CreateAffiliatesPartnerEntity();
+        campaignTrafficSourceParam = new CampaignTrafficSourceParam();
+        createNewCampaignEntity = new CreateCampaignEntity();
     }
 
 
@@ -57,7 +61,7 @@ public class CreateNewCampaignSteps {
         createAffiliatesPartnerEntity.setDescription("Thuan test create new affiliates parter");
         createAffiliatesPartnerEntity.setCreatedBy(63);
         createAffiliatesPartnerEntity.setUpdatedBy(63);
-        createAffiliatesPartnerEntity.setParams(arrayList =  new ArrayList());
+        createAffiliatesPartnerEntity.setParams(arrayList = new ArrayList());
         createAffiliatesPartnerEntity.setPixelUrl(restRequest.newHashSet("http://api.airpush.com/track/?guid=%click_id%"));
         createAffiliatesPartnerEntity.setCountries(restRequest.newHashSet("se"));
         createAffiliatesPartnerEntity.setCountryPayout(arrayList = new ArrayList());
@@ -68,7 +72,8 @@ public class CreateNewCampaignSteps {
         createAffiliatesPartnerEntity.setConfig(String.format("{\"default_pub_id\":\"" + "%d" + "\",\"default_sub_id\":\"" + "%d" + "\",\"cost\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}},\"callback_payout\":{\"" + "%s" + "\":{\"" + "%s" + "\":{\"" + "%s" + "\":\"" + "%d" + "\"}}}}", Integer.parseInt(stringListCA.get(0)), Integer.parseInt(stringListCA.get(1)), stringListCA.get(2), stringListCA.get(3), stringListCA.get(4), Integer.parseInt(stringListCA.get(5)), stringListCA.get(6), stringListCA.get(7), stringListCA.get(8), Integer.parseInt(stringListCA.get(9))));
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(createAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
-        state.setId(restResponse.rawToJson(restResponse.extract()).getString("id"));
+        restResponse.printPrettyPrint();
+        state.setId(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
     }
 
     @Given("User create new campaign for country SE with valid")
@@ -117,6 +122,7 @@ public class CreateNewCampaignSteps {
         objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         restRequest.setBody(new RestBody(objectMapper.writeValueAsString(createNewCampaignEntity)));
         restResponse = restRequest.sendWithLog();
+        restResponse.printPrettyPrint();
     }
 
     @Then("Response status code create new campaign for country SE valid equals {int}")
@@ -126,6 +132,6 @@ public class CreateNewCampaignSteps {
 
     @Then("Response body create new campaign for country SE valid has param Id is not null")
     public void response_body_create_new_campaign_for_country_se_valid_has_param_id_is_not_null() {
-        Assert.assertNotNull(restResponse.rawToJson(restResponse.extract()).getString("id"));
+        Assert.assertNotNull(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
     }
 }
