@@ -1,4 +1,4 @@
-package emobi.steps;
+package emobi.steps.lpas;
 
 public class State {
     private String id;

@@ -1,4 +1,4 @@
-package emobi.steps.mobwizard;
+package emobi.steps.moviplus;
 
 import emobi.constants.URL;
 import emobi.rest.*;

@@ -1,4 +1,4 @@
-package emobi.steps;
+package emobi.steps.lpas;
 
 import emobi.constants.ServiceNames;
 import emobi.constants.Status;

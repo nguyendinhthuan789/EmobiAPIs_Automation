@@ -1,6 +1,9 @@
 package emobi.rest;
 
+import emobi.filter.log.CustomLogFilter;
+import emobi.filter.log.ErrorLoggingFilter;
 import emobi.filter.log.ResponseLoggingFilter;
+import io.restassured.filter.Filter;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
@@ -13,12 +16,18 @@ import org.slf4j.LoggerFactory;
  */
 public class RestResponse {
     private static final Logger reponsetLog = LoggerFactory.getLogger(RestResponse.class);
-
-    private RestResponse() {
-    }
+    private Filter logFilter = new CustomLogFilter();
 
     private Response response;
     private ResponseLoggingFilter responseLoggingFilter;
+    private ErrorLoggingFilter errorLoggingFilter;
+
+    private RestResponse() {
+        responseLoggingFilter = new ResponseLoggingFilter();
+        errorLoggingFilter = new ErrorLoggingFilter();
+    }
+
+
 
     /**
      * Init Response
@@ -26,7 +35,6 @@ public class RestResponse {
      */
     public RestResponse(Response response) {
         this.response = response;
-        reponsetLog.info("RESPONSE BODY: \n"+ response);
     }
 
     /**

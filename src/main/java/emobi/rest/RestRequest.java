@@ -3,11 +3,13 @@ package emobi.rest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import emobi.auth.RestAuth;
+import emobi.filter.log.CustomLogFilter;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.config.RedirectConfig;
 import io.restassured.config.RestAssuredConfig;
+import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookies;
@@ -28,9 +30,9 @@ import static io.restassured.config.JsonConfig.jsonConfig;
  */
 public class RestRequest {
     private static final Logger requestLog = LoggerFactory.getLogger(RestRequest.class);
+    private Filter logFilter = new CustomLogFilter();
     private String url;
     private String path;
-    private String camp;
     private RestMethod method;
     private RestHeaders header;
     private RestBody body;
@@ -69,22 +71,6 @@ public class RestRequest {
     public RestRequest(String url, String path, RestMethod method, int connectionTimeout) {
         this.url = url;
         this.path = path;
-        this.method = method;
-        init(connectionTimeout);
-    }
-
-    /**
-     * Init request with url, path, method and timeout
-     *
-     * @param url               String
-     * @param path              String
-     * @param camp              String
-     * @param method            RestMethod
-     */
-    public RestRequest(String url, String path, String camp, RestMethod method) {
-        this.url = url;
-        this.path = path;
-        this.camp = camp;
         this.method = method;
         init(connectionTimeout);
     }
