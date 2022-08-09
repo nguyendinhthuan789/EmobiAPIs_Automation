@@ -34,7 +34,7 @@ public class PinVerify {
         restParams.addParam(result.get(3), result.get(7));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
-        restResponse = restRequest.sendWithLog();
+        restResponse = restRequest.send();
         restResponse.printPrettyPrint();
     }
 

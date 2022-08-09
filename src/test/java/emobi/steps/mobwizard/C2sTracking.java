@@ -7,10 +7,13 @@ import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class C2sTracking {
+    final Logger log = LoggerFactory.getLogger(C2sTracking.class);
     private RestRequest restRequest;
     private RestHeaders restHeaders;
     private RestResponse restResponse;
@@ -33,8 +36,9 @@ public class C2sTracking {
         restParams.addParam(result.get(2), result.get(5));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
-        restResponse = restRequest.sendWithLog();
+        restResponse = restRequest.send();
         restResponse.printPrettyPrint();
+        log.info(String.format("Request method header {0}: ", restHeaders.toString()));
     }
 
     @Then("Response successful status code is {int} after tracking request of Mobwizard flow C2S")

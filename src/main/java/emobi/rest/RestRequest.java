@@ -40,7 +40,7 @@ public class RestRequest {
     private RequestSpecification requestSpec;
     private RequestSpecBuilder requestSpecBuilder;
     private RestAssuredConfig config;
-    private RequestLoggingFilter filter;
+    private RequestLoggingFilter filter = new RequestLoggingFilter();
     private int connectionTimeout;
     private static final int DEFAULT_CONNECTION_TIMEOUT = 30000;
 
@@ -227,6 +227,7 @@ public class RestRequest {
      */
     public RestResponse send() {
         requestSpec = requestSpecBuilder.build();
+        requestLog.info("Started %s", curlConverter.printCurl());
         switch (this.method) {
             case POST:
                 return new RestResponse(RestAssured.given()

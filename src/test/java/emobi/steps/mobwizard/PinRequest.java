@@ -36,7 +36,7 @@ public class PinRequest {
         restParams.addParam(result.get(5), result.get(11));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
-        restResponse = restRequest.sendWithLog();
+        restResponse = restRequest.send();
         restResponse.printPrettyPrint();
     }
 
@@ -66,7 +66,7 @@ public class PinRequest {
         restParams.addParam(result.get(5), result.get(11));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
-        restResponse = restRequest.sendWithLog();
+        restResponse = restRequest.send();
         restResponse.printPrettyPrint();
     }
 

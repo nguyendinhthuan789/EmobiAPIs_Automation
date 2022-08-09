@@ -1,5 +1,7 @@
 package emobi.rest;
 
+import com.github.dzieciou.testing.curl.Platform;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -54,5 +56,13 @@ public class CurlConverter {
     public void setBodyCurl(RestBody body) {
         curlCommand.removeData();
         curlCommand.addData(body.prettyPrint());
+    }
+
+    public String printCurl() {
+        if (paramUrl.length() > 1)
+            curlCommand.setUrl(mainUrl + paramUrl);
+        else
+            curlCommand.setUrl(mainUrl);
+        return curlCommand.asString(Platform.RECOGNIZE_AUTOMATICALLY, true, true);
     }
 }

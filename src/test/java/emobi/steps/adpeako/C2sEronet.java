@@ -26,7 +26,7 @@ public class C2sEronet {
         restHeaders.add("apikey", "e5f4a5e9-5924-413e-a8bd-f62345fbb445");
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
-        restResponse = restRequest.sendWithLog();
+        restResponse = restRequest.send();
         restResponse.printPrettyPrint();
     }
 //    @Then("Response successful status code is {int} after tracking request Eronet of Adpeako flow C2S")
