@@ -12,6 +12,8 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Utils {
     public Utils(){
@@ -127,5 +129,12 @@ public class Utils {
         ObjectMapper objMapper = new ObjectMapper();
         obj = objMapper.readValue(content, clazz);
         return obj;
+    }
+
+    public static List<String> generateListString(List<List<String>> list){
+        List<String> result = list.stream()
+                .flatMap(l -> l.stream())
+                .collect(Collectors.toList());
+        return result;
     }
 }

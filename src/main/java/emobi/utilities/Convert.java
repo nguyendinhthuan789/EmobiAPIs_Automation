@@ -49,6 +49,12 @@ public class Convert {
 //        return jsonSender;
 //    }
 
+//    public Map<Integer, Animal> convertListAfterJava8(List<Animal> list) {
+//        Map<Integer, Animal> map = list.stream()
+//                .collect(Collectors.toMap(Animal::getId, Function.identity()));
+//        return map;
+//    }
+
     public static Integer convertStringToInt(String clsObj) {
         //convert String to Integer
         Integer value = Integer.parseInt(clsObj);
