@@ -16,12 +16,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Utils {
-    public Utils(){
+    public Utils() {
 
     }
 
     /**
      * Get integer
+     *
      * @param number Object
      * @return Integer
      */
@@ -37,6 +38,7 @@ public class Utils {
 
     /**
      * Get double
+     *
      * @param number Object
      * @return Double
      */
@@ -52,6 +54,7 @@ public class Utils {
 
     /**
      * Get Long
+     *
      * @param number Object
      * @return Long
      */
@@ -77,13 +80,13 @@ public class Utils {
         return ts;
     }
 
-    public static LocalDateTime localDateTime(){
+    public static LocalDateTime localDateTime() {
         return Instant.now()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
     }
 
-    public static Date date(){
+    public static Date date() {
         Date date = new Date();
         return date;
     }
@@ -98,7 +101,7 @@ public class Utils {
         }
     }
 
-    public static void isSnakeStrategy (){
+    public static void isSnakeStrategy() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
     }
@@ -118,7 +121,6 @@ public class Utils {
             objMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
         }
-
         StringWriter stringWriter = new StringWriter();
         objMapper.writeValue(stringWriter, object);
         return stringWriter.toString();
@@ -131,7 +133,7 @@ public class Utils {
         return obj;
     }
 
-    public static List<String> generateListString(List<List<String>> list){
+    public static List<String> generateListString(List<List<String>> list) {
         List<String> result = list.stream()
                 .flatMap(l -> l.stream())
                 .collect(Collectors.toList());

@@ -2,7 +2,6 @@ package emobi.steps.mobwizard;
 
 import emobi.constants.URL;
 import emobi.rest.*;
-import emobi.utilities.ConfigSettings;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
@@ -16,20 +15,18 @@ public class C2sTracking {
     private RestHeaders restHeaders;
     private RestResponse restResponse;
     private RestParams restParams;
-    private ConfigSettings config;
     private List<String> result;
 
     public C2sTracking() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
-        config = new ConfigSettings(System.getProperty("user.dir"));
     }
 
     @Given("User call the API tracking request of Mobwizard flow C2S with valid credential")
     public void user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential(List<List<String>> list) {
         result = Utils.generateListString(list);
         restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_C2S + result.get(3), RestMethod.GET);
-        restHeaders.add("apikey", config.getApiKey());
+        restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam(result.get(1), Randoms.randomString());
         restParams.addParam(result.get(2), result.get(5));
         restRequest.setParams(restParams);

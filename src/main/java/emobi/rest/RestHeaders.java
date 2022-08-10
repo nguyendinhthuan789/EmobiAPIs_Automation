@@ -1,5 +1,7 @@
 package emobi.rest;
 
+import emobi.utilities.ConfigSettings;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,12 +11,14 @@ import java.util.Map;
 public class RestHeaders {
 
     private Map<String, String> headers;
+    private ConfigSettings config;
 
     /**
      * Init map
      */
     public RestHeaders() {
         this.headers = new HashMap<>();
+        config = new ConfigSettings(System.getProperty("user.dir"));
     }
 
     /**
@@ -109,10 +113,14 @@ public class RestHeaders {
     }
 
     public Map<String, String> defalutHeaders() {
-        Map<String, String> defalutHeaders = new HashMap<String, String>();
-        defalutHeaders.put("Content-Type", "application/json");
-        defalutHeaders.put("charset", "utf-8");
-        defalutHeaders.put("Cookie", "PHPSESSID=irrn2qj5b2mvsl8mhaq6j6anc6");
-        return defalutHeaders;
+        headers.put("Content-Type", "application/json");
+        headers.put("charset", "utf-8");
+        headers.put("Cookie", "PHPSESSID=irrn2qj5b2mvsl8mhaq6j6anc6");
+        return headers;
+    }
+
+    public Map<String, String> defaultApikey() {
+        headers.put("apikey", config.getApiKey());
+        return headers;
     }
 }

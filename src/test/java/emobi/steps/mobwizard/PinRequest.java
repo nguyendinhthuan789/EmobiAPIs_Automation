@@ -2,7 +2,6 @@ package emobi.steps.mobwizard;
 
 import emobi.constants.URL;
 import emobi.rest.*;
-import emobi.utilities.ConfigSettings;
 import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,20 +14,18 @@ public class PinRequest {
     private RestHeaders restHeaders;
     private RestResponse restResponse;
     private RestParams restParams;
-    private ConfigSettings config;
     private List<String> result;
 
     public PinRequest() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
-        config = new ConfigSettings(System.getProperty("user.dir"));
     }
 
     @Given("User call the API pin request of Mobwizard flow msisdn pin with valid credential")
     public void user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_valid_credential(List<List<String>> list) {
         result = Utils.generateListString(list);
         restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_MSISDN_PIN_REQUEST + result.get(6), RestMethod.GET);
-        restHeaders.add("apikey", config.getApiKey());
+        restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam(result.get(1), result.get(7));
         restParams.addParam(result.get(2), result.get(8));
         restParams.addParam(result.get(3), result.get(9));
@@ -58,7 +55,7 @@ public class PinRequest {
     public void user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign_credential(List<List<String>> list) {
         result = Utils.generateListString(list);
         restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_MSISDN_PIN_REQUEST + result.get(6), RestMethod.GET);
-        restHeaders.add("apikey", config.getApiKey());
+        restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam(result.get(1), result.get(7));
         restParams.addParam(result.get(2), result.get(8));
         restParams.addParam(result.get(3), result.get(9));
@@ -87,7 +84,7 @@ public class PinRequest {
     public void user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory_credential(List<List<String>> list) {
         result = Utils.generateListString(list);
         restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_MSISDN_PIN_REQUEST + result.get(6), RestMethod.GET);
-        restHeaders.add("apikey", config.getApiKey());
+        restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam(result.get(1), result.get(7));
         restParams.addParam(result.get(2), result.get(8));
         restParams.addParam(result.get(3), result.get(9));
