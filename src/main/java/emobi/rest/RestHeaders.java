@@ -12,6 +12,7 @@ public class RestHeaders {
 
     private Map<String, String> headers;
     private ConfigSettings config;
+    private final String APIKEY="apikey";
 
     /**
      * Init map
@@ -120,7 +121,7 @@ public class RestHeaders {
     }
 
     public Map<String, String> defaultApikey() {
-        headers.put("apikey", config.getApiKey());
+        headers.put(APIKEY, config.getApiKey());
         return headers;
     }
 }

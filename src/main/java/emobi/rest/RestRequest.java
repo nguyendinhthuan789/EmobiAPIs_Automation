@@ -93,7 +93,7 @@ public class RestRequest {
         this.connectionTimeout = connectionTimeout;
     }
 
-    public void setFilter(RequestLoggingFilter filter){
+    public void setFilter(RequestLoggingFilter filter) {
         this.filter = filter;
     }
 
@@ -111,7 +111,6 @@ public class RestRequest {
                         .setParam(CoreConnectionPNames.CONNECTION_TIMEOUT, connectionTimeout)
                         .setParam(CoreConnectionPNames.SO_TIMEOUT, connectionTimeout));
     }
-
 
 
     /**
@@ -189,13 +188,14 @@ public class RestRequest {
      */
     public void setParams(RestParams params) {
         this.params = params;
-        if (this.method == RestMethod.GET) {
+        if (this.method == RestMethod.GET || this.method == RestMethod.POST || this.method == RestMethod.PUT || this.method == RestMethod.PATCH || this.method == RestMethod.DELETE) {
             requestSpecBuilder.addParams(this.params.getParams());
         } else {
             requestSpecBuilder.addQueryParams(this.params.getParams());
         }
         curlConverter.setParams(params);
     }
+
 
     /**
      * Set authen config
@@ -294,15 +294,14 @@ public class RestRequest {
     }
 
     /**
-     *
      * @return
      */
 
-    public String writeValueAsString(Object obj){
+    public String writeValueAsString(Object obj) {
         try {
-            ObjectMapper objectMapper= new ObjectMapper();
+            ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(obj);
-        }catch (JsonProcessingException exception){
+        } catch (JsonProcessingException exception) {
             exception.printStackTrace();
         }
         return null;

@@ -17,28 +17,24 @@ import org.slf4j.LoggerFactory;
 public class RestResponse {
     private static final Logger reponsetLog = LoggerFactory.getLogger(RestResponse.class);
     private Filter logFilter = new CustomLogFilter();
-
     private Response response;
     private ResponseLoggingFilter responseLoggingFilter;
     private ErrorLoggingFilter errorLoggingFilter;
 
-    private RestResponse() {
-        responseLoggingFilter = new ResponseLoggingFilter();
-        errorLoggingFilter = new ErrorLoggingFilter();
-    }
-
-
-
     /**
      * Init Response
+     *
      * @param response Response
      */
     public RestResponse(Response response) {
         this.response = response;
+        responseLoggingFilter = new ResponseLoggingFilter();
+        errorLoggingFilter = new ErrorLoggingFilter();
     }
 
     /**
      * Return ValidatableResponse object of rest-assured
+     *
      * @return ValidatableResponse
      */
     public ValidatableResponse validate() {
@@ -47,28 +43,29 @@ public class RestResponse {
 
     /**
      * Return Response object of rest-assured
+     *
      * @return Response
      */
     public Response extract() {
         return this.response;
     }
 
-    public ResponseBody getBody(){
+    public ResponseBody getBody() {
         return response.getBody();
     }
 
-    public ResponseBody printPeek(){
+    public ResponseBody printPeek() {
         return getBody().peek();
     }
 
-    public ResponseBody printPrettyPeek(){
+    public ResponseBody printPrettyPeek() {
         return getBody().prettyPeek();
     }
 
-    public String printPrettyPrint(){
-        System.out.println("==================== "+"Start Response body"+" ========================");
-        String res=getBody().prettyPrint();
-        System.out.println("==================== "+"End Response body"+" ========================");
+    public String printPrettyPrint() {
+        System.out.println("==================== " + "Start Response body" + " ========================");
+        String res = getBody().prettyPrint();
+        System.out.println("==================== " + "End Response body" + " ========================");
         return res;
     }
 
