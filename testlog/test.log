@@ -1,0 +1,30 @@
+INFO  | 2022-08-11 17:54:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$0:26) - ------------BEGINNING-------------
+INFO  | 2022-08-11 17:54:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestScenarioStarted:52) - ------------Start Scenario-------------
+INFO  | 2022-08-11 17:54:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestStepStarted:42) - 
+STEP: User call the API tracking request of Mobwizard flow C2S with valid credential
+INFO  | 2022-08-11 17:54:58 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential:38) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/32c3d2d1-7a89-4b91-83cc-89f123493889?tp_click_id=fSljQabK6L4VJzr9DocHX&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36' /
+  -X GET /
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-11 17:54:58 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential:39) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "keyword": "OK",
+        "shortcode": "145451",
+        "tracking_code": "24E"
+    },
+    "timeStamp": "2022/08/11 10:55:02"
+}
+INFO  | 2022-08-11 17:54:58 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestStepStarted:42) - 
+STEP: Response successful status code is 200 after tracking request of Mobwizard flow C2S
+INFO  | 2022-08-11 17:54:58 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_mobwizard_flow_c2s:44) - status code is: 200
+INFO  | 2022-08-11 17:54:58 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestStepStarted:42) - 
+STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of Mobwizard flow C2S
+INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:51) - message is: Success
+INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:52) - status is: true
+INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:53) - keyword is: OK
+INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:54) - shortcode is: 145451
+INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:55) - tracking_code is: 24E
+INFO  | 2022-08-11 17:54:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:57) - ------------End Scenario-------------

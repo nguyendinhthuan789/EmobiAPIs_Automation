@@ -5,6 +5,7 @@ import java.util.Properties;
 
 public class ConfigSettings {
     public static final String API_KEY = "apikey";
+    private static final String DATA_FILE = "data_file";
 
     private Properties configProperties;
 
@@ -18,6 +19,10 @@ public class ConfigSettings {
 
     public String getApiKey() {
         return configProperties.getProperty(API_KEY);
+    }
+
+    public String getDataFile() {
+        return this.configProperties.getProperty(DATA_FILE);
     }
 
     public void setConfigProperties(Properties configProperties) {

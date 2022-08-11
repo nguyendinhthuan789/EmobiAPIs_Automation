@@ -7,10 +7,13 @@ import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class C2sTracking {
+    Logger log = LoggerFactory.getLogger(C2sTracking.class);
     private RestRequest restRequest;
     private RestHeaders restHeaders;
     private RestResponse restResponse;
@@ -32,17 +35,24 @@ public class C2sTracking {
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
         restResponse = restRequest.send();
-        restResponse.printPrettyPrint();
+        log.info("Request header is: \n" + restRequest.toString());
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
     @Then("Response successful status code is {int} after tracking request of Mobwizard flow C2S")
     public void response_successful_status_code_is_after_tracking_request_of_mobwizard_flow_c2s(int statusCode) {
+        log.info("status code is: " + restResponse.extract().statusCode());
         Assert.assertEquals(statusCode, restResponse.extract().statusCode());
     }
 
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Mobwizard flow C2S")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s(List<List<String>> list) {
         result = Utils.generateListString(list);
+        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("keyword is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
+        log.info("shortcode is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
+        log.info("tracking_code is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
         Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("message"));
         Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(6), restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));

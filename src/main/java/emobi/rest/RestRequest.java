@@ -3,21 +3,18 @@ package emobi.rest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import emobi.auth.RestAuth;
-import emobi.filter.log.CustomLogFilter;
+import emobi.filter.log.Log;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.config.RedirectConfig;
 import io.restassured.config.RestAssuredConfig;
-import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookies;
 import io.restassured.path.json.config.JsonPathConfig;
 import io.restassured.specification.RequestSpecification;
 import org.apache.http.params.CoreConnectionPNames;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -29,8 +26,7 @@ import static io.restassured.config.JsonConfig.jsonConfig;
  * RestRequest creates HTTP request with headers, parameters, body, etc.
  */
 public class RestRequest {
-    private static final Logger requestLog = LoggerFactory.getLogger(RestRequest.class);
-    private Filter logFilter = new CustomLogFilter();
+    private Log logger = new Log(RestRequest.class);
     private String url;
     private String path;
     private RestMethod method;
@@ -213,7 +209,7 @@ public class RestRequest {
      */
     public RestResponse send() {
         requestSpec = requestSpecBuilder.build();
-        requestLog.info("Started %s", curlConverter.printCurl());
+        logger.info("Started %s", curlConverter.printCurl());
         switch (this.method) {
             case POST:
                 return new RestResponse(RestAssured.given()
@@ -283,6 +279,12 @@ public class RestRequest {
                 return new RestResponse(RestAssured.given().config(config).spec(requestSpec).log().all().when().get(path));
         }
     }
+
+    @Override
+    public String toString() {
+        return curlConverter.printCurl();
+    }
+
 
     /**
      * Set cookie
