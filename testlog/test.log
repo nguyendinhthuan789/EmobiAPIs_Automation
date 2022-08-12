@@ -1,30 +1,353 @@
-INFO  | 2022-08-11 17:54:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$0:26) - ------------BEGINNING-------------
-INFO  | 2022-08-11 17:54:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestScenarioStarted:52) - ------------Start Scenario-------------
-INFO  | 2022-08-11 17:54:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestStepStarted:42) - 
-STEP: User call the API tracking request of Mobwizard flow C2S with valid credential
-INFO  | 2022-08-11 17:54:58 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential:38) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/32c3d2d1-7a89-4b91-83cc-89f123493889?tp_click_id=fSljQabK6L4VJzr9DocHX&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36' /
-  -X GET /
+INFO  | 2022-08-12 11:48:51 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$0:21) - ------------START TESTING-------------
+INFO  | 2022-08-12 11:48:52 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:48:52 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET tracking request affiliates partner Adpeako flow C2S of BA - Eronet successful with valid credentials
+INFO  | 2022-08-12 11:48:52 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API tracking request of Adpeako flow C2S ba eronet with valid credential
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_adpeako_flow_c2s_ba_eronet_with_valid_credential:39) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=ewZPsYmTqKd1ORyhVJQ1Y&operator=eronet' \
+  -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-11 17:54:58 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential:39) - Response is: 
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_adpeako_flow_c2s_ba_eronet_with_valid_credential:40) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "keyword": "OK",
+        "shortcode": "063770100",
+        "tracking_code": "25M"
+    },
+    "timeStamp": "2022/08/12 04:48:56"
+}
+INFO  | 2022-08-12 11:48:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 200 after tracking request of Adpeako flow C2S ba eronet
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_adpeako_flow_c2s_ba_eronet:45) - status code is: 200
+INFO  | 2022-08-12 11:48:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of Adpeako flow C2S ba eronet
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_eronet:52) - message is: Success
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_eronet:53) - status is: true
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_eronet:54) - keyword is: OK
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_eronet:55) - shortcode is: 063770100
+INFO  | 2022-08-12 11:48:56 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_eronet:56) - tracking_code is: 25M
+INFO  | 2022-08-12 11:48:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:48:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:48:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET tracking request affiliates partner Adpeako flow C2S of BA - Mtel successful with valid credentials
+INFO  | 2022-08-12 11:48:56 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API tracking request of Adpeako flow C2S ba mtel with valid credential
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_adpeako_flow_c2s_ba_mtel_with_valid_credential:75) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=pmgXEwyYcIsW1RsWF9DX8&operator=mtel' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_adpeako_flow_c2s_ba_mtel_with_valid_credential:76) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "keyword": "OK",
+        "shortcode": "0651388",
+        "tracking_code": "25N"
+    },
+    "timeStamp": "2022/08/12 04:48:57"
+}
+INFO  | 2022-08-12 11:48:57 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 200 after tracking request of Adpeako flow C2S ba mtel
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_adpeako_flow_c2s_ba_mtel:81) - status code is: 200
+INFO  | 2022-08-12 11:48:57 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of Adpeako flow C2S ba mtel
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_mtel:88) - message is: Success
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_mtel:90) - status is: true
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_mtel:92) - keyword is: OK
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_mtel:94) - shortcode is: 0651388
+INFO  | 2022-08-12 11:48:57 | [main] steps.adpeako.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_mtel:96) - tracking_code is: 25N
+INFO  | 2022-08-12 11:48:57 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:48:57 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:48:57 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET tracking request affiliates partner Edgar Zakaryan flow C2S of BA - Eronet successful with valid credentials
+INFO  | 2022-08-12 11:48:57 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API tracking request of Edgar Zakaryan flow C2S ba eronet with valid credential
+INFO  | 2022-08-12 11:48:57 | [main] steps.edan.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet_with_valid_credential:38) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?tp_click_id=EpPpHPoEZjyN9IgWf3bdt&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&operator=eronet' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:48:58 | [main] steps.edan.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet_with_valid_credential:40) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "keyword": "OK",
+        "shortcode": "063770100",
+        "tracking_code": "29D"
+    },
+    "timeStamp": "2022/08/12 04:48:58"
+}
+INFO  | 2022-08-12 11:48:58 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 200 after tracking request of Edgar Zakaryan flow C2S ba eronet
+INFO  | 2022-08-12 11:48:58 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet:45) - status code is: 200
+INFO  | 2022-08-12 11:48:58 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of Edgar Zakaryan flow C2S ba eronet
+INFO  | 2022-08-12 11:48:58 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet:52) - message is: Success
+INFO  | 2022-08-12 11:48:58 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet:54) - status is: true
+INFO  | 2022-08-12 11:48:58 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet:56) - keyword is: OK
+INFO  | 2022-08-12 11:48:58 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet:58) - shortcode is: 063770100
+INFO  | 2022-08-12 11:48:58 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet:60) - tracking_code is: 29D
+INFO  | 2022-08-12 11:48:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:48:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:48:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET tracking request affiliates partner Edgar Zakaryan flow C2S of BA - Mtel successful with valid credentials
+INFO  | 2022-08-12 11:48:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API tracking request of Edgar Zakaryan flow C2S ba mtel with valid credential
+INFO  | 2022-08-12 11:48:59 | [main] steps.edan.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel_with_valid_credential:74) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?tp_click_id=ggMXqM7nzQNcZrl3GXlwQ&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&operator=mtel' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:48:59 | [main] steps.edan.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel_with_valid_credential:76) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "keyword": "OK",
+        "shortcode": "0651388",
+        "tracking_code": "29E"
+    },
+    "timeStamp": "2022/08/12 04:48:59"
+}
+INFO  | 2022-08-12 11:48:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 200 after tracking request of Edgar Zakaryan flow C2S ba mtel
+INFO  | 2022-08-12 11:48:59 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel:80) - status code is: 200
+INFO  | 2022-08-12 11:48:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of Edgar Zakaryan flow C2S ba mtel
+INFO  | 2022-08-12 11:48:59 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel:86) - message is: Success
+INFO  | 2022-08-12 11:48:59 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel:88) - status is: true
+INFO  | 2022-08-12 11:48:59 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel:90) - keyword is: OK
+INFO  | 2022-08-12 11:48:59 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel:92) - shortcode is: 0651388
+INFO  | 2022-08-12 11:49:00 | [main] steps.edan.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel:94) - tracking_code is: 29E
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET tracking request affiliates partner Mobwizard flow C2S of BG-Playzone successful with valid credentials
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API tracking request of Mobwizard flow C2S with valid credential
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential:37) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/32c3d2d1-7a89-4b91-83cc-89f123493889?tp_click_id=HThGbM5cXKugMP1JKoOhr&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential:39) - Response is: 
 {
     "message": "Success",
     "status": true,
     "data": {
         "keyword": "OK",
         "shortcode": "145451",
-        "tracking_code": "24E"
+        "tracking_code": "29F"
     },
-    "timeStamp": "2022/08/11 10:55:02"
+    "timeStamp": "2022/08/12 04:49:00"
 }
-INFO  | 2022-08-11 17:54:58 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestStepStarted:42) - 
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
 STEP: Response successful status code is 200 after tracking request of Mobwizard flow C2S
-INFO  | 2022-08-11 17:54:58 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_mobwizard_flow_c2s:44) - status code is: 200
-INFO  | 2022-08-11 17:54:58 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:handleTestStepStarted:42) - 
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_mobwizard_flow_c2s:44) - status code is: 200
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
 STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of Mobwizard flow C2S
-INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:51) - message is: Success
-INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:52) - status is: true
-INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:53) - keyword is: OK
-INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:54) - shortcode is: 145451
-INFO  | 2022-08-11 17:54:59 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:55) - tracking_code is: 24E
-INFO  | 2022-08-11 17:54:59 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:57) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:51) - message is: Success
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:53) - status is: true
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:55) - keyword is: OK
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:57) - shortcode is: 145451
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s:59) - tracking_code is: 29F
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET pin request affiliates partner Mobwizard flow MSISDN + PIN of RS Country successful with valid credentials
+INFO  | 2022-08-12 11:49:00 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API pin request of Mobwizard flow msisdn pin with valid credential
+INFO  | 2022-08-12 11:49:00 | [main] steps.mobwizard.PinRequest (PinRequest.java:user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_valid_credential:39) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=5g043028b301065041111' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:01 | [main] steps.mobwizard.PinRequest (PinRequest.java:user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_valid_credential:41) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "subscriptionStatus": "NEW",
+        "nwc": "22801",
+        "pinId": "30575615"
+    },
+    "timeStamp": "2022/08/12 04:49:01"
+}
+INFO  | 2022-08-12 11:49:01 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 200 after pin request of Mobwizard flow msisdn pin
+INFO  | 2022-08-12 11:49:01 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_status_code_is_after_pin_request_of_mobwizard_flow_msisdn_pin:46) - status code is: 200
+INFO  | 2022-08-12 11:49:01 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status subscriptionStatus and pinid not null after pin request of Mobwizard flow msisdn pin
+INFO  | 2022-08-12 11:49:01 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_mobwizard_flow_msisdn_pin:53) - message is: Success
+INFO  | 2022-08-12 11:49:01 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_mobwizard_flow_msisdn_pin:55) - status is: true
+INFO  | 2022-08-12 11:49:01 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_mobwizard_flow_msisdn_pin:57) - status subscriptionStatus is: true
+INFO  | 2022-08-12 11:49:01 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_mobwizard_flow_msisdn_pin:59) - pin is: 30575615
+INFO  | 2022-08-12 11:49:01 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:01 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:01 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET pin request affiliates partner Mobwizard flow MSISDN + PIN of RS Country successful with invalid campaign credentials
+INFO  | 2022-08-12 11:49:01 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API pin request of Mobwizard flow msisdn pin with invalid campaign credential
+INFO  | 2022-08-12 11:49:01 | [main] steps.mobwizard.PinRequest (PinRequest.java:user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign_credential:75) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/invalid?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=5g043028b301065041111' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:02 | [main] steps.mobwizard.PinRequest (PinRequest.java:user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign_credential:77) - Response is: 
+{
+    "message": "Invalid campaign",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/12 04:49:02"
+}
+INFO  | 2022-08-12 11:49:02 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 400 after pin request of Mobwizard flow msisdn pin with invalid campaign
+INFO  | 2022-08-12 11:49:02 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_status_code_is_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign:82) - status code is: 400
+INFO  | 2022-08-12 11:49:02 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status and data null after pin request of Mobwizard flow msisdn pin with invalid campaign
+INFO  | 2022-08-12 11:49:02 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign:89) - message is: Invalid campaign
+INFO  | 2022-08-12 11:49:02 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign:91) - status is: false
+INFO  | 2022-08-12 11:49:02 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign:93) - data is: {}
+INFO  | 2022-08-12 11:49:02 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:02 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:02 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET pin request affiliates partner Mobwizard flow MSISDN + PIN of RS Country successful with invalid mandatory credentials
+INFO  | 2022-08-12 11:49:02 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API pin request of Mobwizard flow msisdn pin with invalid mandatory credential
+INFO  | 2022-08-12 11:49:02 | [main] steps.mobwizard.PinRequest (PinRequest.java:user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory_credential:109) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=null' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinRequest (PinRequest.java:user_call_the_api_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory_credential:111) - Response is: 
+{
+    "message": "Invalid mandatory fields",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/12 04:49:03"
+}
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 400 after pin request of Mobwizard flow msisdn pin with invalid mandatory
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_status_code_is_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory:115) - status code is: 400
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status and data null after pin request of Mobwizard flow msisdn pin with invalid mandatory
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory:121) - message is: Invalid mandatory fields
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory:123) - status is: false
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinRequest (PinRequest.java:response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory:125) - data is: {}
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET pin verify affiliates partner Mobwizard flow MSISDN + PIN of RS Country successful with valid credentials
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API pin verify of Mobwizard flow msisdn pin with valid credential
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinVerify (PinVerify.java:user_call_the_api_pin_verify_of_mobwizard_flow_msisdn_pin_with_valid_credential:37) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=3333&tpClickId=5g043028b301065041111' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinVerify (PinVerify.java:user_call_the_api_pin_verify_of_mobwizard_flow_msisdn_pin_with_valid_credential:39) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "verify_status": "VERIFIED"
+    },
+    "timeStamp": "2022/08/12 04:49:03"
+}
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 200 after pin verify of Mobwizard flow msisdn pin
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_status_code_is_after_pin_verify_of_mobwizard_flow_msisdn_pin:44) - status code is: 200
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin:51) - message is: Success
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin:53) - status is: true
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin:55) - verify status is: VERIFIED
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET pin verify affiliates partner Mobwizard flow MSISDN + PIN of RS Country successful with pin invalid credentials
+INFO  | 2022-08-12 11:49:03 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API pin verify of Mobwizard flow msisdn pin with pin invalid credential
+INFO  | 2022-08-12 11:49:03 | [main] steps.mobwizard.PinVerify (PinVerify.java:user_call_the_api_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_credential:69) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=1111&tpClickId=5g043028b301065041111' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:04 | [main] steps.mobwizard.PinVerify (PinVerify.java:user_call_the_api_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_credential:71) - Response is: 
+{
+    "message": "Pin invalid",
+    "status": false,
+    "data": {
+        "verify_status": "FAILED"
+    },
+    "timeStamp": "2022/08/12 04:49:04"
+}
+INFO  | 2022-08-12 11:49:04 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 500 after pin verify of Mobwizard flow msisdn pin with pin invalid
+INFO  | 2022-08-12 11:49:04 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_status_code_is_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid:76) - status code is: 500
+INFO  | 2022-08-12 11:49:04 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin with pin invalid
+INFO  | 2022-08-12 11:49:04 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid:83) - message is: Pin invalid
+INFO  | 2022-08-12 11:49:04 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid:85) - status is: false
+INFO  | 2022-08-12 11:49:04 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid:87) - verify status is: FAILED
+INFO  | 2022-08-12 11:49:04 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:04 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:04 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET pin verify affiliates partner Mobwizard flow MSISDN + PIN of RS Country successful with pin invalid mandatory credentials
+INFO  | 2022-08-12 11:49:04 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API pin verify of Mobwizard flow msisdn pin with pin invalid mandatory credential
+INFO  | 2022-08-12 11:49:04 | [main] steps.mobwizard.PinVerify (PinVerify.java:user_call_the_api_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory_credential:101) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=3333&tpClickId=null' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:05 | [main] steps.mobwizard.PinVerify (PinVerify.java:user_call_the_api_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory_credential:103) - Response is: 
+{
+    "message": "Invalid mandatory fields",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/12 04:49:05"
+}
+INFO  | 2022-08-12 11:49:05 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 400 after pin verify of Mobwizard flow msisdn pin with pin invalid mandatory
+INFO  | 2022-08-12 11:49:05 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_status_code_is_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory:108) - status code is: 400
+INFO  | 2022-08-12 11:49:05 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin with pin invalid mandatory
+INFO  | 2022-08-12 11:49:05 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory:115) - message is: Invalid mandatory fields
+INFO  | 2022-08-12 11:49:05 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory:117) - status is: false
+INFO  | 2022-08-12 11:49:05 | [main] steps.mobwizard.PinVerify (PinVerify.java:response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory:119) - verify status is: {}
+INFO  | 2022-08-12 11:49:05 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:05 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:38) - ------------Start Scenario-------------
+INFO  | 2022-08-12 11:49:05 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$3:39) - 
+SCENARIO NAME: User GET tracking request affiliates partner Moviplus flow C2S of BG-Playzone successful with valid credentials
+INFO  | 2022-08-12 11:49:05 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: User call the API tracking request of Moviplus flow C2S with valid credential
+INFO  | 2022-08-12 11:49:05 | [main] steps.moviplus.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_moviplus_flow_c2s_with_valid_credential:37) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/32c3d2d1-7a89-4b91-83cc-89f123493889?tp_click_id=8f1rQZbJFxMpnS5KELP65&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-12 11:49:06 | [main] steps.moviplus.C2sTracking (C2sTracking.java:user_call_the_api_tracking_request_of_moviplus_flow_c2s_with_valid_credential:39) - Response is: 
+{
+    "message": "Success",
+    "status": true,
+    "data": {
+        "keyword": "OK",
+        "shortcode": "145451",
+        "tracking_code": "25C"
+    },
+    "timeStamp": "2022/08/12 04:49:06"
+}
+INFO  | 2022-08-12 11:49:06 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful status code is 200 after tracking request of Moviplus flow C2S
+INFO  | 2022-08-12 11:49:06 | [main] steps.moviplus.C2sTracking (C2sTracking.java:response_successful_status_code_is_after_tracking_request_of_moviplus_flow_c2s:44) - status code is: 200
+INFO  | 2022-08-12 11:49:06 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$2:33) - 
+STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of Moviplus flow C2S
+INFO  | 2022-08-12 11:49:06 | [main] steps.moviplus.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_moviplus_flow_c2s:51) - message is: Success
+INFO  | 2022-08-12 11:49:06 | [main] steps.moviplus.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_moviplus_flow_c2s:53) - status is: true
+INFO  | 2022-08-12 11:49:06 | [main] steps.moviplus.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_moviplus_flow_c2s:55) - keyword is: OK
+INFO  | 2022-08-12 11:49:06 | [main] steps.moviplus.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_moviplus_flow_c2s:57) - shortcode is: 145451
+INFO  | 2022-08-12 11:49:06 | [main] steps.moviplus.C2sTracking (C2sTracking.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_moviplus_flow_c2s:59) - tracking_code is: 25C
+INFO  | 2022-08-12 11:49:06 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$4:43) - ------------End Scenario-------------
+INFO  | 2022-08-12 11:49:06 | [main] emobi.steps.CucumberHooks (CucumberHooks.java:lambda$new$1:25) - ------------END TESTING-------------

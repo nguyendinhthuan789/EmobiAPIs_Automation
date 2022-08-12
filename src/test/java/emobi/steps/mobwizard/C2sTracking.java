@@ -34,8 +34,8 @@ public class C2sTracking {
         restParams.addParam(result.get(2), result.get(5));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
-        restResponse = restRequest.send();
         log.info("Request header is: \n" + restRequest.toString());
+        restResponse = restRequest.send();
         log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
@@ -49,14 +49,14 @@ public class C2sTracking {
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s(List<List<String>> list) {
         result = Utils.generateListString(list);
         log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("keyword is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
-        log.info("shortcode is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
-        log.info("tracking_code is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
         Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("keyword is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
         Assert.assertEquals(result.get(6), restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
+        log.info("shortcode is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
         Assert.assertEquals(result.get(7), restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
+        log.info("tracking_code is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
         Assert.assertNotNull(restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
     }
 }

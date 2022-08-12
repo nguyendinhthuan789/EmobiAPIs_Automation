@@ -6,10 +6,13 @@ import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class PinVerify {
+    Logger log = LoggerFactory.getLogger(PinVerify.class);
     private RestRequest restRequest;
     private RestHeaders restHeaders;
     private RestResponse restResponse;
@@ -31,20 +34,25 @@ public class PinVerify {
         restParams.addParam(result.get(3), result.get(7));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
+        log.info("Request header is: \n" + restRequest.toString());
         restResponse = restRequest.send();
-        restResponse.printPrettyPrint();
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
     @Then("Response successful status code is {int} after pin verify of Mobwizard flow msisdn pin")
     public void response_successful_status_code_is_after_pin_verify_of_mobwizard_flow_msisdn_pin(int  statusCode) {
+        log.info("status code is: " + restResponse.extract().statusCode());
         Assert.assertEquals(statusCode, restResponse.extract().statusCode());
     }
 
     @Then("Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin(List<List<String>> list) {
         result = Utils.generateListString(list);
+        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
         Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("verify status is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
         Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
     }
 
@@ -58,20 +66,25 @@ public class PinVerify {
         restParams.addParam(result.get(3), result.get(7));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
+        log.info("Request header is: \n" + restRequest.toString());
         restResponse = restRequest.send();
-        restResponse.printPrettyPrint();
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
     @Then("Response successful status code is {int} after pin verify of Mobwizard flow msisdn pin with pin invalid")
     public void response_successful_status_code_is_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid(int statusCode) {
+        log.info("status code is: " + restResponse.extract().statusCode());
         Assert.assertEquals(statusCode, restResponse.extract().statusCode());
     }
 
     @Then("Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin with pin invalid")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid(List<List<String>> list) {
         result = Utils.generateListString(list);
+        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
         Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("verify status is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
         Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
     }
 
@@ -85,20 +98,25 @@ public class PinVerify {
         restParams.addParam(result.get(3), result.get(7));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
+        log.info("Request header is: \n" + restRequest.toString());
         restResponse = restRequest.send();
-        restResponse.printPrettyPrint();
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
     @Then("Response successful status code is {int} after pin verify of Mobwizard flow msisdn pin with pin invalid mandatory")
     public void response_successful_status_code_is_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory(int statusCode) {
+        log.info("status code is: " + restResponse.extract().statusCode());
         Assert.assertEquals(statusCode, restResponse.extract().statusCode());
     }
 
     @Then("Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin with pin invalid mandatory")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
+        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
         Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("verify status is: " + restResponse.getJsonPath(restResponse.extract()).getMap("data"));
         Assert.assertTrue(restResponse.getJsonPath(restResponse.extract()).getMap("data").size() == 0);
     }
 

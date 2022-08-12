@@ -312,14 +312,28 @@ public class CurlCommand {
         }
 
         private CharSequence chooseJoiningString(boolean printMultiliner) {
-            String commandLineSeparator = targetPlatform.isOsWindows() ? "/" : "\\";
-            return printMultiliner ? String.format(" %s%s  ", commandLineSeparator, targetPlatform.lineSeparator())
+            String commandLineSeparator = targetPlatform.isOsWindows() ? "\\" : "\\";
+            return printMultiliner
+                    ? String.format(" %s%s  ", commandLineSeparator, targetPlatform.lineSeparator())
                     : " ";
         }
 
         private String escapeString(String s) {
             // cURL command is expected to run on the same platform that test run
             return targetPlatform.isOsWindows() ? escapeStringWin(s) : escapeStringPosix(s);
+        }
+
+        private String quoteString(String s) {
+            // cURL command is expected to run on the same platform that test run
+            return targetPlatform.isOsWindows() ? quoteStringWin(s) : quoteStringPosix(s);
+        }
+
+        private static String quoteStringWin(String s) {
+            return "\"" + s + "\"";
+        }
+
+        private static String quoteStringPosix(String s) {
+            return "'" + s + "'";
         }
     }
 

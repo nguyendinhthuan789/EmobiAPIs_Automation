@@ -6,10 +6,13 @@ import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class PinRequest {
+    Logger log = LoggerFactory.getLogger(PinRequest.class);
     private RestRequest restRequest;
     private RestHeaders restHeaders;
     private RestResponse restResponse;
@@ -33,21 +36,27 @@ public class PinRequest {
         restParams.addParam(result.get(5), result.get(11));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
+        log.info("Request header is: \n" + restRequest.toString());
         restResponse = restRequest.send();
-        restResponse.printPrettyPrint();
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
     @Then("Response successful status code is {int} after pin request of Mobwizard flow msisdn pin")
     public void response_successful_status_code_is_after_pin_request_of_mobwizard_flow_msisdn_pin(int statusCode) {
+        log.info("status code is: " + restResponse.extract().statusCode());
         Assert.assertEquals(statusCode, restResponse.extract().statusCode());
     }
 
     @Then("Response successful message status subscriptionStatus and pinid not null after pin request of Mobwizard flow msisdn pin")
     public void response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_mobwizard_flow_msisdn_pin(List<List<String>> list) {
         result = Utils.generateListString(list);
+        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
         Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("status subscriptionStatus is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("data.subscriptionStatus"));
+        log.info("pin is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.pinId"));
         Assert.assertNotNull(restResponse.getJsonPath(restResponse.extract()).getString("data.pinId"));
     }
 
@@ -63,20 +72,25 @@ public class PinRequest {
         restParams.addParam(result.get(5), result.get(11));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
+        log.info("Request header is: \n" + restRequest.toString());
         restResponse = restRequest.send();
-        restResponse.printPrettyPrint();
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
     @Then("Response successful status code is {int} after pin request of Mobwizard flow msisdn pin with invalid campaign")
     public void response_successful_status_code_is_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign(int statusCode) {
+        log.info("status code is: " + restResponse.extract().statusCode());
         Assert.assertEquals(statusCode, restResponse.extract().statusCode());
     }
 
     @Then("Response successful message status and data null after pin request of Mobwizard flow msisdn pin with invalid campaign")
     public void response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign(List<List<String>> list) {
         result = Utils.generateListString(list);
+        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
         Assert.assertEquals(result.get(2), restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("data is: " + restResponse.getJsonPath(restResponse.extract()).getMap("data"));
         Assert.assertTrue(restResponse.getJsonPath(restResponse.extract()).getMap("data").size() == 0);
     }
 
@@ -92,18 +106,23 @@ public class PinRequest {
         restParams.addParam(result.get(5), result.get(11));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
+        log.info("Request header is: \n" + restRequest.toString());
         restResponse = restRequest.send();
-        restResponse.printPrettyPrint();
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
     @Then("Response successful status code is {int} after pin request of Mobwizard flow msisdn pin with invalid mandatory")
     public void response_successful_status_code_is_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory(int statusCode) {
+        log.info("status code is: " + restResponse.extract().statusCode());
         Assert.assertEquals(statusCode, restResponse.extract().statusCode());
     }
     @Then("Response successful message status and data null after pin request of Mobwizard flow msisdn pin with invalid mandatory")
     public void response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
+        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
         Assert.assertEquals(result.get(2), restResponse.getJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
         Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("status"));
+        log.info("data is: " + restResponse.getJsonPath(restResponse.extract()).getMap("data"));
         Assert.assertTrue(restResponse.getJsonPath(restResponse.extract()).getMap("data").size() == 0);
     }
 }
