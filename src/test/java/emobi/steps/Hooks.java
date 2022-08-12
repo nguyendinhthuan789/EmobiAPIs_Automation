@@ -5,8 +5,8 @@ import io.cucumber.plugin.event.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CucumberHooks implements ConcurrentEventListener {
-    Logger log = LoggerFactory.getLogger(CucumberHooks.class);
+public class Hooks implements ConcurrentEventListener {
+    Logger log = LoggerFactory.getLogger(Hooks.class);
 
     @Override
     public void setEventPublisher(EventPublisher eventPublisher) {
@@ -23,7 +23,6 @@ public class CucumberHooks implements ConcurrentEventListener {
 
     private EventHandler<TestRunFinished> afterAll = event -> {
         log.info("------------END TESTING-------------");
-
     };
 
     private EventHandler<TestStepStarted> beforeStep = event -> {

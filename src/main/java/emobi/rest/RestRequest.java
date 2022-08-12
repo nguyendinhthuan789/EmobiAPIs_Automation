@@ -3,7 +3,6 @@ package emobi.rest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import emobi.auth.RestAuth;
-import emobi.filter.log.Log;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.config.HttpClientConfig;
@@ -15,6 +14,8 @@ import io.restassured.http.Cookies;
 import io.restassured.path.json.config.JsonPathConfig;
 import io.restassured.specification.RequestSpecification;
 import org.apache.http.params.CoreConnectionPNames;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -26,7 +27,7 @@ import static io.restassured.config.JsonConfig.jsonConfig;
  * RestRequest creates HTTP request with headers, parameters, body, etc.
  */
 public class RestRequest {
-    private Log logger = new Log(RestRequest.class);
+    Logger log = LoggerFactory.getLogger(RestRequest.class);
     private String url;
     private String path;
     private RestMethod method;
@@ -209,7 +210,7 @@ public class RestRequest {
      */
     public RestResponse send() {
         requestSpec = requestSpecBuilder.build();
-        logger.info("Started %s", curlConverter.printCurl());
+        //log.info("Started %s "+ curlConverter.printCurl());
         switch (this.method) {
             case POST:
                 return new RestResponse(RestAssured.given()
