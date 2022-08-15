@@ -48,12 +48,12 @@ public class PinVerify {
     @Then("Response successful message status and verify status after pin verify of Adpeako flow msisdn pin")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_adpeako_flow_msisdn_pin(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("verify status is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
-        Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(3), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(4), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("verify status is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.verify_status"));
+        Assert.assertEquals(result.get(5), restResponse.findJsonPath(restResponse.extract()).getString("data.verify_status"));
     }
 
     @Given("User call the API pin verify of Adpeako flow msisdn pin with pin invalid credential")
@@ -80,12 +80,12 @@ public class PinVerify {
     @Then("Response successful message status and verify status after pin verify of Adpeako flow msisdn pin with pin invalid")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_adpeako_flow_msisdn_pin_with_pin_invalid(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("verify status is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
-        Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("data.verify_status"));
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(3), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(4), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("verify status is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.verify_status"));
+        Assert.assertEquals(result.get(5), restResponse.findJsonPath(restResponse.extract()).getString("data.verify_status"));
     }
 
     @Given("User call the API pin verify of Adpeako flow msisdn pin with pin invalid mandatory credential")
@@ -112,11 +112,11 @@ public class PinVerify {
     @Then("Response successful message status and verify status after pin verify of Adpeako flow msisdn pin with pin invalid mandatory")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_adpeako_flow_msisdn_pin_with_pin_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("verify status is: " + restResponse.getJsonPath(restResponse.extract()).getMap("data"));
-        Assert.assertTrue(restResponse.getJsonPath(restResponse.extract()).getMap("data").size() == 0);
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(3), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(4), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("verify status is: " + restResponse.findJsonPath(restResponse.extract()).getMap("data"));
+        Assert.assertTrue(restResponse.findJsonPath(restResponse.extract()).getMap("data").size() == 0);
     }
 }

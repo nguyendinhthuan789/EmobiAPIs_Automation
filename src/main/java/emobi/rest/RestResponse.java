@@ -56,7 +56,7 @@ public class RestResponse {
         return res;
     }
 
-    public static JsonPath getJsonPath(Response response) {
+    public static JsonPath findJsonPath(Response response) {
         JsonPath js = new JsonPath(response.body().asString());
         return js;
     }

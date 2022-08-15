@@ -3,7 +3,11 @@ package emobi.utilities;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.apache.commons.io.FileUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.math.BigDecimal;
@@ -16,6 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Utils {
+    Logger log = LoggerFactory.getLogger(Utils.class);
     public Utils() {
 
     }
@@ -138,5 +143,20 @@ public class Utils {
                 .flatMap(l -> l.stream())
                 .collect(Collectors.toList());
         return result;
+    }
+
+    public void deleteFolder(String path) {
+        try {
+            if (!path.isEmpty()) {
+                FileUtils.deleteDirectory(new File(path));
+                log.info("Folder '" + path + "' deleted successfully!");
+            } else {
+                log.info("Folder '" + path + "' has been deleted successfully!");
+            }
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            log.info("Folder '" + path + "' deleted Failed!");
+        }
     }
 }

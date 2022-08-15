@@ -73,7 +73,7 @@ public class CreateNewCampaignSteps {
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(createAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
         restResponse.printPrettyPrint();
-        state.setId(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
+        state.setId(RestResponse.findJsonPath(restResponse.extract()).getString("id"));
     }
 
     @Given("User create new campaign for country SE with valid")
@@ -132,6 +132,6 @@ public class CreateNewCampaignSteps {
 
     @Then("Response body create new campaign for country SE valid has param Id is not null")
     public void response_body_create_new_campaign_for_country_se_valid_has_param_id_is_not_null() {
-        Assert.assertNotNull(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
+        Assert.assertNotNull(RestResponse.findJsonPath(restResponse.extract()).getString("id"));
     }
 }

@@ -67,7 +67,7 @@ public class UpdateAffiliatesPartnerSteps {
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(createAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
         restResponse.printPrettyPrint();
-        state.setId(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
+        state.setId(RestResponse.findJsonPath(restResponse.extract()).getString("id"));
     }
 
     @When("User update name affiliates partner for country SE with valid")
@@ -95,7 +95,7 @@ public class UpdateAffiliatesPartnerSteps {
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(updateAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
         restResponse.printPrettyPrint();
-        state.setValue(RestResponse.getJsonPath(restResponse.extract()).getString("name"));
+        state.setValue(RestResponse.findJsonPath(restResponse.extract()).getString("name"));
     }
 
     @When("User update payout amount affiliates partner for country SE with valid")
@@ -123,7 +123,7 @@ public class UpdateAffiliatesPartnerSteps {
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(updateAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
         restResponse.printPrettyPrint();
-        updateAffiliatesPartnerCountryPayout.setPayoutAmount((float) RestResponse.getJsonPath(restResponse.extract()).getList("country_payout.payout_amount").get(0));
+        updateAffiliatesPartnerCountryPayout.setPayoutAmount((float) RestResponse.findJsonPath(restResponse.extract()).getList("country_payout.payout_amount").get(0));
     }
 
     @Then("Response status code update affiliates for country SE valid equals {int}")
@@ -133,7 +133,7 @@ public class UpdateAffiliatesPartnerSteps {
 
     @Then("Response body with id of country SE")
     public void response_body_with_id_of_country_se() {
-        Assert.assertEquals(state.getId(), RestResponse.getJsonPath(restResponse.extract()).getString("id"));
+        Assert.assertEquals(state.getId(), RestResponse.findJsonPath(restResponse.extract()).getString("id"));
     }
 
     @Then("Response body update name successful for country SE")

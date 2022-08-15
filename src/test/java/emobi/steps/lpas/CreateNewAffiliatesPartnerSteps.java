@@ -73,6 +73,6 @@ public class CreateNewAffiliatesPartnerSteps {
 
     @Then("Response body create new affiliates for country SE valid has param Id is not null")
     public void response_body_create_new_affiliates_for_country_se_valid_has_param_id_is_not_null() {
-        Assert.assertNotNull(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
+        Assert.assertNotNull(RestResponse.findJsonPath(restResponse.extract()).getString("id"));
     }
 }

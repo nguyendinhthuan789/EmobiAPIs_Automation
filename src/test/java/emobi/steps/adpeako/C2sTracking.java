@@ -49,16 +49,16 @@ public class C2sTracking {
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Adpeako flow C2S ba eronet")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_eronet(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("keyword is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
-        log.info("shortcode is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
-        log.info("tracking_code is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
-        Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(6), restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
-        Assert.assertEquals(result.get(7), restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
-        Assert.assertNotNull(restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("keyword is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
+        log.info("shortcode is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
+        log.info("tracking_code is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.tracking_code"));
+        Assert.assertEquals(result.get(4), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(5), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(6), restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
+        Assert.assertEquals(result.get(7), restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
+        Assert.assertNotNull(restResponse.findJsonPath(restResponse.extract()).getString("data.tracking_code"));
     }
 
     @Given("User call the API tracking request of Adpeako flow C2S ba mtel with valid credential")
@@ -85,15 +85,15 @@ public class C2sTracking {
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Adpeako flow C2S ba mtel")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_adpeako_flow_c2s_ba_mtel(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("keyword is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
-        Assert.assertEquals(result.get(6), restResponse.getJsonPath(restResponse.extract()).getString("data.keyword"));
-        log.info("shortcode is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
-        Assert.assertEquals(result.get(7), restResponse.getJsonPath(restResponse.extract()).getString("data.shortcode"));
-        log.info("tracking_code is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
-        Assert.assertNotNull(restResponse.getJsonPath(restResponse.extract()).getString("data.tracking_code"));
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(4), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(5), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("keyword is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
+        Assert.assertEquals(result.get(6), restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
+        log.info("shortcode is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
+        Assert.assertEquals(result.get(7), restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
+        log.info("tracking_code is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.tracking_code"));
+        Assert.assertNotNull(restResponse.findJsonPath(restResponse.extract()).getString("data.tracking_code"));
     }
 }

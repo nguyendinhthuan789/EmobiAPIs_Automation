@@ -50,14 +50,14 @@ public class PinRequest {
     @Then("Response successful message status subscriptionStatus and pinid not null after pin request of Adpeako flow msisdn pin")
     public void response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_adpeako_flow_msisdn_pin(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(4), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("status subscriptionStatus is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.subscriptionStatus"));
-        Assert.assertEquals(result.get(5), restResponse.getJsonPath(restResponse.extract()).getString("data.subscriptionStatus"));
-        log.info("pinId is: " + restResponse.getJsonPath(restResponse.extract()).getString("data.pinId"));
-        Assert.assertNotNull(restResponse.getJsonPath(restResponse.extract()).getString("data.pinId"));
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(3), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(4), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("status subscriptionStatus is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.subscriptionStatus"));
+        Assert.assertEquals(result.get(5), restResponse.findJsonPath(restResponse.extract()).getString("data.subscriptionStatus"));
+        log.info("pinId is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.pinId"));
+        Assert.assertNotNull(restResponse.findJsonPath(restResponse.extract()).getString("data.pinId"));
     }
 
     @Given("User call the API pin request of Adpeako flow msisdn pin with invalid campaign credential")
@@ -85,12 +85,12 @@ public class PinRequest {
     @Then("Response successful message status and data null after pin request of Adpeako flow msisdn pin with invalid campaign")
     public void response_successful_message_status_and_data_null_after_pin_request_of_adpeako_flow_msisdn_pin_with_invalid_campaign(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(2), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("data is: " + restResponse.getJsonPath(restResponse.extract()).getMap("data"));
-        Assert.assertTrue(restResponse.getJsonPath(restResponse.extract()).getMap("data").size()==0);
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(2), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(3), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("data is: " + restResponse.findJsonPath(restResponse.extract()).getMap("data"));
+        Assert.assertTrue(restResponse.findJsonPath(restResponse.extract()).getMap("data").size()==0);
     }
 
     @Given("User call the API pin request of Adpeako flow msisdn pin with invalid mandatory credential")
@@ -118,12 +118,12 @@ public class PinRequest {
     @Then("Response successful message status and data null after pin request of Adpeako flow msisdn pin with invalid mandatory")
     public void response_successful_message_status_and_data_null_after_pin_request_of_adpeako_flow_msisdn_pin_with_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(2), restResponse.getJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(3), restResponse.getJsonPath(restResponse.extract()).getString("status"));
-        log.info("data is: " + restResponse.getJsonPath(restResponse.extract()).getMap("data"));
-        Assert.assertTrue(restResponse.getJsonPath(restResponse.extract()).getMap("data").size()==0);
+        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        Assert.assertEquals(result.get(2), restResponse.findJsonPath(restResponse.extract()).getString("message"));
+        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        Assert.assertEquals(result.get(3), restResponse.findJsonPath(restResponse.extract()).getString("status"));
+        log.info("data is: " + restResponse.findJsonPath(restResponse.extract()).getMap("data"));
+        Assert.assertTrue(restResponse.findJsonPath(restResponse.extract()).getMap("data").size()==0);
     }
 
 }

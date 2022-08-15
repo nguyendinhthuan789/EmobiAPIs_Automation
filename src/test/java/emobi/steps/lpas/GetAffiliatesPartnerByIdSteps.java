@@ -65,7 +65,7 @@ public class GetAffiliatesPartnerByIdSteps {
         restRequest.setBody(new RestBody(restRequest.writeValueAsString(createAffiliatesPartnerEntity)));
         restResponse = restRequest.sendWithLog();
         restResponse.printPrettyPrint();
-        state.setId(RestResponse.getJsonPath(restResponse.extract()).getString("id"));
+        state.setId(RestResponse.findJsonPath(restResponse.extract()).getString("id"));
     }
 
     @Given("Get affiliates partner by id with id valid credential")
