@@ -60,10 +60,4 @@ public class RestResponse {
         JsonPath js = new JsonPath(response.body().asString());
         return js;
     }
-
-    public static String getJsonPathHasKey(Response response, String key) {
-        String complete = response.asString();
-        JsonPath js = new JsonPath(complete);
-        return js.get(key).toString();
-    }
 }

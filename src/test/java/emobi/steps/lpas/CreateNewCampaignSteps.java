@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import emobi.constants.*;
-import emobi.model.*;
+import emobi.models.*;
 import emobi.rest.*;
 import emobi.utilities.Convert;
 import emobi.utilities.Randoms;

@@ -1,0 +1,1 @@
+{"uuid":"b454d136-6a63-4b38-af63-2ab8663af77c","name":"Scenario: User GET pin request affiliates partner Adpeako flow MSISDN + PIN of CA Country unsuccessful with invalid campaign credentials","children":["cc0f3dda-bbb9-440c-83db-5f4f91737f69"],"befores":[],"afters":[],"start":1660621418412,"stop":1660621418916}

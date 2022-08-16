@@ -1,6 +1,6 @@
 package emobi.steps;
 
-import emobi.constants.ConstCommon;
+import emobi.constants.ConstantUtils;
 import emobi.utilities.Utils;
 import io.cucumber.plugin.ConcurrentEventListener;
 import io.cucumber.plugin.event.*;
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class Hooks implements ConcurrentEventListener {
     Logger log = LoggerFactory.getLogger(Hooks.class);
     private Utils utils=new Utils();
-    private String allurePath = System.getProperty(ConstCommon.USER_DIR_PROPERTY) + "/target/allure-results";
+    private String allurePath = System.getProperty(ConstantUtils.USER_DIR_PROPERTY) + "/target/allure-results";
 
     @Override
     public void setEventPublisher(EventPublisher eventPublisher) {

@@ -1,8 +1,10 @@
 package emobi.steps.adpeako;
 
-import emobi.constants.URL;
-import emobi.rest.*;
-import emobi.utilities.Randoms;
+import emobi.controller.AdpeakoMoController;
+import emobi.rest.RestHeaders;
+import emobi.rest.RestParams;
+import emobi.rest.RestRequest;
+import emobi.rest.RestResponse;
 import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,81 +21,57 @@ public class MsisdnMoTracking {
     private RestResponse restResponse;
     private RestParams restParams;
     private List<String> result;
+    private AdpeakoMoController adpeakoMoController;
 
     public MsisdnMoTracking() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
+        adpeakoMoController =new AdpeakoMoController();
     }
 
     @Given("User call the API tracking request of Adpeako flow msisdn mo with valid credential")
     public void user_call_the_api_tracking_request_of_adpeako_flow_msisdn_mo_with_valid_credential(List<List<String>> list) {
-        result = Utils.generateListString(list);
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_MO_REQUEST + result.get(7), RestMethod.GET);
-        restHeaders.add(restHeaders.defaultApikey());
-        restParams.addParam(result.get(1), Randoms.randomString());
-        restParams.addParam(result.get(2), result.get(9));
-        restParams.addParam(result.get(3), result.get(10));
-        restParams.addParam(result.get(4), result.get(11));
-        restParams.addParam(result.get(5), result.get(12));
-        restRequest.setParams(restParams);
-        restRequest.setHeader(restHeaders);
-        restResponse = restRequest.send();
-        log.info("Request header is: \n" + restRequest.toString());
-        log.info("Response is: \n" + restResponse.printPrettyPrint());
+        adpeakoMoController.adpeakoRequestMoTracking(list);
     }
 
     @Then("Response successful status code is {int} after tracking request of Adpeako flow msisdn mo")
     public void response_successful_status_code_is_after_tracking_request_of_adpeako_flow_msisdn_mo(int statusCode) {
-        log.info("status code is: " + restResponse.extract().statusCode());
-        Assert.assertEquals(statusCode, restResponse.extract().statusCode());
+        adpeakoMoController.checkStatusIs200(statusCode);
     }
 
     @Then("Response successful message status keyword shortcode and new subscriptionStatus after tracking request of Adpeako flow msisdn mo")
     public void response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(5), restResponse.findJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(6), restResponse.findJsonPath(restResponse.extract()).getString("status"));
-        log.info("subscriptionStatus is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.subscriptionStatus"));
-        Assert.assertEquals(result.get(7), restResponse.findJsonPath(restResponse.extract()).getString("data.subscriptionStatus"));
-        log.info("keyword is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
-        Assert.assertEquals(result.get(8), restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
-        log.info("shortcode is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
-        Assert.assertEquals(result.get(9), restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
+        log.info("message is: " + adpeakoMoController.getJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(5), adpeakoMoController.getJsonPathHasKey("message"));
+        log.info("status is: " + adpeakoMoController.getJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(6), adpeakoMoController.getJsonPathHasKey("status"));
+        log.info("subscriptionStatus is: " + adpeakoMoController.getJsonPathHasKey("data.subscriptionStatus"));
+        Assert.assertEquals(result.get(7), adpeakoMoController.getJsonPathHasKey("data.subscriptionStatus"));
+        log.info("keyword is: " + adpeakoMoController.getJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(8), adpeakoMoController.getJsonPathHasKey("data.keyword"));
+        log.info("keyword is: " + adpeakoMoController.getJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(9), adpeakoMoController.getJsonPathHasKey("data.shortcode"));
     }
 
     @Given("User call the API tracking request of Adpeako flow msisdn mo with invalid mandatory")
     public void user_call_the_api_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory(List<List<String>> list) {
-        result = Utils.generateListString(list);
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_MO_REQUEST + result.get(7), RestMethod.GET);
-        restHeaders.add(restHeaders.defaultApikey());
-        restParams.addParam(result.get(1), Randoms.randomString());
-        restParams.addParam(result.get(2), result.get(9));
-        restParams.addParam(result.get(3), result.get(10));
-        restParams.addParam(result.get(4), result.get(11));
-        restParams.addParam(result.get(5), result.get(12));
-        restRequest.setParams(restParams);
-        restRequest.setHeader(restHeaders);
-        restResponse = restRequest.send();
-        log.info("Request header is: \n" + restRequest.toString());
-        log.info("Response is: \n" + restResponse.printPrettyPrint());
+        adpeakoMoController.adpeakoRequestMoTracking(list);
     }
 
     @Then("Response successful status code is {int} after tracking request of Adpeako flow msisdn mo with invalid mandatory")
     public void response_successful_status_code_is_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory(int statusCode) {
-        log.info("status code is: " + restResponse.extract().statusCode());
-        Assert.assertEquals(statusCode, restResponse.extract().statusCode());
+        adpeakoMoController.checkStatusIs200(statusCode);
     }
 
     @Then("Response successful message status keyword shortcode and new subscriptionStatus after tracking request of Adpeako flow msisdn mo with invalid mandatory")
     public void response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(2), restResponse.findJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(3), restResponse.findJsonPath(restResponse.extract()).getString("status"));
-        log.info("data is: " + restResponse.findJsonPath(restResponse.extract()).getMap("data"));
-        Assert.assertTrue(restResponse.findJsonPath(restResponse.extract()).getMap("data").size() == 0);
+        log.info("message is: " + adpeakoMoController.getJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(2), adpeakoMoController.getJsonPathHasKey("message"));
+        log.info("status is: " + adpeakoMoController.getJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), adpeakoMoController.getJsonPathHasKey("status"));
+        log.info("data is: " + adpeakoMoController.getJsonPathHasKey("data"));
+        Assert.assertTrue(adpeakoMoController.checkMapIsEmpty("data"));
     }
 }
