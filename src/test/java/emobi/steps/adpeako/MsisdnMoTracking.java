@@ -36,7 +36,7 @@ public class MsisdnMoTracking {
 
     @Then("Response successful status code is {int} after tracking request of Adpeako flow msisdn mo")
     public void response_successful_status_code_is_after_tracking_request_of_adpeako_flow_msisdn_mo(int statusCode) {
-        adpeakoMoController.checkStatusIs200(statusCode);
+        Assert.assertTrue(adpeakoMoController.checkStatusIs200(statusCode));
     }
 
     @Then("Response successful message status keyword shortcode and new subscriptionStatus after tracking request of Adpeako flow msisdn mo")
@@ -61,7 +61,7 @@ public class MsisdnMoTracking {
 
     @Then("Response successful status code is {int} after tracking request of Adpeako flow msisdn mo with invalid mandatory")
     public void response_successful_status_code_is_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory(int statusCode) {
-        adpeakoMoController.checkStatusIs200(statusCode);
+        Assert.assertTrue(adpeakoMoController.checkStatusIs200(statusCode));
     }
 
     @Then("Response successful message status keyword shortcode and new subscriptionStatus after tracking request of Adpeako flow msisdn mo with invalid mandatory")

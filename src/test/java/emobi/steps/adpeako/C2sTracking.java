@@ -27,7 +27,7 @@ public class C2sTracking {
 
     @Then("Response successful status code is {int} after tracking request of Adpeako flow C2S ba eronet")
     public void response_successful_status_code_is_after_tracking_request_of_adpeako_flow_c2s_ba_eronet(int statusCode) {
-        c2sController.checkStatusIs200(statusCode);
+        Assert.assertTrue(c2sController.checkStatusIs200(statusCode));
     }
 
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Adpeako flow C2S ba eronet")
@@ -52,7 +52,7 @@ public class C2sTracking {
 
     @Then("Response successful status code is {int} after tracking request of Adpeako flow C2S ba mtel")
     public void response_successful_status_code_is_after_tracking_request_of_adpeako_flow_c2s_ba_mtel(int statusCode) {
-        c2sController.checkStatusIs200(statusCode);
+        Assert.assertTrue(c2sController.checkStatusIs200(statusCode));
     }
 
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Adpeako flow C2S ba mtel")

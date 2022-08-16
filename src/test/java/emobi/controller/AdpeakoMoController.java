@@ -5,7 +5,6 @@ import emobi.rest.*;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
 import io.restassured.path.json.JsonPath;
-import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,9 +41,12 @@ public class AdpeakoMoController {
         log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
-    public void checkStatusIs200(int statusCode) {
+    public boolean checkStatusIs200(int statusCode) {
         log.info("status code is: " + restResponse.extract().getStatusCode());
-        Assert.assertEquals(restResponse.extract().getStatusCode(), statusCode);
+        if(restResponse.extract().getStatusCode()==statusCode){
+            return true;
+        }
+        return false;
     }
 
     public String getJsonPathHasKey(String key) {

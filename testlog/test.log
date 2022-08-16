@@ -1,8 +1,8 @@
-INFO  | 2022-08-16 17:09:51 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:41) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=5ANhStEtpvmjrI6lcTFPe' \
+INFO  | 2022-08-16 17:36:09 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:40) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=lIQyNf2obVBfeu8PkOtYC' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-16 17:09:51 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:42) - Response is: 
+INFO  | 2022-08-16 17:36:09 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:41) - Response is: 
 {
     "message": "Success",
     "status": true,
@@ -12,28 +12,28 @@ INFO  | 2022-08-16 17:09:51 | [main] emobi.controller.AdpeakoMoController (Adpea
         "keyword": "DA",
         "shortcode": "06202020"
     },
-    "timeStamp": "2022/08/16 10:09:51"
+    "timeStamp": "2022/08/16 10:36:09"
 }
-INFO  | 2022-08-16 17:09:51 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:checkStatusIs200:46) - status code is: 200
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:45) - message is: Success
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:47) - status is: true
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:49) - subscriptionStatus is: NEW
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:51) - keyword is: DA
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:53) - keyword is: 06202020
-INFO  | 2022-08-16 17:09:52 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:41) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=null&tpClickId=6HUY3MGzNBBNKVO41KDHS' \
+INFO  | 2022-08-16 17:36:09 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:checkStatusIs200:45) - status code is: 200
+INFO  | 2022-08-16 17:36:09 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:45) - message is: Success
+INFO  | 2022-08-16 17:36:09 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:47) - status is: true
+INFO  | 2022-08-16 17:36:09 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:49) - subscriptionStatus is: NEW
+INFO  | 2022-08-16 17:36:09 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:51) - keyword is: DA
+INFO  | 2022-08-16 17:36:09 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo:53) - keyword is: 06202020
+INFO  | 2022-08-16 17:36:10 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:40) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=null&tpClickId=KNgEmfYA6NUtosmSxn86t' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-16 17:09:52 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:42) - Response is: 
+INFO  | 2022-08-16 17:36:10 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:41) - Response is: 
 {
     "message": "Invalid mandatory fields",
     "status": false,
     "data": {
         
     },
-    "timeStamp": "2022/08/16 10:09:52"
+    "timeStamp": "2022/08/16 10:36:10"
 }
-INFO  | 2022-08-16 17:09:52 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:checkStatusIs200:46) - status code is: 400
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory:70) - message is: Invalid mandatory fields
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory:72) - status is: false
-INFO  | 2022-08-16 17:09:52 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory:74) - data is: {}
+INFO  | 2022-08-16 17:36:10 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:checkStatusIs200:45) - status code is: 400
+INFO  | 2022-08-16 17:36:10 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory:70) - message is: Invalid mandatory fields
+INFO  | 2022-08-16 17:36:10 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory:72) - status is: false
+INFO  | 2022-08-16 17:36:10 | [main] steps.adpeako.MsisdnMoTracking (MsisdnMoTracking.java:response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory:74) - data is: {}
