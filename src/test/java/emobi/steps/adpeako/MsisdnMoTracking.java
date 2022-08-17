@@ -1,10 +1,6 @@
 package emobi.steps.adpeako;
 
 import emobi.controller.AdpeakoMoController;
-import emobi.rest.RestHeaders;
-import emobi.rest.RestParams;
-import emobi.rest.RestRequest;
-import emobi.rest.RestResponse;
 import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,16 +12,10 @@ import java.util.List;
 
 public class MsisdnMoTracking {
     Logger log = LoggerFactory.getLogger(MsisdnMoTracking.class);
-    private RestRequest restRequest;
-    private RestHeaders restHeaders;
-    private RestResponse restResponse;
-    private RestParams restParams;
     private List<String> result;
     private AdpeakoMoController adpeakoMoController;
 
     public MsisdnMoTracking() {
-        restParams = new RestParams();
-        restHeaders = new RestHeaders();
         adpeakoMoController =new AdpeakoMoController();
     }
 

@@ -27,7 +27,7 @@ public class RestResponse {
      * @return ValidatableResponse
      */
     public ValidatableResponse validate() {
-        return response.then().log().all();
+        return response.then();
     }
 
     /**

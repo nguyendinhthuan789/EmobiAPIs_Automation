@@ -18,12 +18,13 @@ public class AdpeakoMoController {
     private RestHeaders restHeaders;
     private List<String> result;
     private RestResponse restResponse;
+    private RestAssuredUtil restAssuredUtil;
 
     public AdpeakoMoController() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
+        restAssuredUtil = new RestAssuredUtil();
     }
-
 
     public void adpeakoRequestMoTracking(List<List<String>> list) {
         result = Utils.generateListString(list);
@@ -42,23 +43,20 @@ public class AdpeakoMoController {
     }
 
     public boolean checkStatusIs200(int statusCode) {
-        log.info("status code is: " + restResponse.extract().getStatusCode());
-        if(restResponse.extract().getStatusCode()==statusCode){
+        log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
+        if(restAssuredUtil.checkStatusIs200(restResponse.validate().extract().response(),statusCode)){
             return true;
         }
         return false;
     }
 
     public String getJsonPathHasKey(String key) {
-        String complete = restResponse.extract().asString();
-        JsonPath js = new JsonPath(complete);
-        return js.get(key).toString();
+        return restAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
     }
 
     public boolean checkMapIsEmpty(String key){
         Map map= new JsonPath(restResponse.extract().asString()).getMap(key);
-        Map<String, Object> elements = map;
-        if(elements.size()==0){
+        if(restAssuredUtil.isNullOrEmpty(map)){
             return true;
         }
         return false;

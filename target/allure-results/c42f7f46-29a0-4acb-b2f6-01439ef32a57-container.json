@@ -1,0 +1,1 @@
+{"uuid":"c42f7f46-29a0-4acb-b2f6-01439ef32a57","name":"Scenario: User GET pin verify affiliates partner Mobwizard flow MSISDN + PIN of RS Country unsuccessful with pin invalid credentials","children":["c7699afd-56c2-4b93-97ed-5db9cbf517e8"],"befores":[],"afters":[],"start":1660731239418,"stop":1660731239995}

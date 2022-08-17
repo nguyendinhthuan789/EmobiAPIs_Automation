@@ -5,6 +5,10 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
+import java.lang.reflect.Array;
+import java.util.Collection;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class RestAssuredUtil {
@@ -60,5 +64,46 @@ public class RestAssuredUtil {
         String complete = response.asString();
         JsonPath js = new JsonPath(complete);
         return js.get(key).toString();
+    }
+
+    public boolean checkStatusIs200(Response res, int status) {
+        if(res.getStatusCode()==status){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isNullOrEmpty( final Collection< ? > c ) {
+        return c == null || c.isEmpty();
+    }
+
+    public static boolean isNullOrEmpty( final Map< ?, ? > m ) {
+        return m == null || m.isEmpty();
+    }
+
+    public static boolean isEmpty(Object[] array) {
+        return (array == null || array.length == 0);
+    }
+
+    public static boolean isEmpty(Object obj) {
+        if (obj == null) {
+            return true;
+        }
+
+        if (obj.getClass().isArray()) {
+            return Array.getLength(obj) == 0;
+        }
+        if (obj instanceof CharSequence) {
+            return ((CharSequence) obj).length() == 0;
+        }
+        if (obj instanceof Collection) {
+            return ((Collection) obj).isEmpty();
+        }
+        if (obj instanceof Map) {
+            return ((Map) obj).isEmpty();
+        }
+
+        // else
+        return false;
     }
 }

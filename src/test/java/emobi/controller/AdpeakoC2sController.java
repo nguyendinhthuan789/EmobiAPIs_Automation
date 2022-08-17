@@ -2,9 +2,9 @@ package emobi.controller;
 
 import emobi.constants.URL;
 import emobi.rest.*;
+import emobi.utilities.Convert;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
-import io.restassured.path.json.JsonPath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,11 +17,14 @@ public class AdpeakoC2sController {
     private RestHeaders restHeaders;
     private List<String> result;
     private RestResponse restResponse;
-    private RestAssuredUtil restAssuredUtil= new RestAssuredUtil();
+    private RestAssuredUtil restAssuredUtil;
+    private Convert convert;
 
     public AdpeakoC2sController() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
+        restAssuredUtil= new RestAssuredUtil();
+        convert = new Convert();
     }
 
     public void adpeakoRequestC2STracking(List<List<String>> list) {
@@ -38,17 +41,15 @@ public class AdpeakoC2sController {
         log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
-    public boolean checkStatusIs200(int statusCode) {
-        log.info("status code is: " + restResponse.extract().getStatusCode());
-        if(restResponse.extract().getStatusCode()==statusCode){
+    public boolean checkStatusIs200(int status) {
+        log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
+        if(restAssuredUtil.checkStatusIs200(restResponse.validate().extract().response(),status)){
             return true;
         }
         return false;
     }
 
     public String getJsonPathHasKey(String key) {
-        String complete = restResponse.extract().asString();
-        JsonPath js = new JsonPath(complete);
-        return js.get(key).toString();
+        return restAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
     }
 }
