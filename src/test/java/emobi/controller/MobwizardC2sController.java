@@ -38,7 +38,7 @@ public class MobwizardC2sController {
 
     public boolean checkStatusIs200(int statusCode) {
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        if(restAssuredUtil.checkStatusIs200(restResponse.validate().extract().response(),statusCode)){
+        if(restAssuredUtil.checkStatusCode(restResponse.validate().extract().response(),statusCode)){
             return true;
         }
         return false;

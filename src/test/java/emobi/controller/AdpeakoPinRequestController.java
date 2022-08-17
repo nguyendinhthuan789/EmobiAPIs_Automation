@@ -48,7 +48,7 @@ public class AdpeakoPinRequestController {
 
     public boolean checkStatusIs200(int status) {
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        return restAssuredUtil.checkStatusIs200(restResponse.validate().extract().response(), status);
+        return restAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status);
     }
 
     public String getJsonPathHasKey(String key) {

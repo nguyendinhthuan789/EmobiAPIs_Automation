@@ -2,7 +2,6 @@ package emobi.controller;
 
 import emobi.constants.URL;
 import emobi.rest.*;
-import emobi.utilities.Convert;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
 import org.slf4j.Logger;
@@ -18,13 +17,11 @@ public class AdpeakoC2sController {
     private List<String> result;
     private RestResponse restResponse;
     private RestAssuredUtil restAssuredUtil;
-    private Convert convert;
 
     public AdpeakoC2sController() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
         restAssuredUtil= new RestAssuredUtil();
-        convert = new Convert();
     }
 
     public void adpeakoRequestC2STracking(List<List<String>> list) {
@@ -43,7 +40,7 @@ public class AdpeakoC2sController {
 
     public boolean checkStatusIs200(int status) {
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        if(restAssuredUtil.checkStatusIs200(restResponse.validate().extract().response(),status)){
+        if(restAssuredUtil.checkStatusCode(restResponse.validate().extract().response(),status)){
             return true;
         }
         return false;
