@@ -1,8 +1,6 @@
 package emobi.steps.moviplus;
 
-import emobi.constants.URL;
-import emobi.rest.*;
-import emobi.utilities.Randoms;
+import emobi.controller.MoviplusMoController;
 import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,52 +12,35 @@ import java.util.List;
 
 public class MsisdnMoTracking {
     Logger log = LoggerFactory.getLogger(MsisdnMoTracking.class);
-    private RestRequest restRequest;
-    private RestHeaders restHeaders;
-    private RestResponse restResponse;
-    private RestParams restParams;
     private List<String> result;
+    private MoviplusMoController moviplusMoController;
 
     public MsisdnMoTracking() {
-        restParams = new RestParams();
-        restHeaders = new RestHeaders();
+        moviplusMoController = new MoviplusMoController();
     }
 
     @Given("User call the API tracking request of Moviplus flow msisdn mo with valid credential")
     public void user_call_the_api_tracking_request_of_moviplus_flow_msisdn_mo_with_valid_credential(List<List<String>> list) {
-        result = Utils.generateListString(list);
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_MO_REQUEST + result.get(6), RestMethod.GET);
-        restHeaders.add(restHeaders.defaultApikey());
-        restParams.addParam(result.get(1), Randoms.randomString());
-        restParams.addParam(result.get(2), result.get(8));
-        restParams.addParam(result.get(3), result.get(9));
-        restParams.addParam(result.get(4), result.get(10));
-        restParams.addParam(result.get(5), result.get(11));
-        restRequest.setParams(restParams);
-        restRequest.setHeader(restHeaders);
-        restResponse = restRequest.send();
-        log.info("Request header is: \n" + restRequest.toString());
-        log.info("Response is: \n" + restResponse.printPrettyPrint());
+        moviplusMoController.moviplusRequestMoTracking(list);
     }
 
     @Then("Response successful status code is {int} after tracking request of Moviplus flow msisdn mo")
     public void response_successful_status_code_is_after_tracking_request_of_moviplus_flow_msisdn_mo(int statusCode) {
-        log.info("status code is: " + restResponse.extract().statusCode());
-        Assert.assertEquals(statusCode, restResponse.extract().statusCode());
+      moviplusMoController.checkStatusIs200(statusCode);
     }
 
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Moviplus flow msisdn mo")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_moviplus_flow_msisdn_mo(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + restResponse.findJsonPath(restResponse.extract()).getString("message"));
-        Assert.assertEquals(result.get(4), restResponse.findJsonPath(restResponse.extract()).getString("message"));
-        log.info("status is: " + restResponse.findJsonPath(restResponse.extract()).getString("status"));
-        Assert.assertEquals(result.get(5), restResponse.findJsonPath(restResponse.extract()).getString("status"));
-        log.info("keyword is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
-        Assert.assertEquals(result.get(6), restResponse.findJsonPath(restResponse.extract()).getString("data.keyword"));
-        log.info("shortcode is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
-        Assert.assertEquals(result.get(7), restResponse.findJsonPath(restResponse.extract()).getString("data.shortcode"));
-        log.info("tracking_code is: " + restResponse.findJsonPath(restResponse.extract()).getString("data.tracking_code"));
-        Assert.assertNotNull(restResponse.findJsonPath(restResponse.extract()).getString("data.tracking_code"));
+        log.info("message is: " + moviplusMoController.getJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(4), moviplusMoController.getJsonPathHasKey("message"));
+        log.info("status is: " + moviplusMoController.getJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(5), moviplusMoController.getJsonPathHasKey("status"));
+        log.info("keyword is: " + moviplusMoController.getJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(6), moviplusMoController.getJsonPathHasKey("data.keyword"));
+        log.info("shortcode is: " + moviplusMoController.getJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(7), moviplusMoController.getJsonPathHasKey("data.shortcode"));
+        log.info("tracking_code is: " + moviplusMoController.getJsonPathHasKey("data.tracking_code"));
+        Assert.assertNotNull(moviplusMoController.getJsonPathHasKey("data.tracking_code"));
     }
 }
