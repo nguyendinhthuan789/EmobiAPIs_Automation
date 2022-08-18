@@ -56,7 +56,7 @@ public class MobwizardPinRequestController {
     }
 
     public boolean checkMapIsEmpty(String key) {
-        Map map = new JsonPath(restResponse.extract().asString()).getMap(key);
+        Map map = new JsonPath(findJsonPathHasKey(key)).getMap(key);
         return RestAssuredUtil.isNullOrEmpty(map);
     }
 
