@@ -15,6 +15,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -141,6 +142,13 @@ public class Utils {
     public static List<String> generateListString(List<List<String>> list) {
         List<String> result = list.stream()
                 .flatMap(l -> l.stream())
+                .collect(Collectors.toList());
+        return result;
+    }
+
+    public static List<String> generateListofListString1(List<List<String>> list) { //[[a], [b]].
+        List<String> result = list.stream()
+                .flatMap(Collection::stream)
                 .collect(Collectors.toList());
         return result;
     }

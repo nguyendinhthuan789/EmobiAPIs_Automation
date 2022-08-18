@@ -18,6 +18,11 @@ public class C2sTracking {
         mobwizardC2sController.mobwizardRequestC2STracking(list);
     }
 
+//    @Given("User call the API tracking request of Mobwizard flow C2S with valid credential")
+//    public void user_call_the_api_tracking_request_of_mobwizard_flow_c2s_with_valid_credential(DataTable table) {
+//        mobwizardC2sController.mobwizardRequestC2STracking1(table);
+//    }
+
     @Then("Response successful status code is {int} after tracking request of Mobwizard flow C2S")
     public void response_successful_status_code_is_after_tracking_request_of_mobwizard_flow_c2s(int statusCode) {
         mobwizardC2sController.verifyStatus(statusCode);

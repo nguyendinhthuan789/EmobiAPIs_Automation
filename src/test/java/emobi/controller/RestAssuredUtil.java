@@ -89,7 +89,6 @@ public class RestAssuredUtil {
         if (obj == null) {
             return true;
         }
-
         if (obj.getClass().isArray()) {
             return Array.getLength(obj) == 0;
         }
@@ -102,7 +101,6 @@ public class RestAssuredUtil {
         if (obj instanceof Map) {
             return ((Map) obj).isEmpty();
         }
-
         // else
         return false;
     }

@@ -1,0 +1,1 @@
+{"uuid":"257c6a56-ccf7-48a4-8b0d-a43b768fd2b4","name":"Scenario: User GET pin request affiliates partner Mobwizard flow MSISDN + PIN of RS Country unsuccessful with invalid campaign credentials","children":["718cf2f0-e2a2-4eec-874c-9d14ce5491dc"],"befores":[],"afters":[],"start":1660815416146,"stop":1660815416622}

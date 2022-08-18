@@ -1,0 +1,1 @@
+{"uuid":"f1504e3a-a8bc-460f-9ce9-09fe0b22d26b","name":"Scenario: User GET pin verify affiliates partner Adpeako flow MSISDN + PIN of RS Country unsuccessful with pin invalid mandatory credentials","children":["edaff4b9-0a60-49bf-8c1c-bcd53081f020"],"befores":[],"afters":[],"start":1660815412099,"stop":1660815412608}
