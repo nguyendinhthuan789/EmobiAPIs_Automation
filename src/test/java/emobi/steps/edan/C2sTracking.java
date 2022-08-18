@@ -32,16 +32,16 @@ public class C2sTracking {
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Edgar Zakaryan flow C2S ba eronet")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_eronet(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + edanC2sController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(4), edanC2sController.getJsonPathHasKey("message"));
-        log.info("status is: " + edanC2sController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(5), edanC2sController.getJsonPathHasKey("status"));
-        log.info("keyword is: " + edanC2sController.getJsonPathHasKey("data.keyword"));
-        Assert.assertEquals(result.get(6), edanC2sController.getJsonPathHasKey("data.keyword"));
-        log.info("shortcode is: " + edanC2sController.getJsonPathHasKey("data.shortcode"));
-        Assert.assertEquals(result.get(7), edanC2sController.getJsonPathHasKey("data.shortcode"));
-        log.info("tracking_code is: " + edanC2sController.getJsonPathHasKey("data.tracking_code"));
-        Assert.assertNotNull(edanC2sController.getJsonPathHasKey("data.tracking_code"));
+        log.info("message is: " + edanC2sController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(4), edanC2sController.findJsonPathHasKey("message"));
+        log.info("status is: " + edanC2sController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(5), edanC2sController.findJsonPathHasKey("status"));
+        log.info("keyword is: " + edanC2sController.findJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(6), edanC2sController.findJsonPathHasKey("data.keyword"));
+        log.info("shortcode is: " + edanC2sController.findJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(7), edanC2sController.findJsonPathHasKey("data.shortcode"));
+        log.info("tracking_code is: " + edanC2sController.findJsonPathHasKey("data.tracking_code"));
+        Assert.assertNotNull(edanC2sController.findJsonPathHasKey("data.tracking_code"));
     }
 
     @Given("User call the API tracking request of Edgar Zakaryan flow C2S ba mtel with valid credential")
@@ -55,15 +55,15 @@ public class C2sTracking {
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Edgar Zakaryan flow C2S ba mtel")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_edgar_zakaryan_flow_c2s_ba_mtel(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + edanC2sController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(4), edanC2sController.getJsonPathHasKey("message"));
-        log.info("status is: " + edanC2sController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(5), edanC2sController.getJsonPathHasKey("status"));
-        log.info("keyword is: " + edanC2sController.getJsonPathHasKey("data.keyword"));
-        Assert.assertEquals(result.get(6), edanC2sController.getJsonPathHasKey("data.keyword"));
-        log.info("shortcode is: " + edanC2sController.getJsonPathHasKey("data.shortcode"));
-        Assert.assertEquals(result.get(7), edanC2sController.getJsonPathHasKey("data.shortcode"));
-        log.info("tracking_code is: " + edanC2sController.getJsonPathHasKey("data.tracking_code"));
-        Assert.assertNotNull(edanC2sController.getJsonPathHasKey("data.tracking_code"));
+        log.info("message is: " + edanC2sController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(4), edanC2sController.findJsonPathHasKey("message"));
+        log.info("status is: " + edanC2sController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(5), edanC2sController.findJsonPathHasKey("status"));
+        log.info("keyword is: " + edanC2sController.findJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(6), edanC2sController.findJsonPathHasKey("data.keyword"));
+        log.info("shortcode is: " + edanC2sController.findJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(7), edanC2sController.findJsonPathHasKey("data.shortcode"));
+        log.info("tracking_code is: " + edanC2sController.findJsonPathHasKey("data.tracking_code"));
+        Assert.assertNotNull(edanC2sController.findJsonPathHasKey("data.tracking_code"));
     }
 }

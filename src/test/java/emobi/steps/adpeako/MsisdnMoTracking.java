@@ -32,16 +32,16 @@ public class MsisdnMoTracking {
     @Then("Response successful message status keyword shortcode and new subscriptionStatus after tracking request of Adpeako flow msisdn mo")
     public void response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + adpeakoMoController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(5), adpeakoMoController.getJsonPathHasKey("message"));
-        log.info("status is: " + adpeakoMoController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(6), adpeakoMoController.getJsonPathHasKey("status"));
-        log.info("subscriptionStatus is: " + adpeakoMoController.getJsonPathHasKey("data.subscriptionStatus"));
-        Assert.assertEquals(result.get(7), adpeakoMoController.getJsonPathHasKey("data.subscriptionStatus"));
-        log.info("keyword is: " + adpeakoMoController.getJsonPathHasKey("data.keyword"));
-        Assert.assertEquals(result.get(8), adpeakoMoController.getJsonPathHasKey("data.keyword"));
-        log.info("keyword is: " + adpeakoMoController.getJsonPathHasKey("data.shortcode"));
-        Assert.assertEquals(result.get(9), adpeakoMoController.getJsonPathHasKey("data.shortcode"));
+        log.info("message is: " + adpeakoMoController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(5), adpeakoMoController.findJsonPathHasKey("message"));
+        log.info("status is: " + adpeakoMoController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(6), adpeakoMoController.findJsonPathHasKey("status"));
+        log.info("subscriptionStatus is: " + adpeakoMoController.findJsonPathHasKey("data.subscriptionStatus"));
+        Assert.assertEquals(result.get(7), adpeakoMoController.findJsonPathHasKey("data.subscriptionStatus"));
+        log.info("keyword is: " + adpeakoMoController.findJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(8), adpeakoMoController.findJsonPathHasKey("data.keyword"));
+        log.info("keyword is: " + adpeakoMoController.findJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(9), adpeakoMoController.findJsonPathHasKey("data.shortcode"));
     }
 
     @Given("User call the API tracking request of Adpeako flow msisdn mo with invalid mandatory")
@@ -57,11 +57,11 @@ public class MsisdnMoTracking {
     @Then("Response successful message status keyword shortcode and new subscriptionStatus after tracking request of Adpeako flow msisdn mo with invalid mandatory")
     public void response_successful_message_status_keyword_shortcode_and_new_subscription_status_after_tracking_request_of_adpeako_flow_msisdn_mo_with_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + adpeakoMoController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(2), adpeakoMoController.getJsonPathHasKey("message"));
-        log.info("status is: " + adpeakoMoController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(3), adpeakoMoController.getJsonPathHasKey("status"));
-        log.info("data is: " + adpeakoMoController.getJsonPathHasKey("data"));
+        log.info("message is: " + adpeakoMoController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(2), adpeakoMoController.findJsonPathHasKey("message"));
+        log.info("status is: " + adpeakoMoController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), adpeakoMoController.findJsonPathHasKey("status"));
+        log.info("data is: " + adpeakoMoController.findJsonPathHasKey("data"));
         Assert.assertTrue(adpeakoMoController.checkMapIsEmpty("data"));
     }
 }

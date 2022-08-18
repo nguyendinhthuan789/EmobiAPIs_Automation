@@ -32,15 +32,15 @@ public class C2sTracking {
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Moviplus flow C2S")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_moviplus_flow_c2s(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + moviplusC2sController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(4), moviplusC2sController.getJsonPathHasKey("message"));
-        log.info("status is: " + moviplusC2sController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(5), moviplusC2sController.getJsonPathHasKey("status"));
-        log.info("keyword is: " + moviplusC2sController.getJsonPathHasKey("data.keyword"));
-        Assert.assertEquals(result.get(6), moviplusC2sController.getJsonPathHasKey("data.keyword"));
-        log.info("shortcode is: " + moviplusC2sController.getJsonPathHasKey("data.shortcode"));
-        Assert.assertEquals(result.get(7), moviplusC2sController.getJsonPathHasKey("data.shortcode"));
-        log.info("tracking_code is: " + moviplusC2sController.getJsonPathHasKey("data.tracking_code"));
-        Assert.assertNotNull(moviplusC2sController.getJsonPathHasKey("data.tracking_code"));
+        log.info("message is: " + moviplusC2sController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(4), moviplusC2sController.findJsonPathHasKey("message"));
+        log.info("status is: " + moviplusC2sController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(5), moviplusC2sController.findJsonPathHasKey("status"));
+        log.info("keyword is: " + moviplusC2sController.findJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(6), moviplusC2sController.findJsonPathHasKey("data.keyword"));
+        log.info("shortcode is: " + moviplusC2sController.findJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(7), moviplusC2sController.findJsonPathHasKey("data.shortcode"));
+        log.info("tracking_code is: " + moviplusC2sController.findJsonPathHasKey("data.tracking_code"));
+        Assert.assertNotNull(moviplusC2sController.findJsonPathHasKey("data.tracking_code"));
     }
 }

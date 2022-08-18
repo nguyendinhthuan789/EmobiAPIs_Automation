@@ -16,7 +16,6 @@ public class EdanC2sController {
     private final RestHeaders restHeaders;
     private List<String> result;
     private RestResponse restResponse;
-    private final RestAssuredUtil restAssuredUtil = new RestAssuredUtil();
 
     public EdanC2sController() {
         restParams = new RestParams();
@@ -39,13 +38,13 @@ public class EdanC2sController {
 
     public boolean checkStatusIs200(int statusCode) {
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        if(restAssuredUtil.checkStatusCode(restResponse.validate().extract().response(),statusCode)){
+        if(RestAssuredUtil.checkStatusCode(restResponse.validate().extract().response(),statusCode)){
             return true;
         }
         return false;
     }
 
-    public String getJsonPathHasKey(String key) {
-        return restAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
+    public String findJsonPathHasKey(String key) {
+        return RestAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
     }
 }

@@ -2,7 +2,6 @@ package emobi.controller;
 
 import emobi.constants.URL;
 import emobi.rest.*;
-import emobi.utilities.Convert;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
 import io.restassured.path.json.JsonPath;
@@ -19,14 +18,10 @@ public class AdpeakoPinRequestController {
     private final RestHeaders restHeaders;
     private List<String> result;
     private RestResponse restResponse;
-    private final RestAssuredUtil restAssuredUtil;
-    private final Convert convert;
 
     public AdpeakoPinRequestController() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
-        restAssuredUtil = new RestAssuredUtil();
-        convert = new Convert();
     }
 
     public void adpeakoPinRequestTracking(List<List<String>> list) {
@@ -48,10 +43,10 @@ public class AdpeakoPinRequestController {
 
     public boolean checkStatusIs200(int status) {
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        return restAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status);
+        return RestAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status);
     }
 
-    public String getJsonPathHasKey(String key) {
+    public String findJsonPathHasKey(String key) {
         return RestAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
     }
 

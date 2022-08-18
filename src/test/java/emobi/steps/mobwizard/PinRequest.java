@@ -32,14 +32,14 @@ public class PinRequest {
     @Then("Response successful message status subscriptionStatus and pinid not null after pin request of Mobwizard flow msisdn pin")
     public void response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_mobwizard_flow_msisdn_pin(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + mobwizardPinRequestController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(3), mobwizardPinRequestController.getJsonPathHasKey("message"));
-        log.info("status is: " + mobwizardPinRequestController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(4), mobwizardPinRequestController.getJsonPathHasKey("status"));
-        log.info("status subscriptionStatus is: " + mobwizardPinRequestController.getJsonPathHasKey("data.subscriptionStatus"));
-        Assert.assertEquals(result.get(5), mobwizardPinRequestController.getJsonPathHasKey("data.subscriptionStatus"));
-        log.info("pin is: " + mobwizardPinRequestController.getJsonPathHasKey("data.pinId"));
-        Assert.assertNotNull(mobwizardPinRequestController.getJsonPathHasKey("data.pinId"));
+        log.info("message is: " + mobwizardPinRequestController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(3), mobwizardPinRequestController.findJsonPathHasKey("message"));
+        log.info("status is: " + mobwizardPinRequestController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(4), mobwizardPinRequestController.findJsonPathHasKey("status"));
+        log.info("status subscriptionStatus is: " + mobwizardPinRequestController.findJsonPathHasKey("data.subscriptionStatus"));
+        Assert.assertEquals(result.get(5), mobwizardPinRequestController.findJsonPathHasKey("data.subscriptionStatus"));
+        log.info("pin is: " + mobwizardPinRequestController.findJsonPathHasKey("data.pinId"));
+        Assert.assertNotNull(mobwizardPinRequestController.findJsonPathHasKey("data.pinId"));
     }
 
     @Given("User call the API pin request of Mobwizard flow msisdn pin with invalid campaign credential")
@@ -55,11 +55,11 @@ public class PinRequest {
     @Then("Response successful message status and data null after pin request of Mobwizard flow msisdn pin with invalid campaign")
     public void response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_campaign(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + mobwizardPinRequestController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(2), mobwizardPinRequestController.getJsonPathHasKey("message"));
-        log.info("status is: " + mobwizardPinRequestController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(3), mobwizardPinRequestController.getJsonPathHasKey("status"));
-        log.info("data is: " + mobwizardPinRequestController.getJsonPathHasKey("data"));
+        log.info("message is: " + mobwizardPinRequestController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(2), mobwizardPinRequestController.findJsonPathHasKey("message"));
+        log.info("status is: " + mobwizardPinRequestController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), mobwizardPinRequestController.findJsonPathHasKey("status"));
+        log.info("data is: " + mobwizardPinRequestController.findJsonPathHasKey("data"));
         Assert.assertTrue(mobwizardPinRequestController.checkMapIsEmpty("data"));
     }
 
@@ -74,11 +74,11 @@ public class PinRequest {
     @Then("Response successful message status and data null after pin request of Mobwizard flow msisdn pin with invalid mandatory")
     public void response_successful_message_status_and_data_null_after_pin_request_of_mobwizard_flow_msisdn_pin_with_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + mobwizardPinRequestController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(2), mobwizardPinRequestController.getJsonPathHasKey("message"));
-        log.info("status is: " + mobwizardPinRequestController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(3), mobwizardPinRequestController.getJsonPathHasKey("status"));
-        log.info("data is: " + mobwizardPinRequestController.getJsonPathHasKey("data"));
+        log.info("message is: " + mobwizardPinRequestController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(2), mobwizardPinRequestController.findJsonPathHasKey("message"));
+        log.info("status is: " + mobwizardPinRequestController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), mobwizardPinRequestController.findJsonPathHasKey("status"));
+        log.info("data is: " + mobwizardPinRequestController.findJsonPathHasKey("data"));
         Assert.assertTrue(mobwizardPinRequestController.checkMapIsEmpty("data"));
     }
 }

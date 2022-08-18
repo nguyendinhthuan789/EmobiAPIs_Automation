@@ -32,15 +32,15 @@ public class C2sTracking {
     @Then("Response successful message status keyword shortcode and trackingcode not null after tracking request of Mobwizard flow C2S")
     public void response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_mobwizard_flow_c2s(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + mobwizardC2sController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(4), mobwizardC2sController.getJsonPathHasKey("message"));
-        log.info("status is: " + mobwizardC2sController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(5), mobwizardC2sController.getJsonPathHasKey("status"));
-        log.info("keyword is: " + mobwizardC2sController.getJsonPathHasKey("data.keyword"));
-        Assert.assertEquals(result.get(6), mobwizardC2sController.getJsonPathHasKey("data.keyword"));
-        log.info("shortcode is: " + mobwizardC2sController.getJsonPathHasKey("data.shortcode"));
-        Assert.assertEquals(result.get(7), mobwizardC2sController.getJsonPathHasKey("data.shortcode"));
-        log.info("tracking_code is: " + mobwizardC2sController.getJsonPathHasKey("data.tracking_code"));
-        Assert.assertNotNull(mobwizardC2sController.getJsonPathHasKey("data.tracking_code"));
+        log.info("message is: " + mobwizardC2sController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(4), mobwizardC2sController.findJsonPathHasKey("message"));
+        log.info("status is: " + mobwizardC2sController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(5), mobwizardC2sController.findJsonPathHasKey("status"));
+        log.info("keyword is: " + mobwizardC2sController.findJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(6), mobwizardC2sController.findJsonPathHasKey("data.keyword"));
+        log.info("shortcode is: " + mobwizardC2sController.findJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(7), mobwizardC2sController.findJsonPathHasKey("data.shortcode"));
+        log.info("tracking_code is: " + mobwizardC2sController.findJsonPathHasKey("data.tracking_code"));
+        Assert.assertNotNull(mobwizardC2sController.findJsonPathHasKey("data.tracking_code"));
     }
 }

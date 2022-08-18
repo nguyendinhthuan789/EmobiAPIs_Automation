@@ -32,12 +32,12 @@ public class PinVerify {
     @Then("Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + mobwizardPinVerifyController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(3), mobwizardPinVerifyController.getJsonPathHasKey("message"));
-        log.info("status is: " + mobwizardPinVerifyController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(4), mobwizardPinVerifyController.getJsonPathHasKey("status"));
-        log.info("verify status is: " + mobwizardPinVerifyController.getJsonPathHasKey("data.verify_status"));
-        Assert.assertEquals(result.get(5), mobwizardPinVerifyController.getJsonPathHasKey("data.verify_status"));
+        log.info("message is: " + mobwizardPinVerifyController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(3), mobwizardPinVerifyController.findJsonPathHasKey("message"));
+        log.info("status is: " + mobwizardPinVerifyController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(4), mobwizardPinVerifyController.findJsonPathHasKey("status"));
+        log.info("verify status is: " + mobwizardPinVerifyController.findJsonPathHasKey("data.verify_status"));
+        Assert.assertEquals(result.get(5), mobwizardPinVerifyController.findJsonPathHasKey("data.verify_status"));
     }
 
     @Given("User call the API pin verify of Mobwizard flow msisdn pin with pin invalid credential")
@@ -53,12 +53,12 @@ public class PinVerify {
     @Then("Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin with pin invalid")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + mobwizardPinVerifyController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(3), mobwizardPinVerifyController.getJsonPathHasKey("message"));
-        log.info("status is: " + mobwizardPinVerifyController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(4), mobwizardPinVerifyController.getJsonPathHasKey("status"));
-        log.info("verify status is: " + mobwizardPinVerifyController.getJsonPathHasKey("data.verify_status"));
-        Assert.assertEquals(result.get(5), mobwizardPinVerifyController.getJsonPathHasKey("data.verify_status"));
+        log.info("message is: " + mobwizardPinVerifyController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(3), mobwizardPinVerifyController.findJsonPathHasKey("message"));
+        log.info("status is: " + mobwizardPinVerifyController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(4), mobwizardPinVerifyController.findJsonPathHasKey("status"));
+        log.info("verify status is: " + mobwizardPinVerifyController.findJsonPathHasKey("data.verify_status"));
+        Assert.assertEquals(result.get(5), mobwizardPinVerifyController.findJsonPathHasKey("data.verify_status"));
     }
 
     @Given("User call the API pin verify of Mobwizard flow msisdn pin with pin invalid mandatory credential")
@@ -74,11 +74,11 @@ public class PinVerify {
     @Then("Response successful message status and verify status after pin verify of Mobwizard flow msisdn pin with pin invalid mandatory")
     public void response_successful_message_status_and_verify_status_after_pin_verify_of_mobwizard_flow_msisdn_pin_with_pin_invalid_mandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + mobwizardPinVerifyController.getJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(3), mobwizardPinVerifyController.getJsonPathHasKey("message"));
-        log.info("status is: " + mobwizardPinVerifyController.getJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(4), mobwizardPinVerifyController.getJsonPathHasKey("status"));
-        log.info("verify status is: " + mobwizardPinVerifyController.getJsonPathHasKey("data"));
+        log.info("message is: " + mobwizardPinVerifyController.findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(3), mobwizardPinVerifyController.findJsonPathHasKey("message"));
+        log.info("status is: " + mobwizardPinVerifyController.findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(4), mobwizardPinVerifyController.findJsonPathHasKey("status"));
+        log.info("verify status is: " + mobwizardPinVerifyController.findJsonPathHasKey("data"));
         Assert.assertTrue(mobwizardPinVerifyController.checkMapIsEmpty("data"));
     }
 }

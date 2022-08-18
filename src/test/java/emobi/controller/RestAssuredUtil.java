@@ -66,7 +66,7 @@ public class RestAssuredUtil {
         return js.get(key).toString();
     }
 
-    public boolean checkStatusCode(Response res, int status) {
+    public static boolean checkStatusCode(Response res, int status) {
         if(res.getStatusCode()==status){
             return true;
         }

@@ -2,7 +2,6 @@ package emobi.controller;
 
 import emobi.constants.URL;
 import emobi.rest.*;
-import emobi.utilities.Convert;
 import emobi.utilities.Utils;
 import io.restassured.path.json.JsonPath;
 import org.slf4j.Logger;
@@ -18,14 +17,10 @@ public class AdpeakoPinVerifyController {
     private final RestHeaders restHeaders;
     private List<String> result;
     private RestResponse restResponse;
-    private final RestAssuredUtil restAssuredUtil;
-    private final Convert convert;
 
     public AdpeakoPinVerifyController() {
         restParams = new RestParams();
         restHeaders = new RestHeaders();
-        restAssuredUtil = new RestAssuredUtil();
-        convert = new Convert();
     }
 
     public void adpeakoPinVerifyTracking(List<List<String>> list) {
@@ -44,10 +39,10 @@ public class AdpeakoPinVerifyController {
 
     public boolean checkStatusIs200(int status) {
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        return restAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status);
+        return RestAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status);
     }
 
-    public String getJsonPathHasKey(String key) {
+    public String findJsonPathHasKey(String key) {
         return RestAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
     }
 
