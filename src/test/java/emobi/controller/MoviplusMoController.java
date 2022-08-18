@@ -64,14 +64,25 @@ public class MoviplusMoController {
     public void verifyResponseWithValidInput(List<List<String>> list) {
         result = Utils.generateListString(list);
         log.info("message is: " + findJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(4), findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(5), findJsonPathHasKey("message"));
         log.info("status is: " + findJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(5), findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(6), findJsonPathHasKey("status"));
+        log.info("subscriptionStatus is: " + findJsonPathHasKey("data.subscriptionStatus"));
+        Assert.assertEquals(result.get(7), findJsonPathHasKey("data.subscriptionStatus"));
         log.info("keyword is: " + findJsonPathHasKey("data.keyword"));
-        Assert.assertEquals(result.get(6), findJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(8), findJsonPathHasKey("data.keyword"));
         log.info("shortcode is: " + findJsonPathHasKey("data.shortcode"));
-        Assert.assertEquals(result.get(7), findJsonPathHasKey("data.shortcode"));
-        log.info("tracking_code is: " + findJsonPathHasKey("data.tracking_code"));
-        Assert.assertNotNull(findJsonPathHasKey("data.tracking_code"));
+        Assert.assertEquals(result.get(9), findJsonPathHasKey("data.shortcode"));
+
+    }
+
+    public void verifyResponseWithInvalidMandatory(List<List<String>> list) {
+        result = Utils.generateListString(list);
+        log.info("message is: " + findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(2), findJsonPathHasKey("message"));
+        log.info("status is: " + findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), findJsonPathHasKey("status"));
+        log.info("data is: " + findJsonPathHasKey("data"));
+        Assert.assertTrue(checkMapIsEmpty("data"));
     }
 }

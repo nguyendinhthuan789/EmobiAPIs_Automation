@@ -1,39 +1,39 @@
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:40) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=cYvRFz1qQOYAKifDZHlma' \
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:moviplusRequestMoTracking:40) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/a9aa85be-965f-4b09-937b-caf13ea51e49?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=004361111111111&tpClickId=UgOdz4F0m9O7nx8YFz6Bq' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:41) - Response is: 
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:moviplusRequestMoTracking:41) - Response is: 
 {
     "message": "Success",
     "status": true,
     "data": {
         "subscriptionStatus": "NEW",
         "nwc": "22801",
-        "keyword": "DA",
-        "shortcode": "06202020"
+        "keyword": "OK",
+        "shortcode": "145451"
     },
-    "timeStamp": "2022/08/18 06:47:55"
+    "timeStamp": "2022/08/18 08:59:29"
 }
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyStatus:46) - status code is: 200
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithValidInput:66) - message is: Success
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithValidInput:68) - status is: true
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithValidInput:70) - subscriptionStatus is: NEW
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithValidInput:72) - keyword is: DA
-INFO  | 2022-08-18 13:47:55 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithValidInput:74) - keyword is: 06202020
-INFO  | 2022-08-18 13:47:56 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:40) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=null&tpClickId=5C2tSeLNYvn5cig0Oz4JL' \
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyStatus:46) - status code is: 200
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithValidInput:66) - message is: Success
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithValidInput:68) - status is: true
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithValidInput:70) - subscriptionStatus is: NEW
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithValidInput:72) - keyword is: OK
+INFO  | 2022-08-18 15:59:29 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithValidInput:74) - shortcode is: 145451
+INFO  | 2022-08-18 15:59:30 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:moviplusRequestMoTracking:40) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/a9aa85be-965f-4b09-937b-caf13ea51e49?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=null&tpClickId=62Dm2Zdmm1Pwl5cbBE3qf' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-18 13:47:56 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:adpeakoRequestMoTracking:41) - Response is: 
+INFO  | 2022-08-18 15:59:30 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:moviplusRequestMoTracking:41) - Response is: 
 {
     "message": "Invalid mandatory fields",
     "status": false,
     "data": {
         
     },
-    "timeStamp": "2022/08/18 06:47:56"
+    "timeStamp": "2022/08/18 08:59:30"
 }
-INFO  | 2022-08-18 13:47:56 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyStatus:46) - status code is: 400
-INFO  | 2022-08-18 13:47:56 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithInvalidMandatory:80) - message is: Invalid mandatory fields
-INFO  | 2022-08-18 13:47:56 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithInvalidMandatory:82) - status is: false
-INFO  | 2022-08-18 13:47:56 | [main] emobi.controller.AdpeakoMoController (AdpeakoMoController.java:verifyResponseWithInvalidMandatory:84) - data is: {}
+INFO  | 2022-08-18 15:59:30 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyStatus:46) - status code is: 400
+INFO  | 2022-08-18 15:59:30 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithInvalidMandatory:81) - message is: Invalid mandatory fields
+INFO  | 2022-08-18 15:59:30 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithInvalidMandatory:83) - status is: false
+INFO  | 2022-08-18 15:59:30 | [main] emobi.controller.MoviplusMoController (MoviplusMoController.java:verifyResponseWithInvalidMandatory:85) - data is: {}

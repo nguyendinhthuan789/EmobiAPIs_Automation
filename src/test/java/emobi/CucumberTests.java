@@ -11,8 +11,9 @@ import org.junit.runner.RunWith;
 //        tags = "@Mobwizard_C2s",
         //tags = "@CreateAffiliatePartner or @CreateNewCampaign or @GetAffiliatesPartnerById or @UpdateAffiliatePartner",
         tags = "@Mobwizard_C2s or @Mobwizard_PinRequest or @Mobwizard_PinVerify " +
-                "or @Moviplus_C2s or @Edgar_Zakaryan_C2s or @Adpeako_C2s or @Adpeako_Msisdn_Mo " +
-                "or @Adpeako_PinRequest or @Adpeako_PinVerify",
+                "or @Moviplus_C2s or @Moviplus_Msisdn_Mo" +
+                "or @Edgar_Zakaryan_C2s " +
+                "or @Adpeako_C2s or @Adpeako_PinRequest or @Adpeako_PinVerify or @Adpeako_Msisdn_Mo",
         glue = {"emobi.steps"},
         monochrome = true
 )

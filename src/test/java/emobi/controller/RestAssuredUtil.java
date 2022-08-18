@@ -67,17 +67,17 @@ public class RestAssuredUtil {
     }
 
     public static boolean checkStatusCode(Response res, int status) {
-        if(res.getStatusCode()==status){
+        if (res.getStatusCode() == status) {
             return true;
         }
         return false;
     }
 
-    public static boolean isNullOrEmpty( final Collection< ? > c ) {
+    public static boolean isNullOrEmpty(final Collection<?> c) {
         return c == null || c.isEmpty();
     }
 
-    public static boolean isNullOrEmpty( final Map< ?, ? > m ) {
+    public static boolean isNullOrEmpty(final Map<?, ?> m) {
         return m == null || m.isEmpty();
     }
 

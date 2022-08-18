@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 
 public class Hooks implements ConcurrentEventListener {
     Logger log = LoggerFactory.getLogger(Hooks.class);
-    private Utils utils=new Utils();
-    private String allurePath = System.getProperty(ConstantUtils.USER_DIR_PROPERTY) + "/target/allure-results";
+    private final Utils utils=new Utils();
+    private final String allurePath = System.getProperty(ConstantUtils.USER_DIR_PROPERTY) + "/target/allure-results";
 
     @Override
     public void setEventPublisher(EventPublisher eventPublisher) {

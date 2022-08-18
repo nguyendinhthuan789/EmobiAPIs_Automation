@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.MessageFormat;
 import java.util.List;
 
 public class AdpeakoC2sController {
@@ -32,7 +33,7 @@ public class AdpeakoC2sController {
         restParams.addParam(result.get(3), result.get(7));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
-        log.info("Request header is: \n" + restRequest.toString());
+        log.info("Request header is: \n"+ restRequest.toString());
         restResponse = restRequest.send();
         log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
@@ -54,7 +55,7 @@ public class AdpeakoC2sController {
 
     public void verifyResponse(List<List<String>> list) {
         result = Utils.generateListString(list);
-        log.info("message is: " + findJsonPathHasKey("message"));
+        log.info(MessageFormat.format("message is: ''{0}''", findJsonPathHasKey("message")));
         Assert.assertEquals(result.get(4), findJsonPathHasKey("message"));
         log.info("status is: " + findJsonPathHasKey("status"));
         Assert.assertEquals(result.get(5), findJsonPathHasKey("status"));
