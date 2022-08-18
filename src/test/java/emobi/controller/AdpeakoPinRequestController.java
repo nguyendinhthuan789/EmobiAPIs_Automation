@@ -5,6 +5,7 @@ import emobi.rest.*;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
 import io.restassured.path.json.JsonPath;
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,9 +42,15 @@ public class AdpeakoPinRequestController {
         log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
-    public boolean checkStatusIs200(int status) {
+    public boolean verifyStatus(int status) {
+        boolean bol = (status == status);
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        return RestAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status);
+        if (RestAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status)) {
+            Assert.assertTrue(bol);
+            return true;
+        }
+        Assert.assertFalse(bol);
+        return false;
     }
 
     public String findJsonPathHasKey(String key) {
@@ -53,5 +60,37 @@ public class AdpeakoPinRequestController {
     public boolean checkMapIsEmpty(String key) {
         Map map = new JsonPath(restResponse.extract().asString()).getMap(key);
         return RestAssuredUtil.isNullOrEmpty(map);
+    }
+
+    public void verifyResponseWithValidInput(List<List<String>> list) {
+        result = Utils.generateListString(list);
+        log.info("message is: " + findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(3), findJsonPathHasKey("message"));
+        log.info("status is: " + findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(4), findJsonPathHasKey("status"));
+        log.info("status subscriptionStatus is: " + findJsonPathHasKey("data.subscriptionStatus"));
+        Assert.assertEquals(result.get(5), findJsonPathHasKey("data.subscriptionStatus"));
+        log.info("pinId is: " + findJsonPathHasKey("data.pinId"));
+        Assert.assertNotNull(findJsonPathHasKey("data.pinId"));
+    }
+
+    public void verifyResponseWithInvalidCampaign(List<List<String>> list) {
+        result = Utils.generateListString(list);
+        log.info("message is: " + findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(2), findJsonPathHasKey("message"));
+        log.info("status is: " + findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), findJsonPathHasKey("status"));
+        log.info("data is: " + findJsonPathHasKey("data"));
+        Assert.assertTrue(checkMapIsEmpty("data"));
+    }
+
+    public void verifyResponseWithInvalidMandatory(List<List<String>> list) {
+        result = Utils.generateListString(list);
+        log.info("message is: " + findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(2), findJsonPathHasKey("message"));
+        log.info("status is: " + findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), findJsonPathHasKey("status"));
+        log.info("data is: " + findJsonPathHasKey("data"));
+        Assert.assertTrue(checkMapIsEmpty("data"));
     }
 }

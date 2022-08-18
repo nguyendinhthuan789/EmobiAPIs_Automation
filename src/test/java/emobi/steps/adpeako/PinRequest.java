@@ -1,18 +1,12 @@
 package emobi.steps.adpeako;
 
 import emobi.controller.AdpeakoPinRequestController;
-import emobi.utilities.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class PinRequest {
-    Logger log = LoggerFactory.getLogger(PinRequest.class);
-    private List<String> result;
     private final AdpeakoPinRequestController adpeakoPinRequestController;
 
     public PinRequest() {
@@ -25,19 +19,11 @@ public class PinRequest {
     }
     @Then("Response successful status code is {int} after pin request of Adpeako flow msisdn pin")
     public void response_successful_status_code_is_after_pin_request_of_adpeako_flow_msisdn_pin(int statusCode) {
-        Assert.assertTrue(adpeakoPinRequestController.checkStatusIs200(statusCode));
+       adpeakoPinRequestController.verifyStatus(statusCode);
     }
     @Then("Response successful message status subscriptionStatus and pinid not null after pin request of Adpeako flow msisdn pin")
     public void response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_adpeako_flow_msisdn_pin(List<List<String>> list) {
-        result = Utils.generateListString(list);
-        log.info("message is: " + adpeakoPinRequestController.findJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(3), adpeakoPinRequestController.findJsonPathHasKey("message"));
-        log.info("status is: " + adpeakoPinRequestController.findJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(4), adpeakoPinRequestController.findJsonPathHasKey("status"));
-        log.info("status subscriptionStatus is: " + adpeakoPinRequestController.findJsonPathHasKey("data.subscriptionStatus"));
-        Assert.assertEquals(result.get(5), adpeakoPinRequestController.findJsonPathHasKey("data.subscriptionStatus"));
-        log.info("pinId is: " + adpeakoPinRequestController.findJsonPathHasKey("data.pinId"));
-        Assert.assertNotNull(adpeakoPinRequestController.findJsonPathHasKey("data.pinId"));
+        adpeakoPinRequestController.verifyResponseWithValidInput(list);
     }
 
     @Given("User call the API pin request of Adpeako flow msisdn pin with invalid campaign credential")
@@ -46,17 +32,11 @@ public class PinRequest {
     }
     @Then("Response successful status code is {int} after pin request of Adpeako flow msisdn pin with invalid campaign")
     public void response_successful_status_code_is_after_pin_request_of_adpeako_flow_msisdn_pin_with_invalid_campaign(int statusCode) {
-        Assert.assertTrue(adpeakoPinRequestController.checkStatusIs200(statusCode));
+        adpeakoPinRequestController.verifyStatus(statusCode);
     }
     @Then("Response successful message status and data null after pin request of Adpeako flow msisdn pin with invalid campaign")
     public void response_successful_message_status_and_data_null_after_pin_request_of_adpeako_flow_msisdn_pin_with_invalid_campaign(List<List<String>> list) {
-        result = Utils.generateListString(list);
-        log.info("message is: " + adpeakoPinRequestController.findJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(2), adpeakoPinRequestController.findJsonPathHasKey("message"));
-        log.info("status is: " + adpeakoPinRequestController.findJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(3), adpeakoPinRequestController.findJsonPathHasKey("status"));
-        log.info("data is: " + adpeakoPinRequestController.findJsonPathHasKey("data"));
-        Assert.assertTrue(adpeakoPinRequestController.checkMapIsEmpty("data"));
+        adpeakoPinRequestController.verifyResponseWithInvalidCampaign(list);
     }
 
     @Given("User call the API pin request of Adpeako flow msisdn pin with invalid mandatory credential")
@@ -65,16 +45,10 @@ public class PinRequest {
     }
     @Then("Response successful status code is {int} after pin request of Adpeako flow msisdn pin with invalid mandatory")
     public void response_successful_status_code_is_after_pin_request_of_adpeako_flow_msisdn_pin_with_invalid_mandatory(int statusCode) {
-        Assert.assertTrue(adpeakoPinRequestController.checkStatusIs200(statusCode));
+        adpeakoPinRequestController.verifyStatus(statusCode);
     }
     @Then("Response successful message status and data null after pin request of Adpeako flow msisdn pin with invalid mandatory")
     public void response_successful_message_status_and_data_null_after_pin_request_of_adpeako_flow_msisdn_pin_with_invalid_mandatory(List<List<String>> list) {
-        result = Utils.generateListString(list);
-        log.info("message is: " + adpeakoPinRequestController.findJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(2), adpeakoPinRequestController.findJsonPathHasKey("message"));
-        log.info("status is: " + adpeakoPinRequestController.findJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(3), adpeakoPinRequestController.findJsonPathHasKey("status"));
-        log.info("data is: " + adpeakoPinRequestController.findJsonPathHasKey("data"));
-        Assert.assertTrue(adpeakoPinRequestController.checkMapIsEmpty("data"));
+        adpeakoPinRequestController.verifyResponseWithInvalidMandatory(list);
     }
 }

@@ -1,0 +1,1 @@
+{"uuid":"02282d64-bc4b-4ad6-bcc3-6991f4baaf49","name":"Scenario: User GET pin request affiliates partner Mobwizard flow MSISDN + PIN of CA Country unsuccessful with invalid mandatory credentials","children":["8ee64d5c-8e3f-4db6-9f33-d812a393a5b9"],"befores":[],"afters":[],"start":1660804823842,"stop":1660804825392}

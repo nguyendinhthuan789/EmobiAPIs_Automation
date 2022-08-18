@@ -5,6 +5,7 @@ import emobi.rest.*;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
 import io.restassured.path.json.JsonPath;
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,11 +41,14 @@ public class MoviplusMoController {
         log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
-    public boolean checkStatusIs200(int statusCode) {
+    public boolean verifyStatus(int status) {
+        boolean bol = (status == status);
         log.info("status code is: " + restResponse.validate().extract().response().getStatusCode());
-        if(RestAssuredUtil.checkStatusCode(restResponse.validate().extract().response(),statusCode)){
+        if (RestAssuredUtil.checkStatusCode(restResponse.validate().extract().response(), status)) {
+            Assert.assertTrue(bol);
             return true;
         }
+        Assert.assertFalse(bol);
         return false;
     }
 
@@ -52,11 +56,22 @@ public class MoviplusMoController {
         return RestAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
     }
 
-    public boolean checkMapIsEmpty(String key){
-        Map map= new JsonPath(restResponse.extract().asString()).getMap(key);
-        if(RestAssuredUtil.isNullOrEmpty(map)){
-            return true;
-        }
-        return false;
+    public boolean checkMapIsEmpty(String key) {
+        Map map = new JsonPath(restResponse.extract().asString()).getMap(key);
+        return RestAssuredUtil.isNullOrEmpty(map);
+    }
+
+    public void verifyResponseWithValidInput(List<List<String>> list) {
+        result = Utils.generateListString(list);
+        log.info("message is: " + findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(4), findJsonPathHasKey("message"));
+        log.info("status is: " + findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(5), findJsonPathHasKey("status"));
+        log.info("keyword is: " + findJsonPathHasKey("data.keyword"));
+        Assert.assertEquals(result.get(6), findJsonPathHasKey("data.keyword"));
+        log.info("shortcode is: " + findJsonPathHasKey("data.shortcode"));
+        Assert.assertEquals(result.get(7), findJsonPathHasKey("data.shortcode"));
+        log.info("tracking_code is: " + findJsonPathHasKey("data.tracking_code"));
+        Assert.assertNotNull(findJsonPathHasKey("data.tracking_code"));
     }
 }
