@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: emobi.CucumberTests
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.017 s - in emobi.CucumberTests
