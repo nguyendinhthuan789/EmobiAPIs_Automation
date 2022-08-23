@@ -43,6 +43,8 @@ public class RestRequest {
     private int connectionTimeout;
     private static final int DEFAULT_CONNECTION_TIMEOUT = 30000;
 
+    public static String curl="";
+
     /**
      * Init request with url, path, method
      *
@@ -101,6 +103,7 @@ public class RestRequest {
         requestSpecBuilder = new RequestSpecBuilder();
         requestSpecBuilder.setBaseUri(this.url);
         curlConverter = new CurlConverter(url, path, method.toString());
+        curl= curlConverter.printCurl();
         config = RestAssured.config()
                 .redirect(RedirectConfig.redirectConfig().followRedirects(true))
                 .jsonConfig(jsonConfig().numberReturnType(JsonPathConfig.NumberReturnType.BIG_DECIMAL))
@@ -283,7 +286,8 @@ public class RestRequest {
 
     @Override
     public String toString() {
-        return curlConverter.printCurl();
+        curl= curlConverter.printCurl();
+        return curl;
     }
 
 

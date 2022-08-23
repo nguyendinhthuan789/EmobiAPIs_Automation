@@ -1,5 +1,6 @@
 package emobi.controller;
 
+import io.cucumber.datatable.DataTable;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -7,6 +8,7 @@ import io.restassured.response.Response;
 
 import java.lang.reflect.Array;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -103,5 +105,11 @@ public class RestAssuredUtil {
         }
         // else
         return false;
+    }
+
+    public static String mapped(DataTable dataTable, Object object) {
+        List<Map<String, String>> data =  dataTable.asMaps();
+        String key= data.get(0).get(object);
+        return key;
     }
 }
