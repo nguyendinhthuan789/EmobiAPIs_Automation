@@ -1,6 +1,6 @@
 package emobi.steps;
 
-import emobi.constants.ConstantUtils;
+import emobi.constants.Constants;
 import emobi.utilities.Utils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -14,8 +14,9 @@ import static emobi.rest.RestRequest.curl;
 
 public class Hooks implements ConcurrentEventListener {
     private static Logger log = LoggerFactory.getLogger(Hooks.class);
-    private final Utils utils=new Utils();
-    private final String allurePath = System.getProperty(ConstantUtils.USER_DIR_PROPERTY) + "/target/allure-results";
+    private final Utils utils = new Utils();
+    private final String allurePath = System.getProperty(Constants.USER_DIR_PROPERTY) + "/target/allure-results";
+    private final String enviromentPropertiesPath = allurePath + "/environment.properties";
 
     @Override
     public void setEventPublisher(EventPublisher eventPublisher) {
@@ -33,6 +34,7 @@ public class Hooks implements ConcurrentEventListener {
     };
 
     private EventHandler<TestRunFinished> afterAll = event -> {
+        Utils.createEnvironmentProperties(enviromentPropertiesPath);
         log.info("------------END TESTING-------------");
     };
 

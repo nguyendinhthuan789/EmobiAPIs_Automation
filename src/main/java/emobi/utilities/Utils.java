@@ -18,10 +18,12 @@ import java.time.ZoneId;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 public class Utils {
-    Logger log = LoggerFactory.getLogger(Utils.class);
+    private static Logger log = LoggerFactory.getLogger(Utils.class);
+
     public Utils() {
 
     }
@@ -165,6 +167,21 @@ public class Utils {
         } catch (Exception exception) {
             exception.printStackTrace();
             log.info("Folder '" + path + "' deleted Failed!");
+        }
+    }
+
+    public static void createEnvironmentProperties(String filePath) {
+        Properties prop = new Properties();
+        // set the properties value
+        prop.setProperty("Domain", "http://dev.api.emobi-sys.com:8091/v1");
+        try {
+            PropertySettingStoreUtil.saveSettings(prop, filePath,"");
+            log.info(
+                    "Class Utils | Method createEnvironmentProperties | saveSettings : " + prop + " | "
+                            + filePath);
+        } catch (IOException e) {
+            log.error(
+                    "Class Utils | Method createEnvironmentProperties | Exception desc : " + e.getMessage());
         }
     }
 }

@@ -68,7 +68,7 @@
       <version>${project.version}</version>
     </dependency>
     <!--
-     | Plexus classloading/emobi.utilities
+     | Plexus classloading/emobi.apis.utilities
     -->
     <dependency>
       <groupId>org.codehaus.plexus</groupId>

@@ -2,7 +2,7 @@ package emobi.steps.lpas;
 
 import emobi.constants.ServiceNames;
 import emobi.constants.Status;
-import emobi.constants.URL;
+import emobi.constants.URLs;
 import emobi.models.AffiliatesPartnerCountryPayout;
 import emobi.models.CreateAffiliatesPartnerEntity;
 import emobi.rest.*;
@@ -40,7 +40,7 @@ public class CreateNewAffiliatesPartnerSteps {
 
     @Given("User create new affiliates partner for country SE with valid")
     public void user_create_new_affiliates_partner_for_country_se_with_valid() {
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_AFFILIATES_PARTNER, RestMethod.POST);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.CREATE_NEW_AFFILIATES_PARTNER, RestMethod.POST);
         restHeaders.add(restHeaders.defalutHeaders());
         restRequest.setHeader(restHeaders);
         createAffiliatesPartnerEntity.setName("Thuan create new affiliates SE at: " + Utils.date());

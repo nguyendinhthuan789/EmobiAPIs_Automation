@@ -1,6 +1,6 @@
 package emobi.controller;
 
-import emobi.constants.URL;
+import emobi.constants.URLs;
 import emobi.rest.*;
 import emobi.utilities.Utils;
 import io.restassured.path.json.JsonPath;
@@ -26,7 +26,7 @@ public class PinRequestForRsController {
 
     public void mobwizardPinRequestTracking(List<List<String>> list) {
         result = Utils.generateListString(list);
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_PIN_REQUEST + result.get(6), RestMethod.GET);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.AFFILIATES_PARTNER_PIN_REQUEST + result.get(6), RestMethod.GET);
         restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam(result.get(1), result.get(7));
         restParams.addParam(result.get(2), result.get(8));
@@ -72,7 +72,7 @@ public class PinRequestForRsController {
         Assert.assertNotNull(findJsonPathHasKey("data.pinId"));
     }
 
-    public void verifyResponseWithInvalidCampaign(List<List<String>> list) {
+    public void verifyResponseWithInvalidMandatory(List<List<String>> list) {
         result = Utils.generateListString(list);
         log.info("message is: " + findJsonPathHasKey("message"));
         Assert.assertEquals(result.get(2), findJsonPathHasKey("message"));
@@ -82,13 +82,13 @@ public class PinRequestForRsController {
         Assert.assertTrue(checkMapIsEmpty("data"));
     }
 
-    public void verifyResponseWithInvalidMandatory(List<List<String>> list) {
+    public void verifyResponseWithInvalidMsisdn(List<List<String>> list) {
         result = Utils.generateListString(list);
         log.info("message is: " + findJsonPathHasKey("message"));
-        Assert.assertEquals(result.get(2), findJsonPathHasKey("message"));
+        Assert.assertEquals(result.get(3), findJsonPathHasKey("message"));
         log.info("status is: " + findJsonPathHasKey("status"));
-        Assert.assertEquals(result.get(3), findJsonPathHasKey("status"));
-        log.info("data is: " + findJsonPathHasKey("data"));
-        Assert.assertTrue(checkMapIsEmpty("data"));
+        Assert.assertEquals(result.get(4), findJsonPathHasKey("status"));
+        log.info("status subscriptionStatus is: " + findJsonPathHasKey("data.subscriptionStatus"));
+        Assert.assertEquals(result.get(5), findJsonPathHasKey("data.subscriptionStatus"));
     }
 }

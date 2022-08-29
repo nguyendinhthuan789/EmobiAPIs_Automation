@@ -2,7 +2,7 @@ package emobi.steps.lpas;
 
 import emobi.constants.ServiceNames;
 import emobi.constants.Status;
-import emobi.constants.URL;
+import emobi.constants.URLs;
 import emobi.models.AffiliatesPartnerCountryPayout;
 import emobi.models.CreateAffiliatesPartnerEntity;
 import emobi.rest.*;
@@ -43,7 +43,7 @@ public class GetAffiliatesPartnerByIdSteps {
 
     @Given("User create new affiliates partner after that get affiliates by id with valid credential")
     public void user_create_new_affiliates_partner_after_that_get_affiliates_by_id_with_valid_credential() {
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_AFFILIATES_PARTNER, RestMethod.POST);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.CREATE_NEW_AFFILIATES_PARTNER, RestMethod.POST);
         restHeaders.add(restHeaders.defalutHeaders());
         restRequest.setHeader(restHeaders);
         createAffiliatesPartnerEntity.setName("Thuan create new affiliates SE at: " + Utils.date());
@@ -70,7 +70,7 @@ public class GetAffiliatesPartnerByIdSteps {
 
     @Given("Get affiliates partner by id with id valid credential")
     public void get_affiliates_partner_by_id_with_id_valid_credential() {
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_AFFILIATES_PARTNER + "/" + state.getId(), RestMethod.GET);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.CREATE_NEW_AFFILIATES_PARTNER + "/" + state.getId(), RestMethod.GET);
         restHeaders.add(restHeaders.defalutHeaders());
         restRequest.setHeader(restHeaders);
         restResponse = restRequest.sendWithLog();

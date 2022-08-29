@@ -12,7 +12,7 @@
     <version>15.1.1</version>
     <packaging>jar</packaging>
     <name>Cucumber Expressions</name>
-    <description>Cucumber Expressions are simple patterns for matching Step Definitions with Gherkin emobi.steps</description>
+    <description>Cucumber Expressions are simple patterns for matching Step Definitions with Gherkin emobi.apis.steps</description>
     <url>https://github.com/cucumber/cucumber-expressions-java</url>
 
     <properties>

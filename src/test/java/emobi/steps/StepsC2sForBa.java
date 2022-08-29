@@ -48,4 +48,48 @@ public class StepsC2sForBa {
         c2sController.verifyResponse(list);
     }
 
+    @Given("User call the API tracking request of flow C2S with null tpClickId")
+    public void user_call_the_api_tracking_request_of_flow_c2s_with_null_tp_click_id(List<List<String>> list) {
+        c2sController.c2sRequestTrackingOfBaCountryWithNullTpClickId(list);
+    }
+
+    @Then("Response successful status code is {int} after tracking request of flow C2S with null tpClickId")
+    public void response_successful_status_code_is_after_tracking_request_of_flow_c2s_with_null_tp_click_id(int statusCode) {
+        c2sController.verifyStatus(statusCode);
+    }
+
+    @Then("Response message successful after tracking request of flow with null tpClickId")
+    public void response_message_successful_after_tracking_request_of_flow_with_null_tp_click_id(List<List<String>> list) {
+        c2sController.verifyResponseWithInvalidMandatory(list);
+    }
+
+    @Given("User call the API tracking request of flow C2S with null userAgent")
+    public void user_call_the_api_tracking_request_of_flow_c2s_with_null_user_agent(List<List<String>> list) {
+        c2sController.c2sRequestTrackingOfBaCountry(list);
+    }
+
+    @Then("Response successful status code is {int} after tracking request of flow C2S with null userAgent")
+    public void response_successful_status_code_is_after_tracking_request_of_flow_c2s_with_null_user_agent(int statusCode) {
+        c2sController.verifyStatus(statusCode);
+    }
+
+    @Then("Response message successful after tracking request of flow with null userAgent")
+    public void response_message_successful_after_tracking_request_of_flow_with_null_user_agent(List<List<String>> list) {
+        c2sController.verifyResponseWithInvalidMandatory(list);
+    }
+
+    @Given("User call the API tracking request of flow C2S with invalid campaign")
+    public void user_call_the_api_tracking_request_of_flow_c2s_with_invalid_campaign(List<List<String>> list) {
+        c2sController.c2sRequestTrackingOfBaCountry(list);
+    }
+
+    @Then("Response successful status code is {int} after tracking request of flow C2S with invalid campaign")
+    public void response_successful_status_code_is_after_tracking_request_of_flow_c2s_with_invalid_campaign(int statusCode) {
+        c2sController.verifyStatus(statusCode);
+    }
+
+    @Then("Response message successful after tracking request of flow with invalid campaign")
+    public void response_message_successful_after_tracking_request_of_flow_with_invalid_campaign(List<List<String>> list) {
+        c2sController.verifyResponseWithInvalidMandatory(list);
+    }
 }

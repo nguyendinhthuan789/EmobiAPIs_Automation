@@ -1,6 +1,6 @@
 package emobi.controller;
 
-import emobi.constants.URL;
+import emobi.constants.URLs;
 import emobi.rest.*;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
@@ -27,7 +27,7 @@ public class MoForAtController {
 
     public void moviplusRequestMoTracking(List<List<String>> list) {
         result = Utils.generateListString(list);
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_MO_REQUEST + result.get(6), RestMethod.GET);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.AFFILIATES_PARTNER_MO_REQUEST + result.get(6), RestMethod.GET);
         restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam(result.get(1), Randoms.randomString());
         restParams.addParam(result.get(2), result.get(8));

@@ -1,16 +1,18 @@
 package emobi.controller;
 
-import emobi.constants.URL;
+import emobi.constants.URLs;
 import emobi.rest.*;
 import emobi.utilities.Randoms;
 import emobi.utilities.Utils;
 import io.cucumber.datatable.DataTable;
+import io.restassured.path.json.JsonPath;
 import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.Map;
 
 public class C2sForBaController {
     Logger log = LoggerFactory.getLogger(C2sForBaController.class);
@@ -27,7 +29,7 @@ public class C2sForBaController {
 
     public void c2sRequestTrackingOfBaCountry(List<List<String>> list) {
         result = Utils.generateListString(list);
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_C2S + result.get(4), RestMethod.GET);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.AFFILIATES_PARTNER_C2S + result.get(4), RestMethod.GET);
         restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam(result.get(1), Randoms.randomString());
         restParams.addParam(result.get(2), result.get(6));
@@ -39,12 +41,26 @@ public class C2sForBaController {
         log.info("Response is: \n" + restResponse.printPrettyPrint());
     }
 
+    public void c2sRequestTrackingOfBaCountryWithNullTpClickId(List<List<String>> list) {
+        result = Utils.generateListString(list);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.AFFILIATES_PARTNER_C2S + result.get(4), RestMethod.GET);
+        restHeaders.add(restHeaders.defaultApikey());
+        restParams.addParam(result.get(1), result.get(5));
+        restParams.addParam(result.get(2), result.get(6));
+        restParams.addParam(result.get(3), result.get(7));
+        restRequest.setParams(restParams);
+        restRequest.setHeader(restHeaders);
+        log.info("Request header is: \n" + restRequest.toString());
+        restResponse = restRequest.send();
+        log.info("Response is: \n" + restResponse.printPrettyPrint());
+    }
+
     public void c2sRequestTrackingOfBaCountry1(DataTable dataTable) {
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.AFFILIATES_PARTNER_C2S + RestAssuredUtil.mapped(dataTable,"campaignID"), RestMethod.GET);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.AFFILIATES_PARTNER_C2S + RestAssuredUtil.mapped(dataTable, "campaignID"), RestMethod.GET);
         restHeaders.add(restHeaders.defaultApikey());
         restParams.addParam("tpClickId", Randoms.randomString());
-        restParams.addParam("userAgent", RestAssuredUtil.mapped(dataTable,"userAgent"));
-        restParams.addParam("operator", RestAssuredUtil.mapped(dataTable,"operator"));
+        restParams.addParam("userAgent", RestAssuredUtil.mapped(dataTable, "userAgent"));
+        restParams.addParam("operator", RestAssuredUtil.mapped(dataTable, "operator"));
         restRequest.setParams(restParams);
         restRequest.setHeader(restHeaders);
         log.info("Request header is: \n" + restRequest.toString());
@@ -67,6 +83,11 @@ public class C2sForBaController {
         return RestAssuredUtil.getJsonPathHasKey(restResponse.extract(), key);
     }
 
+    public boolean checkMapIsEmpty(String key) {
+        Map map = new JsonPath(findJsonPathHasKey(key)).getMap(key);
+        return RestAssuredUtil.isNullOrEmpty(map);
+    }
+
     public void verifyResponse(List<List<String>> list) {
         result = Utils.generateListString(list);
         log.info(MessageFormat.format("message is: ''{0}''", findJsonPathHasKey("message")));
@@ -79,6 +100,16 @@ public class C2sForBaController {
         Assert.assertEquals(result.get(7), findJsonPathHasKey("data.shortcode"));
         log.info("tracking_code is: " + findJsonPathHasKey("data.tracking_code"));
         Assert.assertNotNull(findJsonPathHasKey("data.tracking_code"));
+    }
+
+    public void verifyResponseWithInvalidMandatory(List<List<String>> list) {
+        result = Utils.generateListString(list);
+        log.info(MessageFormat.format("message is: ''{0}''", findJsonPathHasKey("message")));
+        Assert.assertEquals(result.get(2), findJsonPathHasKey("message"));
+        log.info("status is: " + findJsonPathHasKey("status"));
+        Assert.assertEquals(result.get(3), findJsonPathHasKey("status"));
+        log.info("data is: " + findJsonPathHasKey("data"));
+        Assert.assertTrue(checkMapIsEmpty("data"));
     }
 
 }

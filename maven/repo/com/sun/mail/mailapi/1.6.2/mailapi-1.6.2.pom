@@ -225,7 +225,7 @@
 		    <includes>
 			javax/**,
 			com/sun/mail/util/**,
-			com/sun/mail/emobi.auth/**,
+			com/sun/mail/emobi.apis.auth/**,
 			com/sun/mail/handlers/**,
 			META-INF/*
 		    </includes>

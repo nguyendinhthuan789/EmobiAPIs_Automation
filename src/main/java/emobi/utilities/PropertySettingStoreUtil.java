@@ -31,4 +31,20 @@ public class PropertySettingStoreUtil {
             }
         }
     }
+
+    public static void saveSettings(Properties settings, String filePath, String comment) throws IOException {
+        File settingFile = new File(filePath);
+        if (!settingFile.exists()) {
+            settingFile.createNewFile();
+        }
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(settingFile);
+            settings.store(new OutputStreamWriter(fos, Charset.forName(DF_CHARSET)), comment);
+        } finally {
+            if (fos != null) {
+                fos.close();
+            }
+        }
+    }
 }

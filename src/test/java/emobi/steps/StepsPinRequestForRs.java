@@ -40,21 +40,51 @@ public class StepsPinRequestForRs {
 
     @Then("Response successful message status and data null after pin request of flow msisdn pin with invalid campaign")
     public void response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_campaign(List<List<String>> list) {
-        pinRequestForRsController.verifyResponseWithInvalidCampaign(list);
+        pinRequestForRsController.verifyResponseWithInvalidMandatory(list);
     }
 
-    @Given("User call the API pin request of flow msisdn pin with invalid mandatory credential")
-    public void user_call_the_api_pin_request_of_flow_msisdn_pin_with_invalid_mandatory_credential(List<List<String>> list) {
+    @Given("User call the API pin request of flow msisdn pin with null tpClickId")
+    public void user_call_the_api_pin_request_of_flow_msisdn_pin_with_null_tp_click_id(List<List<String>> list) {
         pinRequestForRsController.mobwizardPinRequestTracking(list);
     }
 
-    @Then("Response successful status code is {int} after pin request of flow msisdn pin with invalid mandatory")
-    public void response_successful_status_code_is_after_pin_request_of_flow_msisdn_pin_with_invalid_mandatory(int statusCode) {
+    @Then("Response successful status code is {int} after pin request of flow msisdn pin with null tpClickId")
+    public void response_successful_status_code_is_after_pin_request_of_flow_msisdn_pin_with_null_tp_click_id(int statusCode) {
         pinRequestForRsController.verifyStatus(statusCode);
     }
 
-    @Then("Response successful message status and data null after pin request of flow msisdn pin with invalid mandatory")
-    public void response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_mandatory(List<List<String>> list) {
+    @Then("Response successful message status and data null after pin request of flow msisdn pin with null tpClickId")
+    public void response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_tp_click_id(List<List<String>> list) {
+        pinRequestForRsController.verifyResponseWithInvalidMandatory(list);
+    }
+
+    @Given("User call the API pin request of flow msisdn pin with invalid msisdn")
+    public void user_call_the_api_pin_request_of_flow_msisdn_pin_with_invalid_msisdn(List<List<String>> list) {
+        pinRequestForRsController.mobwizardPinRequestTracking(list);
+    }
+
+    @Then("Response successful status code is {int} after pin request of flow msisdn pin with invalid msisdn")
+    public void response_successful_status_code_is_after_pin_request_of_flow_msisdn_pin_with_invalid_msisdn(int statusCode) {
+        pinRequestForRsController.verifyStatus(statusCode);
+    }
+
+    @Then("Response successful message status and data null after pin request of flow msisdn pin with invalid msisdn")
+    public void response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_msisdn(List<List<String>> list) {
+        pinRequestForRsController.verifyResponseWithInvalidMsisdn(list);
+    }
+
+    @Given("User call the API pin request of flow msisdn pin with null userAgent")
+    public void user_call_the_api_pin_request_of_flow_msisdn_pin_with_null_user_agent(List<List<String>> list) {
+        pinRequestForRsController.mobwizardPinRequestTracking(list);
+    }
+
+    @Then("Response successful status code is {int} after pin request of flow msisdn pin with null userAgent")
+    public void response_successful_status_code_is_after_pin_request_of_flow_msisdn_pin_with_null_user_agent(int statusCode) {
+        pinRequestForRsController.verifyStatus(statusCode);
+    }
+
+    @Then("Response successful message status and data null after pin request of flow msisdn pin with null userAgent")
+    public void response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_user_agent(List<List<String>> list) {
         pinRequestForRsController.verifyResponseWithInvalidMandatory(list);
     }
 }

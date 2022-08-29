@@ -81,7 +81,7 @@
     </scm>
     <mailingLists>
         <mailingList>
-            <name>emobi.rest-assured mailing-list</name>
+            <name>emobi.apis.rest-assured mailing-list</name>
             <archive>http://groups.google.com/group/rest-assured/topics</archive>
         </mailingList>
     </mailingLists>
@@ -279,7 +279,7 @@
                         <configuration>
                             <boms>
                                 <bom>
-                                    <artifactId>emobi.rest-assured-bom</artifactId>
+                                    <artifactId>emobi.apis.rest-assured-bom</artifactId>
                                     <name>REST Assured: BOM</name>
                                     <description>Centralized dependencyManagement for the Rest Assured Project</description>
                                     <properties>

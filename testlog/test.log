@@ -1,82 +1,158 @@
-INFO  | 2022-08-23 16:01:27 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$0:31) - ------------START TESTING-------------
-INFO  | 2022-08-23 16:01:27 | [main] emobi.utilities.Utils (Utils.java:deleteFolder:160) - Folder 'D:\ThuanNguyen\FrameworkAutomation\ApisAutomation\EmobiAPIs_Automation/target/allure-results' deleted successfully!
-INFO  | 2022-08-23 16:01:28 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:28 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
+INFO  | 2022-08-29 16:11:57 | [main] apis.steps.Hooks (Hooks.java:lambda$new$0:32) - ------------START TESTING-------------
+INFO  | 2022-08-29 16:11:57 | [main] apis.utilities.Helper (Helper.java:deleteFolder:165) - Folder 'D:\ThuanNguyen\FrameworkAutomation\emobi-apis-qa/target/allure-results' deleted successfully!
+INFO  | 2022-08-29 16:11:57 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:11:57 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
 SCENARIO NAME: User GET tracking request flow C2S of BA - Eronet successful with valid credentials
-INFO  | 2022-08-23 16:01:29 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:29 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:11:58 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: User call the API tracking request of flow C2S ba eronet with valid credential
-INFO  | 2022-08-23 16:01:31 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:37) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=jPMWmo2aExXXNjGXFOQJm&operator=eronet' \
+INFO  | 2022-08-29 16:11:58 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:35) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=ZkVIGKJheaprxiVp2FDVU&operator=eronet' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:34 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:39) - Response is: 
+INFO  | 2022-08-29 16:12:01 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:37) - Response is: 
 {
     "message": "Success",
     "status": true,
     "data": {
         "keyword": "OK",
         "shortcode": "063770100",
-        "tracking_code": "2VD"
+        "tracking_code": "2AP"
     },
-    "timeStamp": "2022/08/23 09:01:35"
+    "timeStamp": "2022/08/29 09:12:14"
 }
-INFO  | 2022-08-23 16:01:34 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:01 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful status code is 200 after tracking request of flow C2S ba eronet
-INFO  | 2022-08-23 16:01:34 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyStatus:57) - status code is: 200
-INFO  | 2022-08-23 16:01:34 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:01 | [main] apis.controller.C2sForBaController (C2sForBaController.java:verifyStatus:54) - status code is: 200
+INFO  | 2022-08-29 16:12:01 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of flow C2S ba eronet
-INFO  | 2022-08-23 16:01:36 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:72) - message is: 'Success'
-INFO  | 2022-08-23 16:01:36 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:74) - status is: true
-INFO  | 2022-08-23 16:01:36 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:76) - keyword is: OK
-INFO  | 2022-08-23 16:01:36 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:78) - shortcode is: 063770100
-INFO  | 2022-08-23 16:01:36 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:80) - tracking_code is: 2VD
-INFO  | 2022-08-23 16:01:36 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:36 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:36 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:36 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
+INFO  | 2022-08-29 16:12:02 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_eronet:31) - message is: Success
+INFO  | 2022-08-29 16:12:02 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_eronet:33) - status is: true
+INFO  | 2022-08-29 16:12:02 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_eronet:35) - keyword is: OK
+INFO  | 2022-08-29 16:12:02 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_eronet:37) - shortcode is: 063770100
+INFO  | 2022-08-29 16:12:03 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_eronet:39) - tracking_code is: 2AP
+INFO  | 2022-08-29 16:12:03 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:03 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:03 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
 SCENARIO NAME: User GET tracking request affiliates flow C2S of BA - Mtel successful with valid credentials
-INFO  | 2022-08-23 16:01:36 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:36 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:03 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: User call the API tracking request of flow C2S ba mtel with valid credential
-INFO  | 2022-08-23 16:01:36 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:37) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=7elJ8tLZDuBuWr3axPggC&operator=mtel' \
+INFO  | 2022-08-29 16:12:03 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:35) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=2RVwxG11wOCW90aHrDXbl&operator=mtel' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:37 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:39) - Response is: 
+INFO  | 2022-08-29 16:12:04 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:37) - Response is: 
 {
     "message": "Success",
     "status": true,
     "data": {
         "keyword": "OK",
         "shortcode": "0651388",
-        "tracking_code": "2VH"
+        "tracking_code": "2AJ"
     },
-    "timeStamp": "2022/08/23 09:01:38"
+    "timeStamp": "2022/08/29 09:12:16"
 }
-INFO  | 2022-08-23 16:01:37 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful status code is 200 after tracking request of flow C2S ba mtel
-INFO  | 2022-08-23 16:01:37 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyStatus:57) - status code is: 200
-INFO  | 2022-08-23 16:01:37 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:04 | [main] apis.controller.C2sForBaController (C2sForBaController.java:verifyStatus:54) - status code is: 200
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of flow C2S ba mtel
-INFO  | 2022-08-23 16:01:37 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:72) - message is: 'Success'
-INFO  | 2022-08-23 16:01:37 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:74) - status is: true
-INFO  | 2022-08-23 16:01:38 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:76) - keyword is: OK
-INFO  | 2022-08-23 16:01:38 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:78) - shortcode is: 0651388
-INFO  | 2022-08-23 16:01:38 | [main] emobi.controller.C2sForBaController (C2sForBaController.java:verifyResponse:80) - tracking_code is: 2VH
-INFO  | 2022-08-23 16:01:38 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:38 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:38 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:38 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
-SCENARIO NAME: User GET tracking request flow MSISDN + MO of AT country successful with valid credentials
-INFO  | 2022-08-23 16:01:38 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:38 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: User call the API tracking request of flow msisdn mo with valid credential
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:40) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/a9aa85be-965f-4b09-937b-caf13ea51e49?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=004361111111111&tpClickId=ACZy2gY7Dy181Bx3EW9hA' \
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_mtel:55) - message is: Success
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_mtel:57) - status is: true
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_mtel:59) - keyword is: OK
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_mtel:61) - shortcode is: 0651388
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_c2s_ba_mtel:63) - tracking_code is: 2AJ
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET tracking request affiliates flow C2S unsuccessful with null tpClickId
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API tracking request of flow C2S with null tpClickId
+INFO  | 2022-08-29 16:12:04 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountryWithNullTpClickId:48) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=null&operator=mtel' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:41) - Response is: 
+INFO  | 2022-08-29 16:12:04 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountryWithNullTpClickId:50) - Response is: 
+{
+    "message": "Invalid mandatory fields",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:17"
+}
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after tracking request of flow C2S with null tpClickId
+INFO  | 2022-08-29 16:12:04 | [main] apis.controller.C2sForBaController (C2sForBaController.java:verifyStatus:54) - status code is: 400
+INFO  | 2022-08-29 16:12:04 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response message successful after tracking request of flow with null tpClickId
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_null_tp_click_id:79) - message is: Invalid mandatory fields
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_null_tp_click_id:81) - status is: false
+INFO  | 2022-08-29 16:12:04 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_null_tp_click_id:83) - data is: {}
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET tracking request affiliates flow C2S unsuccessful with null userAgent
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API tracking request of flow C2S with null userAgent
+INFO  | 2022-08-29 16:12:05 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:35) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/df8c1c50-1806-4b82-8701-aaa2175df3c0?userAgent=null&tpClickId=zX5ZOAj7BWIFeHQCvycmm&operator=eronet' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:05 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:37) - Response is: 
+{
+    "message": "Invalid mandatory fields [userAgent]",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:17"
+}
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after tracking request of flow C2S with null userAgent
+INFO  | 2022-08-29 16:12:05 | [main] apis.controller.C2sForBaController (C2sForBaController.java:verifyStatus:54) - status code is: 400
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response message successful after tracking request of flow with null userAgent
+INFO  | 2022-08-29 16:12:05 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_null_user_agent:99) - message is: Invalid mandatory fields [userAgent]
+INFO  | 2022-08-29 16:12:05 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_null_user_agent:101) - status is: false
+INFO  | 2022-08-29 16:12:05 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_null_user_agent:103) - data is: {}
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET tracking request affiliates flow C2S unsuccessful with invalid campaign
+INFO  | 2022-08-29 16:12:05 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API tracking request of flow C2S with invalid campaign
+INFO  | 2022-08-29 16:12:05 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:35) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/TEST/invalidCampaign?userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&tpClickId=PaBz6xwbwMqDzs0WamXVf&operator=mtel' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:06 | [main] apis.controller.C2sForBaController (C2sForBaController.java:c2sRequestTrackingOfBaCountry:37) - Response is: 
+{
+    "message": "Invalid campaign",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:18"
+}
+INFO  | 2022-08-29 16:12:06 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after tracking request of flow C2S with invalid campaign
+INFO  | 2022-08-29 16:12:06 | [main] apis.controller.C2sForBaController (C2sForBaController.java:verifyStatus:54) - status code is: 400
+INFO  | 2022-08-29 16:12:06 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response message successful after tracking request of flow with invalid campaign
+INFO  | 2022-08-29 16:12:06 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_invalid_campaign:119) - message is: Invalid campaign
+INFO  | 2022-08-29 16:12:06 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_invalid_campaign:121) - status is: false
+INFO  | 2022-08-29 16:12:06 | [main] steps.partner.StepsC2sForBa (StepsC2sForBa.java:response_message_successful_after_tracking_request_of_flow_with_invalid_campaign:123) - data is: {}
+INFO  | 2022-08-29 16:12:06 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:06 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:06 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET tracking request flow MSISDN + MO of AT country successful with valid credentials
+INFO  | 2022-08-29 16:12:06 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API tracking request of flow msisdn mo with valid credential
+INFO  | 2022-08-29 16:12:08 | [main] apis.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:38) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/a9aa85be-965f-4b09-937b-caf13ea51e49?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=004361111111111&tpClickId=RQrk6YLWHGDm9KiGs4iI1' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:08 | [main] apis.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:39) - Response is: 
 {
     "message": "Success",
     "status": true,
@@ -86,60 +162,83 @@ INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAt
         "keyword": "OK",
         "shortcode": "145451"
     },
-    "timeStamp": "2022/08/23 09:01:40"
+    "timeStamp": "2022/08/29 09:12:20"
 }
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful status code is 200 after tracking request of flow msisdn mo
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyStatus:46) - status code is: 200
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:08 | [main] apis.controller.MoForAtController (MoForAtController.java:verifyStatus:43) - status code is: 200
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of flow msisdn mo
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithValidInput:66) - message is: Success
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithValidInput:68) - status is: true
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithValidInput:70) - subscriptionStatus is: NEW
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithValidInput:72) - keyword is: OK
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithValidInput:74) - shortcode is: 145451
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
-SCENARIO NAME: User GET tracking request flow MSISDN + MO of AT country successful with invalid mandatory credentials
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: User call the API tracking request of flow msisdn mo with invalid mandatory credentials
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:40) - Request header is: 
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/a9aa85be-965f-4b09-937b-caf13ea51e49?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=null&tpClickId=wH2g6ZTVlweuPWi0OdRPN' \
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_msisdn_mo:31) - message is: Success
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_msisdn_mo:33) - status is: true
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_msisdn_mo:35) - subscriptionStatus is: NEW
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_msisdn_mo:37) - keyword is: OK
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_status_keyword_shortcode_and_trackingcode_not_null_after_tracking_request_of_flow_msisdn_mo:39) - shortcode is: 145451
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET tracking request flow MSISDN + MO of AT country successful with null msisdn
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API tracking request of flow msisdn mo with with null msisdn
+INFO  | 2022-08-29 16:12:08 | [main] apis.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:38) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/a9aa85be-965f-4b09-937b-caf13ea51e49?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=null&tpClickId=dMrjJuKf2R2tBoccJzvu6' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:41) - Response is: 
+INFO  | 2022-08-29 16:12:08 | [main] apis.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:39) - Response is: 
 {
     "message": "Invalid mandatory fields",
     "status": false,
     "data": {
         
     },
-    "timeStamp": "2022/08/23 09:01:40"
+    "timeStamp": "2022/08/29 09:12:20"
 }
-INFO  | 2022-08-23 16:01:39 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: Response successful status code is 400 after tracking request of flow msisdn mo invalid mandatory credentials
-INFO  | 2022-08-23 16:01:39 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyStatus:46) - status code is: 400
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: Response successful message status keyword shortcode and trackingcode not null after tracking request of flow msisdn mo invalid mandatory credentials
-INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithInvalidMandatory:81) - message is: Invalid mandatory fields
-INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithInvalidMandatory:83) - status is: false
-INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.MoForAtController (MoForAtController.java:verifyResponseWithInvalidMandatory:85) - data is: {}
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after tracking request of flow msisdn mo with null msisdn
+INFO  | 2022-08-29 16:12:08 | [main] apis.controller.MoForAtController (MoForAtController.java:verifyStatus:43) - status code is: 400
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message after tracking request of flow msisdn mo with null msisdn
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_after_tracking_request_of_flow_msisdn_mo_with_null_msisdn:55) - message is: Invalid mandatory fields
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_after_tracking_request_of_flow_msisdn_mo_with_null_msisdn:57) - status is: false
+INFO  | 2022-08-29 16:12:08 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_after_tracking_request_of_flow_msisdn_mo_with_null_msisdn:59) - data is: {}
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET tracking request flow MSISDN + MO of AT country successful with invalid campaign
+INFO  | 2022-08-29 16:12:08 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API tracking request of flow msisdn mo with with invalid campaign
+INFO  | 2022-08-29 16:12:09 | [main] apis.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:38) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/mo_request/TEST/invalidCampaign?portalDomain=https://moviplus_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macin tosh%3B%20Intel%20Ma c%20OS%20X%2010_15_7)%20AppleWebKit%2F 537.36%20(KHTML%2C%20like%20Gecko)%20C hrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=null&tpClickId=wViYRvO4aPGDDHvSvwJpU' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:09 | [main] apis.controller.MoForAtController (MoForAtController.java:moviplusRequestMoTracking:39) - Response is: 
+{
+    "message": "Invalid campaign",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:21"
+}
+INFO  | 2022-08-29 16:12:09 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after tracking request of flow msisdn mo with invalid campaign
+INFO  | 2022-08-29 16:12:09 | [main] apis.controller.MoForAtController (MoForAtController.java:verifyStatus:43) - status code is: 400
+INFO  | 2022-08-29 16:12:09 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message after tracking request of flow msisdn mo with invalid campaign
+INFO  | 2022-08-29 16:12:09 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_after_tracking_request_of_flow_msisdn_mo_with_invalid_campaign:75) - message is: Invalid campaign
+INFO  | 2022-08-29 16:12:09 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_after_tracking_request_of_flow_msisdn_mo_with_invalid_campaign:77) - status is: false
+INFO  | 2022-08-29 16:12:09 | [main] steps.partner.StepsMoForAt (StepsMoForAt.java:response_successful_message_after_tracking_request_of_flow_msisdn_mo_with_invalid_campaign:79) - data is: {}
+INFO  | 2022-08-29 16:12:09 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:09 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:09 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
 SCENARIO NAME: User GET pin request flow MSISDN + PIN of RS Country successful with valid credentials
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:09 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: User call the API pin request of flow msisdn pin with valid credential
-INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
+INFO  | 2022-08-29 16:12:09 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
 curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=5g043028b301065041111' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
+INFO  | 2022-08-29 16:12:10 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
 {
     "message": "Success",
     "status": true,
@@ -148,162 +247,314 @@ INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.PinRequestForRsController 
         "nwc": "22801",
         "pinId": "30575615"
     },
-    "timeStamp": "2022/08/23 09:01:41"
+    "timeStamp": "2022/08/29 09:12:22"
 }
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful status code is 200 after pin request of flow msisdn pin
-INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:45) - status code is: 200
-INFO  | 2022-08-23 16:01:40 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:10 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:44) - status code is: 200
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful message status subscriptionStatus and pinid not null after pin request of flow msisdn pin
-INFO  | 2022-08-23 16:01:40 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithValidInput:65) - message is: Success
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithValidInput:67) - status is: true
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithValidInput:69) - status subscriptionStatus is: NEW
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithValidInput:71) - pin is: 30575615
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
+INFO  | 2022-08-29 16:12:10 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_flow_msisdn_pin:31) - message is: Success
+INFO  | 2022-08-29 16:12:10 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_flow_msisdn_pin:33) - status is: true
+INFO  | 2022-08-29 16:12:10 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_flow_msisdn_pin:35) - status subscriptionStatus is: NEW
+INFO  | 2022-08-29 16:12:10 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_subscription_status_and_pinid_not_null_after_pin_request_of_flow_msisdn_pin:37) - pin is: 30575615
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
 SCENARIO NAME: User GET pin request flow MSISDN + PIN of RS Country unsuccessful with invalid campaign credentials
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: User call the API pin request of flow msisdn pin with invalid campaign credential
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
+INFO  | 2022-08-29 16:12:10 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
 curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/invalid?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=5g043028b301065041111' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
+INFO  | 2022-08-29 16:12:10 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
 {
     "message": "Invalid campaign",
     "status": false,
     "data": {
         
     },
-    "timeStamp": "2022/08/23 09:01:42"
+    "timeStamp": "2022/08/29 09:12:23"
 }
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful status code is 400 after pin request of flow msisdn pin with invalid campaign
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:45) - status code is: 400
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:10 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:44) - status code is: 400
+INFO  | 2022-08-29 16:12:10 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful message status and data null after pin request of flow msisdn pin with invalid campaign
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithInvalidCampaign:77) - message is: Invalid campaign
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithInvalidCampaign:79) - status is: false
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithInvalidCampaign:81) - data is: {}
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
-SCENARIO NAME: User GET pin request flow MSISDN + PIN of RS Country unsuccessful with invalid mandatory credentials
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:41 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: User call the API pin request of flow msisdn pin with invalid mandatory credential
-INFO  | 2022-08-23 16:01:41 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
+INFO  | 2022-08-29 16:12:10 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_campaign:53) - message is: Invalid campaign
+INFO  | 2022-08-29 16:12:10 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_campaign:55) - status is: false
+INFO  | 2022-08-29 16:12:10 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_campaign:57) - data is: {}
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin request flow MSISDN + PIN of RS Country unsuccessful with null tpClickId
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin request of flow msisdn pin with null tpClickId
+INFO  | 2022-08-29 16:12:11 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
 curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=null' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:42 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
+INFO  | 2022-08-29 16:12:11 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
 {
     "message": "Invalid mandatory fields",
     "status": false,
     "data": {
         
     },
-    "timeStamp": "2022/08/23 09:01:43"
+    "timeStamp": "2022/08/29 09:12:23"
 }
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: Response successful status code is 400 after pin request of flow msisdn pin with invalid mandatory
-INFO  | 2022-08-23 16:01:42 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:45) - status code is: 400
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: Response successful message status and data null after pin request of flow msisdn pin with invalid mandatory
-INFO  | 2022-08-23 16:01:42 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithInvalidMandatory:87) - message is: Invalid mandatory fields
-INFO  | 2022-08-23 16:01:42 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithInvalidMandatory:89) - status is: false
-INFO  | 2022-08-23 16:01:42 | [main] emobi.controller.PinRequestForRsController (PinRequestForRsController.java:verifyResponseWithInvalidMandatory:91) - data is: {}
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after pin request of flow msisdn pin with null tpClickId
+INFO  | 2022-08-29 16:12:11 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:44) - status code is: 400
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and data null after pin request of flow msisdn pin with null tpClickId
+INFO  | 2022-08-29 16:12:11 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_tp_click_id:73) - message is: Invalid mandatory fields
+INFO  | 2022-08-29 16:12:11 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_tp_click_id:75) - status is: false
+INFO  | 2022-08-29 16:12:11 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_tp_click_id:77) - data is: {}
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin request flow MSISDN + PIN of RS Country unsuccessful with invalid msisdn
+INFO  | 2022-08-29 16:12:11 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin request of flow msisdn pin with invalid msisdn
+INFO  | 2022-08-29 16:12:11 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093388888888&tpClickId=5g043028b301065041111' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:12 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
+{
+    "message": "Opportunity user not found",
+    "status": false,
+    "data": {
+        "subscriptionStatus": "FAILED"
+    },
+    "timeStamp": "2022/08/29 09:12:24"
+}
+INFO  | 2022-08-29 16:12:12 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 500 after pin request of flow msisdn pin with invalid msisdn
+INFO  | 2022-08-29 16:12:12 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:44) - status code is: 500
+INFO  | 2022-08-29 16:12:12 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and data null after pin request of flow msisdn pin with invalid msisdn
+INFO  | 2022-08-29 16:12:12 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_msisdn:93) - message is: Opportunity user not found
+INFO  | 2022-08-29 16:12:12 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_msisdn:95) - status is: false
+INFO  | 2022-08-29 16:12:12 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_invalid_msisdn:97) - status subscriptionStatus is: FAILED
+INFO  | 2022-08-29 16:12:12 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:12 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:12 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin request flow MSISDN + PIN of RS Country unsuccessful with null userAgent
+INFO  | 2022-08-29 16:12:12 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin request of flow msisdn pin with null userAgent
+INFO  | 2022-08-29 16:12:12 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:38) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=null&msisdn=093311111111&tpClickId=5g043028b301065041111' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:13 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:mobwizardPinRequestTracking:40) - Response is: 
+{
+    "message": "Invalid mandatory fields",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:25"
+}
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after pin request of flow msisdn pin with null userAgent
+INFO  | 2022-08-29 16:12:13 | [main] apis.controller.PinRequestForRsController (PinRequestForRsController.java:verifyStatus:44) - status code is: 400
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and data null after pin request of flow msisdn pin with null userAgent
+INFO  | 2022-08-29 16:12:13 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_user_agent:113) - message is: Invalid mandatory fields
+INFO  | 2022-08-29 16:12:13 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_user_agent:115) - status is: false
+INFO  | 2022-08-29 16:12:13 | [main] steps.partner.StepsPinRequestForRs (StepsPinRequestForRs.java:response_successful_message_status_and_data_null_after_pin_request_of_flow_msisdn_pin_with_null_user_agent:117) - data is: {}
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
 SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country successful with valid credentials
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:42 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: User call the API pin verify of flow msisdn pin with valid credential
-INFO  | 2022-08-23 16:01:42 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:mobwizardPinVerifyTracking:36) - Request header is: 
+INFO  | 2022-08-29 16:12:13 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:36) - Request header is: 
 curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=3333&tpClickId=5g043028b3010650413dg2pg1' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:43 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:mobwizardPinVerifyTracking:38) - Response is: 
+INFO  | 2022-08-29 16:12:13 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:38) - Response is: 
 {
     "message": "Success",
     "status": true,
     "data": {
         "verify_status": "VERIFIED"
     },
-    "timeStamp": "2022/08/23 09:01:44"
+    "timeStamp": "2022/08/29 09:12:26"
 }
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful status code is 200 after pin verify of flow msisdn pin
-INFO  | 2022-08-23 16:01:43 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:43) - status code is: 200
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:13 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:42) - status code is: 200
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful message status and verify status after pin verify of flow msisdn pin
-INFO  | 2022-08-23 16:01:43 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithValidInput:63) - message is: Success
-INFO  | 2022-08-23 16:01:43 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithValidInput:65) - status is: true
-INFO  | 2022-08-23 16:01:43 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithValidInput:67) - verify status is: VERIFIED
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
+INFO  | 2022-08-29 16:12:13 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin:31) - message is: Success
+INFO  | 2022-08-29 16:12:13 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin:33) - status is: true
+INFO  | 2022-08-29 16:12:13 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin:35) - verify status is: VERIFIED
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
 SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country unsuccessful with pin invalid credentials
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:43 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:13 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: User call the API pin verify of flow msisdn pin with pin invalid credential
-INFO  | 2022-08-23 16:01:43 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:mobwizardPinVerifyTracking:36) - Request header is: 
+INFO  | 2022-08-29 16:12:13 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:36) - Request header is: 
 curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=1111&tpClickId=5g043028b3010650413dg2pg1' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:mobwizardPinVerifyTracking:38) - Response is: 
+INFO  | 2022-08-29 16:12:14 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:38) - Response is: 
 {
     "message": "Pin invalid",
     "status": false,
     "data": {
         "verify_status": "FAILED"
     },
-    "timeStamp": "2022/08/23 09:01:45"
+    "timeStamp": "2022/08/29 09:12:26"
 }
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:14 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful status code is 500 after pin verify of flow msisdn pin with pin invalid
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:43) - status code is: 500
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
+INFO  | 2022-08-29 16:12:14 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:42) - status code is: 500
+INFO  | 2022-08-29 16:12:14 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
 STEP: Response successful message status and verify status after pin verify of flow msisdn pin with pin invalid
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithInvalidPin:73) - message is: Pin invalid
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithInvalidPin:75) - status is: false
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithInvalidPin:77) - verify status is: FAILED
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:52) - ------------Start Scenario-------------
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$4:53) - 
-SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country unsuccessful with pin invalid mandatory credentials
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:setBeforeTestcase:62) - ------------Start Suite-------------
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: User call the API pin verify of flow msisdn pin with pin invalid mandatory credential
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:mobwizardPinVerifyTracking:36) - Request header is: 
+INFO  | 2022-08-29 16:12:14 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_pin_invalid:51) - message is: Pin invalid
+INFO  | 2022-08-29 16:12:14 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_pin_invalid:53) - status is: false
+INFO  | 2022-08-29 16:12:14 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_pin_invalid:55) - verify status is: FAILED
+INFO  | 2022-08-29 16:12:14 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:14 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:14 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country unsuccessful with null tpClickId
+INFO  | 2022-08-29 16:12:14 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin verify of flow msisdn pin with null tpClickId
+INFO  | 2022-08-29 16:12:14 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:36) - Request header is: 
 curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=3333&tpClickId=null' \
   -X GET \
   -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:mobwizardPinVerifyTracking:38) - Response is: 
+INFO  | 2022-08-29 16:12:15 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:38) - Response is: 
 {
     "message": "Invalid mandatory fields",
     "status": false,
     "data": {
         
     },
-    "timeStamp": "2022/08/23 09:01:45"
+    "timeStamp": "2022/08/29 09:12:27"
 }
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: Response successful status code is 400 after pin verify of flow msisdn pin with pin invalid mandatory
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:43) - status code is: 400
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$2:43) - 
-STEP: Response successful message status and verify status after pin verify of flow msisdn pin with pin invalid mandatory
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithInvalidMandatory:83) - message is: Invalid mandatory fields
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithInvalidMandatory:85) - status is: false
-INFO  | 2022-08-23 16:01:44 | [main] emobi.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyResponseWithInvalidMandatory:87) - verify status is: {}
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:setAfterTestcase:67) - ------------After Suite-------------
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$5:57) - ------------End Scenario-------------
-INFO  | 2022-08-23 16:01:44 | [main] emobi.steps.Hooks (Hooks.java:lambda$new$1:36) - ------------END TESTING-------------
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after pin verify of flow msisdn pin with null tpClickId
+INFO  | 2022-08-29 16:12:15 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:42) - status code is: 400
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and verify status after pin verify of flow msisdn pin with null tpClickId
+INFO  | 2022-08-29 16:12:15 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_tp_click_id:71) - message is: Invalid mandatory fields
+INFO  | 2022-08-29 16:12:15 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_tp_click_id:73) - status is: false
+INFO  | 2022-08-29 16:12:15 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_tp_click_id:75) - verify status is: {}
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country unsuccessful with invalid tpClickId
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin verify of flow msisdn pin with invalid tpClickId
+INFO  | 2022-08-29 16:12:15 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:36) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=3333&tpClickId=invalidtpClickId' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:15 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:38) - Response is: 
+{
+    "message": "Invalid tpClickId",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:28"
+}
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after pin verify of flow msisdn pin with invalid tpClickId
+INFO  | 2022-08-29 16:12:15 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:42) - status code is: 400
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and verify status after pin verify of flow msisdn pin with invalid tpClickId
+INFO  | 2022-08-29 16:12:15 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_invalid_tp_click_id:91) - message is: Invalid tpClickId
+INFO  | 2022-08-29 16:12:15 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_invalid_tp_click_id:93) - status is: false
+INFO  | 2022-08-29 16:12:15 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_invalid_tp_click_id:95) - verify status is: {}
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country unsuccessful with invalid campaign
+INFO  | 2022-08-29 16:12:15 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin verify of flow msisdn pin with invalid campaign
+INFO  | 2022-08-29 16:12:15 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:36) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/invalidCampaign?pinId=sYhM3076631618314366&pinValue=3333&tpClickId=null' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:16 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:38) - Response is: 
+{
+    "message": "Invalid campaign",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:28"
+}
+INFO  | 2022-08-29 16:12:16 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after pin verify of flow msisdn pin with invalid campaign
+INFO  | 2022-08-29 16:12:16 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:42) - status code is: 400
+INFO  | 2022-08-29 16:12:16 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and verify status after pin verify of flow msisdn pin with invalid campaign
+INFO  | 2022-08-29 16:12:16 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_invalid_campaign:111) - message is: Invalid campaign
+INFO  | 2022-08-29 16:12:16 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_invalid_campaign:113) - status is: false
+INFO  | 2022-08-29 16:12:16 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_invalid_campaign:115) - verify status is: {}
+INFO  | 2022-08-29 16:12:16 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:16 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:16 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country unsuccessful with null pinId
+INFO  | 2022-08-29 16:12:16 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin verify of flow msisdn pin with null pinId
+INFO  | 2022-08-29 16:12:16 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:36) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=null&pinValue=3333&tpClickId=5g043028b3010650413dg2pg1' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:17 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:38) - Response is: 
+{
+    "message": "Invalid mandatory fields",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:29"
+}
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after pin verify of flow msisdn pin with null pinId
+INFO  | 2022-08-29 16:12:17 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:42) - status code is: 400
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and verify status after pin verify of flow msisdn pin with null pinId
+INFO  | 2022-08-29 16:12:17 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_pin_id:131) - message is: Invalid mandatory fields
+INFO  | 2022-08-29 16:12:17 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_pin_id:133) - status is: false
+INFO  | 2022-08-29 16:12:17 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_pin_id:135) - verify status is: {}
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:54) - ------------Start Scenario-------------
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$4:55) - 
+SCENARIO NAME: User GET pin verify flow MSISDN + PIN of RS Country unsuccessful with null pinValue
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: User call the API pin verify of flow msisdn pin with null pinValue
+INFO  | 2022-08-29 16:12:17 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:36) - Request header is: 
+curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_verify/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?pinId=sYhM3076631618314366&pinValue=null&tpClickId=5g043028b3010650413dg2pg1' \
+  -X GET \
+  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
+INFO  | 2022-08-29 16:12:17 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:requestPinVerifyTracking:38) - Response is: 
+{
+    "message": "Invalid mandatory fields",
+    "status": false,
+    "data": {
+        
+    },
+    "timeStamp": "2022/08/29 09:12:29"
+}
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful status code is 400 after pin verify of flow msisdn pin with null pinValue
+INFO  | 2022-08-29 16:12:17 | [main] apis.controller.PinVerifyForRsController (PinVerifyForRsController.java:verifyStatus:42) - status code is: 400
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$2:45) - 
+STEP: Response successful message status and verify status after pin verify of flow msisdn pin with null pinValue
+INFO  | 2022-08-29 16:12:17 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_pin_value:151) - message is: Invalid mandatory fields
+INFO  | 2022-08-29 16:12:17 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_pin_value:153) - status is: false
+INFO  | 2022-08-29 16:12:17 | [main] steps.partner.StepsPinVerifyForRs (StepsPinVerifyForRs.java:response_successful_message_status_and_verify_status_after_pin_verify_of_flow_msisdn_pin_with_null_pin_value:155) - verify status is: {}
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$5:59) - ------------End Scenario-------------
+INFO  | 2022-08-29 16:12:17 | [main] apis.utilities.Helper (Helper.java:createEnvironmentProperties:184) - Class Helper | Method createEnvironmentProperties | saveSettings : {Domain:=http://dev.api.emobi-sys.com:8091/v1, Enviroment:=dev} | D:\ThuanNguyen\FrameworkAutomation\emobi-apis-qa/target/allure-results/environment.properties
+INFO  | 2022-08-29 16:12:17 | [main] apis.steps.Hooks (Hooks.java:lambda$new$1:38) - ------------END TESTING-------------

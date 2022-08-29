@@ -7,7 +7,7 @@
   <description>The codec package contains simple encoder and decoders for
       various formats such as Base64 and Hexadecimal. In addition to these
       widely used encoders and decoders, the codec package also maintains a
-      collection of phonetic encoding emobi.utilities.</description>
+      collection of phonetic encoding emobi.apis.utilities.</description>
   <url>http://jakarta.apache.org/commons/codec/</url>
   <issueManagement>
     <url>http://nagoya.apache.org/bugzilla/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;email1=&amp;emailtype1=substring&amp;emailassigned_to1=1&amp;email2=&amp;emailtype2=substring&amp;emailreporter2=1&amp;bugidtype=include&amp;bug_id=&amp;changedin=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;product=Commons&amp;component=Codec&amp;short_desc=&amp;short_desc_type=allwordssubstr&amp;long_desc=&amp;long_desc_type=allwordssubstr&amp;bug_file_loc=&amp;bug_file_loc_type=allwordssubstr&amp;keywords=&amp;keywords_type=anywords&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=&amp;cmdtype=doit&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time</url>

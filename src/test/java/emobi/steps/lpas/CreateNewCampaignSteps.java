@@ -51,7 +51,7 @@ public class CreateNewCampaignSteps {
 
     @Given("User create new affiliates partner for new campaign with valid credential")
     public void user_create_new_affiliates_partner_for_new_campaign_with_valid_credential() {
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_AFFILIATES_PARTNER, RestMethod.POST);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.CREATE_NEW_AFFILIATES_PARTNER, RestMethod.POST);
         restHeaders.add(restHeaders.defalutHeaders());
         restRequest.setHeader(restHeaders);
         createAffiliatesPartnerEntity.setName("Thuan create new affiliates SE at: " + Utils.date());
@@ -78,7 +78,7 @@ public class CreateNewCampaignSteps {
 
     @Given("User create new campaign for country SE with valid")
     public void user_create_new_campaign_for_country_se_with_valid() throws JsonProcessingException {
-        restRequest = new RestRequest(URL.BASE_URL_HAS_PORT_8091, URL.CREATE_NEW_CAMPAIGN, RestMethod.POST);
+        restRequest = new RestRequest(URLs.BASE_URL_HAS_PORT_8091, URLs.CREATE_NEW_CAMPAIGN, RestMethod.POST);
         restHeaders.add(restHeaders.defalutHeaders());
         restRequest.setHeader(restHeaders);
         createNewCampaignEntity.setName("Thuan create campaign at: " + Utils.date());

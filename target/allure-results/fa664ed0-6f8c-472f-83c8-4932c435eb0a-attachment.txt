@@ -1,3 +1,0 @@
-curl 'http://dev.api.emobi-sys.com:8091/v1/affiliates/tf/pin_request/TEST/3525c3c2d-79ba-4e5c-9b82-74861aba0a30?portalDomain=https://mobwizard_sample_landing_page.html&ip=129.20.20.100&userAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_7)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.101%20Safari%2F537.36&msisdn=093311111111&tpClickId=5g043028b301065041111' \
-  -X GET \
-  -H 'apikey: e5f4a5e9-5924-413e-a8bd-f62345fbb445'
