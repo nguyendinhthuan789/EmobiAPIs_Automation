@@ -1,0 +1,31 @@
+
+g	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªşšû
+h	java:S116"SRename this field "FormPart" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚íÕ«
+Z
+java:S3358à"DExtract this nested ternary operation into an independent statement.(Š³±;
+{
+java:S5996ü"_Remove or replace this boundary that will never match because it appears after mandatory input.(à–ŠÂúÿÿÿÿ
+|
+java:S5996ü"`Remove or replace this boundary that will never match because it appears before mandatory input.(à–ŠÂúÿÿÿÿ
+L
+java:S6035ü"0Replace this alternation with a character class.(à–ŠÂúÿÿÿÿ
+d
+java:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.( íÔÔøÿÿÿÿ
+d
+java:S5361€"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ôÈŒùÿÿÿÿ
+_
+java:S5361‡"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ş¡º
+_
+java:S5361‡"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ş¡º
+B
+java:S1905"&Remove this unnecessary cast to "int".(¤˜±¹şÿÿÿÿ
+V
+java:S1117œ":Rename "method" which hides the field declared at line 22.(äÛÔ¶şÿÿÿÿ
+\
+java:S1117Ÿ"@Rename "cookieHeader" which hides the field declared at line 18.(ƒ¤¹üÿÿÿÿ
+S
+java:S1117¤"<Rename "FormPart" which hides the field declared at line 14.(ªşšû
+s
+java:S3923½"]This conditional operation returns the same value whether the condition is "true" or "false".(˜Ù›Y
+G
+java:S1144È"0Remove this unused private "quoteString" method.(•Î›˜

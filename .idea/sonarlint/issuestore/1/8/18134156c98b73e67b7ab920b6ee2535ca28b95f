@@ -1,0 +1,6 @@
+
+j
+java:S1104"OMake Log a static final constant or non-public and provide accessors if needed.(…ÔùĞÿÿÿÿÿ
+-
+java:S1700"Rename field "Log"(…ÔùĞÿÿÿÿÿ
+h	java:S116"NRename this field "Log" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…ÔùĞÿÿÿÿÿ

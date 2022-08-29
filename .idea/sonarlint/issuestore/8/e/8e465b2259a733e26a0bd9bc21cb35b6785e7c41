@@ -1,0 +1,30 @@
+
+e
+java:S1192 "IDefine a constant instead of duplicating this literal "Folder '" 3 times.(’ˆøüÿÿÿÿ
+p
+java:S1488U"ZImmediately return this expression instead of assigning it to the temporary variable "ts".(¸êáµ
+w
+java:S1488`"\Immediately return this expression instead of assigning it to the temporary variable "date".(”Ç©šùÿÿÿÿ
+z
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(Õ‘È´şÿÿÿÿ
+z
+java:S1488–"^Immediately return this expression instead of assigning it to the temporary variable "result".(Õ‘È´şÿÿÿÿ
+S
+java:S2629 "7Use the built-in formatting to construct this argument.(’ˆøüÿÿÿÿ
+S
+java:S2629¢"7Use the built-in formatting to construct this argument.(ÀÔ²Áùÿÿÿÿ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ª³‘«üÿÿÿÿ
+c	java:S100S"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öÿğ¸
+H
+java:S1874p"2Remove this use of "SNAKE_CASE"; it is deprecated.(Ÿüâ
+B
+java:S1125~"'Remove the unnecessary boolean literal.(À¸‰áüÿÿÿÿ
+V
+java:S1612"?Replace this lambda with method reference 'Collection::stream'.(‡Àë¾
+]
+java:S3457 "AFormat specifiers should be used instead of string concatenation.(’ˆøüÿÿÿÿ
+]
+java:S3457¢"AFormat specifiers should be used instead of string concatenation.(ÀÔ²Áùÿÿÿÿ
+W
+java:S3457§"AFormat specifiers should be used instead of string concatenation.(öÂÌ
